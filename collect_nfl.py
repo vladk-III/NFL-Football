@@ -13,7 +13,7 @@ import pytz
 import nfl_data_py as nfl
 
 EASTERN = pytz.timezone("US/Eastern")
-ODDS_BASE = "[https://api.the-odds-api.com/v4](https://api.the-odds-api.com/v4)"
+ODDS_BASE = "https://api.the-odds-api.com/v4"
 ODDS_SPORT = "americanfootball_nfl"
 DATA_DIR = Path("data")
 MARKER_DIR = Path("data/.markers")
@@ -71,6 +71,7 @@ def collect_games(year: int) -> pd.DataFrame:
 
 def collect_odds_api(api_key: str, hours: int = 48) -> pd.DataFrame:
     if not api_key:
+        LOG.warning("No ODDS_API_KEY found, skipping live odds collection.")
         return pd.DataFrame()
     now = datetime.now(pytz.UTC)
     cutoff = now + timedelta(hours=hours)
@@ -134,12 +135,14 @@ def main():
     parser.add_argument("--mode", choices=["auto", "pregame", "postgame"], default="auto")
     parser.add_argument("--week", type=int)
     parser.add_argument("--year", type=int)
-    args = parser.parse_args()
+    args = parser.parseargs()
     
     odds_api_key = os.environ.get("ODDS_API_KEY", "")
     now_et = datetime.now(EASTERN)
     year = args.year or (now_et.year if now_et.month >= 8 else now_et.year - 1)
-    mode = args.mode if args.mode != "auto" else ("postgame" if now_et.weekday() in (1, 4) else "pregame")
+    
+    # Bug Fix 3: Monday is 0, Tuesday is 1, Friday is 4
+    mode = args.mode if args.mode != "auto" else ("postgame" if now_et.weekday() in (0, 1, 4) else "pregame")
     week = args.week or 1
     
     if mode == "pregame":
@@ -150,7 +153,8 @@ def main():
     github_output = os.environ.get("GITHUB_OUTPUT")
     if github_output:
         with open(github_output, "a") as f:
-            f.write(f"mode={mode}\\nyear={year}\\nweek={week}\\nstats={json.dumps(stats)}\\ncollected=true\\n")
+            # Bug Fix 1: Removed double backslashes that were flattening the GitHub Actions output
+            f.write(f"mode={mode}\nyear={year}\nweek={week}\nstats={json.dumps(stats)}\ncollected=true\n")
 
 if __name__ == "__main__":
     main()
