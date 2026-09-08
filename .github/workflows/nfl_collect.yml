@@ -1,0 +1,118 @@
+name: NFL Betting Data Collector
+
+on:
+  schedule:
+    # ── Pregame odds snapshots (Thu, Sat, Sun, Mon) ─────────────────
+    # 14:00 UTC = 10:00 ET — catches morning line moves
+    - cron: "0 14 * * 0,1,4,6"
+    # 20:00 UTC = 4:00 PM ET — afternoon snapshot
+    - cron: "0 20 * * 0,1,4,6"
+
+    # ── Postgame results (Fri, Mon, Tue) ────────────────────────────
+    # 08:00 UTC = 4:00 AM ET Fri (TNF results) & Mon (SNF results)
+    - cron: "0 8 * * 1,5"
+    # 14:00 UTC = 10:00 AM ET Tue (Final cleanup for MNF scores)
+    - cron: "0 14 * * 2"
+
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Force mode (auto / pregame / postgame)"
+        required: false
+        default: "auto"
+        type: choice
+        options: [auto, pregame, postgame]
+      week:
+        description: "Override NFL week number"
+        required: false
+        type: number
+      year:
+        description: "Override season year"
+        required: false
+        type: number
+
+permissions:
+  contents: write
+
+env:
+  ODDS_API_KEY:  ${{ secrets.ODDS_API_KEY }}
+  TZ:            America/New_York
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect NFL data
+        id: collect
+        run: |
+          ARGS=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            MODE="${{ github.event.inputs.mode }}"
+            WEEK="${{ github.event.inputs.week }}"
+            YEAR="${{ github.event.inputs.year }}"
+            [ -n "$MODE" ] && [ "$MODE" != "auto" ] && ARGS="$ARGS --mode $MODE"
+            [ -n "$WEEK" ] && ARGS="$ARGS --week $WEEK"
+            [ -n "$YEAR" ] && ARGS="$ARGS --year $YEAR"
+          fi
+          python collect_nfl.py $ARGS
+
+      - name: Commit updated data
+        if: steps.collect.outputs.collected == 'true'
+        run: |
+          git config user.name  "nfl-bot"
+          git config user.email "nfl-bot@users.noreply.github.com"
+          git add data/
+          MODE='${{ steps.collect.outputs.mode }}'
+          WEEK='${{ steps.collect.outputs.week }}'
+          YEAR='${{ steps.collect.outputs.year }}'
+          MSG="data: ${MODE} snapshot — ${YEAR} wk${WEEK} [$(date +%Y-%m-%d)]"
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "$MSG"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
+
+      - name: Check email configured
+        id: email_check
+        env:
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: |
+          if [ -n "$EMAIL_TO" ]; then echo "configured=true" >> "$GITHUB_OUTPUT"; else echo "configured=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Send summary email
+        if: steps.collect.outputs.collected == 'true' && steps.email_check.outputs.configured == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port:    465
+          secure:         true
+          username:       ${{ secrets.EMAIL_USER }}
+          password:       ${{ secrets.EMAIL_APP_PASSWORD }}
+          subject: >
+            NFL ${{ steps.collect.outputs.mode }} — ${{ steps.collect.outputs.year }} Wk ${{ steps.collect.outputs.week }}
+          to:             ${{ secrets.EMAIL_TO }}
+          from:           NFL Collector <${{ secrets.EMAIL_USER }}>
+          body: |
+            NFL Betting Data — ${{ steps.collect.outputs.mode }} snapshot
+            Season ${{ steps.collect.outputs.year }}, Week ${{ steps.collect.outputs.week }}
+            Stats:
+            ${{ steps.collect.outputs.stats }}
+            Workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
