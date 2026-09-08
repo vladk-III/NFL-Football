@@ -3,11 +3,7 @@
 NFL Football Betting Data Collector
 ===================================
 State-aware, automated pipeline for collecting schedules, multi-book odds,
-and post-game outcomes.
-
-Data sources:
-  1. nfl_data_py (nflverse) — schedules, game outcomes
-  2. The Odds API — live multi-sportsbook odds
+weather, and post-game outcomes.
 """
 
 import os
@@ -16,6 +12,7 @@ import json
 import time
 import logging
 import argparse
+from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -31,9 +28,41 @@ DATA_DIR = Path("data")
 
 LOG = logging.getLogger("nfl_collector")
 
+# Static Mapping of 30 Current Primary NFL Venues
+NFL_VENUES = {
+    "State Farm Stadium": {"lat": 33.5276, "lon": -112.2626, "type": "retractable"},
+    "Mercedes-Benz Stadium": {"lat": 33.7554, "lon": -84.4006, "type": "retractable"},
+    "M&T Bank Stadium": {"lat": 39.2780, "lon": -76.6227, "type": "outdoors"},
+    "Highmark Stadium": {"lat": 42.7738, "lon": -78.7870, "type": "outdoors"},
+    "Bank of America Stadium": {"lat": 35.2258, "lon": -80.8528, "type": "outdoors"},
+    "Soldier Field": {"lat": 41.8623, "lon": -87.6167, "type": "outdoors"},
+    "Paycor Stadium": {"lat": 39.0955, "lon": -84.5161, "type": "outdoors"},
+    "Cleveland Browns Stadium": {"lat": 41.5061, "lon": -81.6995, "type": "outdoors"},
+    "AT&T Stadium": {"lat": 32.7473, "lon": -97.0945, "type": "retractable"},
+    "Empower Field at Mile High": {"lat": 39.7439, "lon": -105.0201, "type": "outdoors"},
+    "Ford Field": {"lat": 42.3400, "lon": -83.0456, "type": "dome"},
+    "Lambeau Field": {"lat": 44.5013, "lon": -88.0622, "type": "outdoors"},
+    "NRG Stadium": {"lat": 29.6847, "lon": -95.4107, "type": "retractable"},
+    "Lucas Oil Stadium": {"lat": 39.7601, "lon": -86.1639, "type": "retractable"},
+    "EverBank Stadium": {"lat": 30.3239, "lon": -81.6373, "type": "outdoors"},
+    "GEHA Field at Arrowhead Stadium": {"lat": 39.0489, "lon": -94.4839, "type": "outdoors"},
+    "Allegiant Stadium": {"lat": 36.0909, "lon": -115.1833, "type": "dome"},
+    "SoFi Stadium": {"lat": 33.9535, "lon": -118.3390, "type": "dome"},
+    "Hard Rock Stadium": {"lat": 25.9580, "lon": -80.2389, "type": "outdoors"},
+    "U.S. Bank Stadium": {"lat": 44.9735, "lon": -93.2575, "type": "dome"},
+    "Gillette Stadium": {"lat": 42.0909, "lon": -71.2643, "type": "outdoors"},
+    "Caesars Superdome": {"lat": 29.9511, "lon": -90.0814, "type": "dome"},
+    "MetLife Stadium": {"lat": 40.8135, "lon": -74.0745, "type": "outdoors"},
+    "Lincoln Financial Field": {"lat": 39.9008, "lon": -75.1675, "type": "outdoors"},
+    "Acrisure Stadium": {"lat": 40.4468, "lon": -80.0158, "type": "outdoors"},
+    "Levi's Stadium": {"lat": 37.4032, "lon": -121.9697, "type": "outdoors"},
+    "Lumen Field": {"lat": 47.5952, "lon": -122.3316, "type": "outdoors"},
+    "Raymond James Stadium": {"lat": 27.9759, "lon": -82.5033, "type": "outdoors"},
+    "Nissan Stadium": {"lat": 36.1665, "lon": -86.7713, "type": "outdoors"},
+    "Northwest Stadium": {"lat": 38.9076, "lon": -76.8645, "type": "outdoors"}
+}
 
 def odds_get(endpoint: str, api_key: str, params: dict | None = None) -> list | dict | None:
-    """GET request to The Odds API with backoff retries."""
     url = f"{ODDS_BASE}{endpoint}"
     base_params = {"apiKey": api_key}
     base_params.update(params or {})
@@ -42,7 +71,6 @@ def odds_get(endpoint: str, api_key: str, params: dict | None = None) -> list | 
             r = requests.get(url, params=base_params, timeout=30)
             if r.status_code == 429:
                 wait = 2 ** (attempt + 1)
-                LOG.warning(f"Odds API rate limited, retrying in {wait}s...")
                 time.sleep(wait)
                 continue
             r.raise_for_status()
@@ -50,12 +78,9 @@ def odds_get(endpoint: str, api_key: str, params: dict | None = None) -> list | 
         except requests.RequestException as e:
             LOG.warning(f"Odds API attempt {attempt+1} failed: {e}")
             time.sleep(2 ** attempt)
-    LOG.error(f"Odds API endpoint {endpoint} failed after 3 attempts.")
     return None
 
-
 def append_or_create_csv(df: pd.DataFrame, path: Path, dedup_cols: list[str] | None = None) -> int:
-    """Append new data to existing CSV or write fresh, deduping on key columns if requested."""
     if path.exists():
         existing = pd.read_csv(path)
         combined = pd.concat([existing, df], ignore_index=True)
@@ -64,12 +89,9 @@ def append_or_create_csv(df: pd.DataFrame, path: Path, dedup_cols: list[str] | N
     if dedup_cols:
         combined = combined.drop_duplicates(subset=dedup_cols, keep="last")
     combined.to_csv(path, index=False)
-    LOG.info(f"Saved {path.name}: {len(combined)} total rows ({len(df)} new)")
     return len(df)
 
-
 def collect_games(year: int) -> pd.DataFrame:
-    """Fetch NFL schedule and official game scores using nfl_data_py."""
     LOG.info(f"Fetching NFL schedule via nflverse for season {year}")
     try:
         sched = nfl.import_schedules([year])
@@ -79,12 +101,9 @@ def collect_games(year: int) -> pd.DataFrame:
 
     rows = []
     for _, g in sched.iterrows():
-        # Parse kickoff time
         gameday_str = str(g.get("gameday", ""))
         gametime_str = str(g.get("gametime", "")) if pd.notna(g.get("gametime")) else "13:00"
-        
         try:
-            # Construct ISO timestamp for kickoff calculation
             dt_str = f"{gameday_str}T{gametime_str}:00"
             start_dt = EASTERN.localize(datetime.fromisoformat(dt_str)).astimezone(pytz.UTC)
             start_iso = start_dt.isoformat()
@@ -102,34 +121,25 @@ def collect_games(year: int) -> pd.DataFrame:
             "away_team": g.get("away_team"),
             "away_points": g.get("away_score"),
             "stadium": g.get("stadium"),
-            "roof": g.get("roof"),
             "completed": not pd.isna(g.get("home_score")),
         })
     return pd.DataFrame(rows)
 
-
-def collect_odds_api(api_key: str, lookahead_hours: int = 72) -> pd.DataFrame:
-    """Fetch live multi-bookmaker odds for upcoming NFL games."""
+def collect_odds_api(api_key: str, lookahead_hours: int = 48) -> pd.DataFrame:
+    """Fetch live odds. Reverted default lookahead_hours to 48 as requested."""
     if not api_key:
-        LOG.warning("ODDS_API_KEY is missing. Skipping live odds collection.")
         return pd.DataFrame()
-
     now = datetime.now(pytz.UTC)
     cutoff = now + timedelta(hours=lookahead_hours)
-
-    LOG.info(f"Querying live NFL odds between {now.isoformat()} and {cutoff.isoformat()}")
     data = odds_get(f"/sports/{ODDS_SPORT}/odds", api_key, {
-        "regions": "us",
-        "markets": "h2h,spreads,totals",
+        "regions": "us", "markets": "h2h,spreads,totals",
         "oddsFormat": "american",
         "commenceTimeFrom": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "commenceTimeTo": cutoff.strftime("%Y-%m-%dT%H:%M:%SZ"),
     })
-
+    
     if not data:
-        LOG.info("No odds data returned for the specified window.")
         return pd.DataFrame()
-
     rows = []
     ts = datetime.now(EASTERN).isoformat()
     for event in data:
@@ -138,13 +148,9 @@ def collect_odds_api(api_key: str, lookahead_hours: int = 72) -> pd.DataFrame:
         for book in event.get("bookmakers", []):
             book_key = book.get("key", "")
             row = {
-                "snapshot_ts": ts,
-                "game_id": event.get("id", ""),
-                "home_team": home,
-                "away_team": away,
-                "provider": book_key,
-                "spread": None, "spread_price": None,
-                "over_under": None, "ou_price": None,
+                "snapshot_ts": ts, "game_id": event.get("id", ""),
+                "home_team": home, "away_team": away, "provider": book_key,
+                "spread": None, "spread_price": None, "over_under": None, "ou_price": None,
                 "home_ml": None, "away_ml": None,
             }
             for market in book.get("markets", []):
@@ -163,9 +169,105 @@ def collect_odds_api(api_key: str, lookahead_hours: int = 72) -> pd.DataFrame:
             rows.append(row)
     return pd.DataFrame(rows)
 
+def collect_weather(games_df: pd.DataFrame) -> pd.DataFrame:
+    """Fetch game weather. Treats both 'dome' AND 'retractable' roofs as indoor environments."""
+    if games_df.empty:
+        return pd.DataFrame()
+
+    rows = []
+    outdoor_games = []
+    now_utc = datetime.now(pytz.UTC)
+
+    for _, g in games_df.iterrows():
+        venue_name = str(g.get("stadium", ""))
+        venue_info = NFL_VENUES.get(venue_name)
+        start_raw = g.get("start_date")
+        
+        try:
+            game_dt = datetime.fromisoformat(str(start_raw).replace("Z", "+00:00"))
+        except (ValueError, TypeError):
+            continue
+
+        # ASSUMPTION: Treat both Domes AND Retractable roofs as indoor climate-controlled
+        if venue_info and venue_info.get("type") in ("dome", "retractable"):
+            rows.append({
+                "game_id": g.get("game_id"), "stadium": venue_name,
+                "temperature": 72.0, "precipitation": 0.0, "wind_speed": 0.0,
+                "roof_type": venue_info.get("type"), "is_indoor": True,
+            })
+            continue
+
+        days_diff = (game_dt - now_utc).days
+        if days_diff > 14 or days_diff < -80:
+            continue
+
+        if not venue_info:
+            continue
+
+        outdoor_games.append((g, game_dt, venue_info))
+
+    if not outdoor_games:
+        return pd.DataFrame(rows)
+
+    games_by_date = defaultdict(list)
+    for g, game_dt, venue_info in outdoor_games:
+        date_str = game_dt.strftime("%Y-%m-%d")
+        games_by_date[date_str].append((g, game_dt, venue_info))
+
+    with requests.Session() as session:
+        for date_str, daily_games in games_by_date.items():
+            lats = ",".join(str(round(v["lat"], 4)) for _, _, v in daily_games)
+            lons = ",".join(str(round(v["lon"], 4)) for _, _, v in daily_games)
+            
+            params = {
+                "latitude": lats, "longitude": lons,
+                "start_date": date_str, "end_date": date_str,
+                "hourly": "temperature_2m,precipitation,windspeed_10m",
+                "temperature_unit": "fahrenheit", "windspeed_unit": "mph", "precipitation_unit": "inch",
+                "timezone": "UTC",
+            }
+
+            for attempt in range(3):
+                try:
+                    r = session.get("https://api.open-meteo.com/v1/forecast", params=params, timeout=20)
+                    if r.status_code == 429:
+                        time.sleep(2 ** (attempt + 2))
+                        continue
+                    data = r.json()
+                    break
+                except requests.RequestException:
+                    time.sleep(2 ** attempt)
+            
+            results = data if isinstance(data, list) else [data]
+            if len(results) != len(daily_games):
+                continue
+            
+            for (g, game_dt, v_info), loc_data in zip(daily_games, results):
+                hourly = loc_data.get("hourly", {})
+                times = hourly.get("time", [])
+                if not times: continue
+                    
+                target = game_dt.replace(minute=0, second=0, microsecond=0)
+                target_str = target.strftime("%Y-%m-%dT%H:00")
+                idx = times.index(target_str) if target_str in times else 0
+
+                def _at(key):
+                    vals = hourly.get(key, [])
+                    return vals[idx] if idx < len(vals) else None
+
+                rows.append({
+                    "game_id": g.get("game_id"), "stadium": g.get("stadium"),
+                    "temperature": _at("temperature_2m"),
+                    "precipitation": _at("precipitation"),
+                    "wind_speed": _at("windspeed_10m"),
+                    "roof_type": v_info["type"],
+                    "is_indoor": False, 
+                })
+            time.sleep(0.5)
+            
+    return pd.DataFrame(rows)
 
 def compute_outcomes(games_df: pd.DataFrame, odds_path: Path) -> pd.DataFrame:
-    """Compute closing line ATS/Total results for completed games."""
     completed = games_df[games_df["completed"] == True].copy()
     if completed.empty or not odds_path.exists():
         return pd.DataFrame()
@@ -203,84 +305,50 @@ def compute_outcomes(games_df: pd.DataFrame, odds_path: Path) -> pd.DataFrame:
                 else: ou_res = "push"
 
             rows.append({
-                "game_id": gid,
-                "home_team": g["home_team"],
-                "away_team": g["away_team"],
-                "home_points": h_pts,
-                "away_points": a_pts,
-                "total_points": total,
-                "margin": margin,
-                "provider": provider,
-                "closing_spread": spread,
-                "ats_result": ats_res,
-                "closing_ou": ou,
-                "ou_result": ou_res,
+                "game_id": gid, "provider": provider,
+                "closing_spread": spread, "ats_result": ats_res,
+                "closing_ou": ou, "ou_result": ou_res,
             })
     return pd.DataFrame(rows)
 
-
 def main():
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-
-    parser = argparse.ArgumentParser(description="NFL Data Collector")
+    parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["auto", "pregame", "postgame"], default="auto")
-    parser.add_argument("--week", type=int, help="Override NFL week")
-    parser.add_argument("--year", type=int, help="Override season year")
-    
-    # FIXED TYPO HERE: parse_args() instead of parseargs()
+    parser.add_argument("--year", type=int)
     args = parser.parse_args()
 
     odds_api_key = os.environ.get("ODDS_API_KEY", "")
     now_utc = datetime.now(pytz.UTC)
     now_et = now_utc.astimezone(EASTERN)
-
     year = args.year or (now_et.year if now_et.month >= 8 else now_et.year - 1)
     
     DATA_DIR.mkdir(exist_ok=True)
     stats = {"year": year, "mode": args.mode}
 
-    # 1. Always update base schedule & game completion status
     games_df = collect_games(year)
     if not games_df.empty:
         stats["games_total"] = append_or_create_csv(games_df, DATA_DIR / "games.csv", ["game_id"])
 
-    # Determine dynamic active week if not supplied
-    if args.week:
-        active_week = args.week
-    elif not games_df.empty:
-        # Default to the minimum incomplete week, or max week if all complete
-        incomplete = games_df[games_df["completed"] == False]
-        active_week = int(incomplete["week"].min()) if not incomplete.empty else int(games_df["week"].max())
-    else:
-        active_week = 1
-    
-    stats["week"] = active_week
+    upcoming_games = games_df[games_df["start_date"] > (now_utc - timedelta(hours=6)).isoformat()]
+    if not upcoming_games.empty:
+        weather_df = collect_weather(upcoming_games)
+        if not weather_df.empty:
+            stats["weather"] = append_or_create_csv(weather_df, DATA_DIR / "weather.csv", ["game_id"])
 
-    # 2. Dynamic Execution Model
     if args.mode in ("auto", "pregame"):
-        # Fetch odds for upcoming games within lookahead window
-        odds_df = collect_odds_api(odds_api_key, lookahead_hours=72)
+        odds_df = collect_odds_api(odds_api_key, lookahead_hours=48)
         if not odds_df.empty:
             stats["odds_snapshots"] = append_or_create_csv(odds_df, DATA_DIR / "odds_snapshots.csv")
 
     if args.mode in ("auto", "postgame"):
-        # Evaluate postgame outcomes for completed games
         outcomes_df = compute_outcomes(games_df, DATA_DIR / "odds_snapshots.csv")
         if not outcomes_df.empty:
             stats["outcomes_updated"] = append_or_create_csv(outcomes_df, DATA_DIR / "outcomes.csv", ["game_id", "provider"])
 
-    # 3. Export outputs cleanly for GitHub Actions
     github_output = os.environ.get("GITHUB_OUTPUT")
     if github_output:
         with open(github_output, "a") as f:
-            f.write(f"mode={args.mode}\n")
-            f.write(f"year={year}\n")
-            f.write(f"week={active_week}\n")
-            f.write(f"stats={json.dumps(stats)}\n")
-            f.write("collected=true\n")
-
-    LOG.info(f"Execution finished. Run stats: {json.dumps(stats, indent=2)}")
-
+            f.write(f"mode={args.mode}\nstats={json.dumps(stats)}\ncollected=true\n")
 
 if __name__ == "__main__":
     main()
