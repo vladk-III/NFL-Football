@@ -1,0 +1,4 @@
+requests>=2.31
+pandas>=2.1
+pytz>=2023.3
+nfl_data_py>=0.3.0
