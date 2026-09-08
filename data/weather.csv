@@ -1,0 +1,102 @@
+game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
+2026_01_NO_DET,Ford Field,72.0,0.0,0.0,dome,True
+2026_01_BAL_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
+2026_01_ARI_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_01_MIA_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
+2026_01_GB_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_02_CAR_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_02_LV_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_02_SEA_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_02_WAS_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_02_NYG_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_03_NYJ_DET,Ford Field,72.0,0.0,0.0,dome,True
+2026_03_HOU_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
+2026_03_LV_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_04_MIA_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_04_KC_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
+2026_04_ATL_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_05_TB_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_05_MIN_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_05_DEN_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_05_DET_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_05_BAL_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_05_BUF_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_06_CHI_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_06_TEN_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
+2026_06_ARI_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_06_BUF_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
+2026_07_SF_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_07_IND_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_07_DEN_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_07_GB_DET,Ford Field,72.0,0.0,0.0,dome,True
+2026_07_LA_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
+2026_08_ARI_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_08_MIN_DET,Ford Field,72.0,0.0,0.0,dome,True
+2026_08_LAC_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_09_DAL_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
+2026_09_CLE_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_09_HOU_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_09_BUF_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_10_KC_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_10_MIA_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
+2026_10_CAR_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_10_LA_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_10_SEA_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
+2026_10_SF_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_11_TEN_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_11_TB_DET,Ford Field,72.0,0.0,0.0,dome,True
+2026_11_NYJ_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_12_GB_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_12_CHI_DET,Ford Field,72.0,0.0,0.0,dome,True
+2026_12_PHI_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_12_NYG_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
+2026_12_ATL_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_12_WAS_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_12_NE_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_13_KC_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_13_DET_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_13_GB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_13_PHI_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_13_CAR_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_14_TEN_DET,Ford Field,72.0,0.0,0.0,dome,True
+2026_14_LAC_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
+2026_15_SF_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_15_NYJ_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_15_DAL_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_15_DEN_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
+2026_15_DET_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_16_TB_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_16_CIN_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
+2026_16_WAS_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_16_ARI_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_16_TEN_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
+2026_16_JAX_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_16_NYG_DET,Ford Field,72.0,0.0,0.0,dome,True
+2026_17_NO_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_17_NYG_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_17_KC_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_17_LV_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_18_SF_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
+2026_18_JAX_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
+2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
+2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
+2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_01_NE_SEA,Lumen Field,76.7,0.0,7.1,outdoors,False
+2026_01_CHI_CAR,Bank of America Stadium,79.4,0.0,2.7,outdoors,False
+2026_01_TB_CIN,Paycor Stadium,85.3,0.0,0.9,outdoors,False
+2026_01_CLE_JAX,EverBank Stadium,96.4,0.0,5.3,outdoors,False
+2026_01_ATL_PIT,Acrisure Stadium,76.8,0.0,1.6,outdoors,False
+2026_01_NYJ_TEN,Nissan Stadium,90.8,0.0,3.6,outdoors,False
+2026_01_WAS_PHI,Lincoln Financial Field,70.4,0.0,4.1,outdoors,False
+2026_01_DAL_NYG,MetLife Stadium,67.1,0.024,2.5,outdoors,False
+2026_01_DEN_KC,GEHA Field at Arrowhead Stadium,87.6,0.0,11.0,outdoors,False
+2026_02_DET_BUF,Highmark Stadium,66.9,0.004,5.6,outdoors,False
+2026_02_NO_BAL,M&T Bank Stadium,70.8,0.0,11.6,outdoors,False
+2026_02_MIN_CHI,Soldier Field,61.2,0.0,9.6,outdoors,False
+2026_02_PIT_NE,Gillette Stadium,66.7,0.0,9.1,outdoors,False
+2026_02_GB_NYJ,MetLife Stadium,71.6,0.0,8.5,outdoors,False
+2026_02_CLE_TB,Raymond James Stadium,91.4,0.0,8.3,outdoors,False
+2026_02_PHI_TEN,Nissan Stadium,73.2,0.0,7.6,outdoors,False
+2026_02_JAX_DEN,Empower Field at Mile High,85.4,0.0,7.6,outdoors,False
+2026_02_MIA_SF,Levi's Stadium,76.8,0.0,6.1,outdoors,False
+2026_02_IND_KC,GEHA Field at Arrowhead Stadium,68.2,0.0,7.1,outdoors,False
