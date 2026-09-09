@@ -1,0 +1,19 @@
+snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,ou_price,home_ml,away_ml
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,draftkings,-3.0,-118,44.5,-108,-170,142
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,betus,-3.0,-120,44.5,-110,-180,155
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,fanduel,-3.5,-104,44.5,-110,-180,152
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,lowvig,-3.0,-112,44.5,-107,-177,155
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,betonlineag,-3.0,-117,44.5,-110,-177,155
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,betrivers,-3.5,-104,44.5,-112,-195,155
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,betmgm,-3.5,-105,44.5,-108,-185,150
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,bovada,-3.0,-120,44.5,-110,-175,150
+2026-09-08T22:30:34.205875-04:00,8c94552d022acec4a0458d70c19d3da9,Seattle Seahawks,New England Patriots,mybookieag,-3.0,-120,44.5,-110,-181,147
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,draftkings,-3.5,-118,48.5,-108,-205,170
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,betmgm,-3.5,-112,48.5,-108,-200,165
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,fanduel,-3.5,-120,48.5,-105,-205,172
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,betonlineag,-3.5,-118,48.0,-113,-210,180
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,lowvig,-3.5,-114,48.0,-110,-210,180
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,betrivers,-3.5,-113,48.5,-109,-205,160
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,bovada,-4.0,-105,48.0,-115,-210,175
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,betus,-3.5,-115,48.0,-115,-215,183
+2026-09-08T22:30:34.205875-04:00,acc580d74344ea3b31bbcdd057fe6a9c,Los Angeles Rams,San Francisco 49ers,mybookieag,-4.0,-110,48.5,-110,-206,166
