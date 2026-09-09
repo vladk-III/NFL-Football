@@ -137,7 +137,7 @@ def collect_odds_api(api_key: str, lookahead_hours: int = 48) -> pd.DataFrame:
         "commenceTimeFrom": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "commenceTimeTo": cutoff.strftime("%Y-%m-%dT%H:%M:%SZ"),
     })
-    
+
     if not data:
         return pd.DataFrame()
     rows = []
@@ -182,7 +182,7 @@ def collect_weather(games_df: pd.DataFrame) -> pd.DataFrame:
         venue_name = str(g.get("stadium", ""))
         venue_info = NFL_VENUES.get(venue_name)
         start_raw = g.get("start_date")
-        
+
         try:
             game_dt = datetime.fromisoformat(str(start_raw).replace("Z", "+00:00"))
         except (ValueError, TypeError):
@@ -218,7 +218,7 @@ def collect_weather(games_df: pd.DataFrame) -> pd.DataFrame:
         for date_str, daily_games in games_by_date.items():
             lats = ",".join(str(round(v["lat"], 4)) for _, _, v in daily_games)
             lons = ",".join(str(round(v["lon"], 4)) for _, _, v in daily_games)
-            
+
             params = {
                 "latitude": lats, "longitude": lons,
                 "start_date": date_str, "end_date": date_str,
@@ -227,6 +227,7 @@ def collect_weather(games_df: pd.DataFrame) -> pd.DataFrame:
                 "timezone": "UTC",
             }
 
+            data = None
             for attempt in range(3):
                 try:
                     r = session.get("https://api.open-meteo.com/v1/forecast", params=params, timeout=20)
@@ -237,16 +238,19 @@ def collect_weather(games_df: pd.DataFrame) -> pd.DataFrame:
                     break
                 except requests.RequestException:
                     time.sleep(2 ** attempt)
-            
+
+            if data is None:
+                continue
+
             results = data if isinstance(data, list) else [data]
             if len(results) != len(daily_games):
                 continue
-            
+
             for (g, game_dt, v_info), loc_data in zip(daily_games, results):
                 hourly = loc_data.get("hourly", {})
                 times = hourly.get("time", [])
                 if not times: continue
-                    
+
                 target = game_dt.replace(minute=0, second=0, microsecond=0)
                 target_str = target.strftime("%Y-%m-%dT%H:00")
                 idx = times.index(target_str) if target_str in times else 0
@@ -261,10 +265,10 @@ def collect_weather(games_df: pd.DataFrame) -> pd.DataFrame:
                     "precipitation": _at("precipitation"),
                     "wind_speed": _at("windspeed_10m"),
                     "roof_type": v_info["type"],
-                    "is_indoor": False, 
+                    "is_indoor": False,
                 })
             time.sleep(0.5)
-            
+
     return pd.DataFrame(rows)
 
 def compute_outcomes(games_df: pd.DataFrame, odds_path: Path) -> pd.DataFrame:
@@ -315,21 +319,35 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["auto", "pregame", "postgame"], default="auto")
     parser.add_argument("--year", type=int)
+    parser.add_argument("--week", type=int)
     args = parser.parse_args()
 
     odds_api_key = os.environ.get("ODDS_API_KEY", "")
     now_utc = datetime.now(pytz.UTC)
     now_et = now_utc.astimezone(EASTERN)
     year = args.year or (now_et.year if now_et.month >= 8 else now_et.year - 1)
-    
+
     DATA_DIR.mkdir(exist_ok=True)
     stats = {"year": year, "mode": args.mode}
+    if args.week is not None:
+        stats["week"] = args.week
 
     games_df = collect_games(year)
     if not games_df.empty:
         stats["games_total"] = append_or_create_csv(games_df, DATA_DIR / "games.csv", ["game_id"])
 
-    upcoming_games = games_df[games_df["start_date"] > (now_utc - timedelta(hours=6)).isoformat()]
+    # If a specific week was requested (e.g. via manual workflow_dispatch),
+    # scope downstream collection (weather/odds/outcomes) to just that week.
+    scoped_games_df = games_df
+    if args.week is not None and not games_df.empty and "week" in games_df.columns:
+        scoped_games_df = games_df[games_df["week"] == args.week]
+        if scoped_games_df.empty:
+            LOG.warning(f"No games found for week {args.week} in season {year}; falling back to full schedule.")
+            scoped_games_df = games_df
+
+    upcoming_games = scoped_games_df[
+        scoped_games_df["start_date"] > (now_utc - timedelta(hours=6)).isoformat()
+    ]
     if not upcoming_games.empty:
         weather_df = collect_weather(upcoming_games)
         if not weather_df.empty:
@@ -341,7 +359,7 @@ def main():
             stats["odds_snapshots"] = append_or_create_csv(odds_df, DATA_DIR / "odds_snapshots.csv")
 
     if args.mode in ("auto", "postgame"):
-        outcomes_df = compute_outcomes(games_df, DATA_DIR / "odds_snapshots.csv")
+        outcomes_df = compute_outcomes(scoped_games_df, DATA_DIR / "odds_snapshots.csv")
         if not outcomes_df.empty:
             stats["outcomes_updated"] = append_or_create_csv(outcomes_df, DATA_DIR / "outcomes.csv", ["game_id", "provider"])
 
