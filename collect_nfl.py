@@ -3,7 +3,7 @@
 NFL Football Betting Data Collector
 ===================================
 State-aware, automated pipeline for collecting schedules, multi-book odds,
-weather, and post-game outcomes.
+weather, post-game outcomes, and play-by-play scoring/advanced metrics.
 """
 
 import os
@@ -16,6 +16,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import requests
 import pytz
@@ -25,6 +26,8 @@ EASTERN = pytz.timezone("US/Eastern")
 ODDS_BASE = "https://api.the-odds-api.com/v4"
 ODDS_SPORT = "americanfootball_nfl"
 DATA_DIR = Path("data")
+CACHE_DIR = DATA_DIR / ".cache"
+PBP_CACHE_MAX_AGE_HOURS = 6  # re-download at most ~4x/day, matching the collection schedule
 
 LOG = logging.getLogger("nfl_collector")
 
@@ -125,8 +128,86 @@ def collect_games(year: int) -> pd.DataFrame:
         })
     return pd.DataFrame(rows)
 
+def _load_pbp_cached(year: int) -> pd.DataFrame | None:
+    """Return a recent cached PBP pull if one exists and isn't stale, else None."""
+    cache_path = CACHE_DIR / f"pbp_{year}.parquet"
+    if not cache_path.exists():
+        return None
+    age_hours = (time.time() - cache_path.stat().st_mtime) / 3600
+    if age_hours > PBP_CACHE_MAX_AGE_HOURS:
+        return None
+    try:
+        LOG.info(f"Using cached PBP data for {year} ({age_hours:.1f}h old)")
+        return pd.read_parquet(cache_path)
+    except Exception as e:
+        LOG.warning(f"Failed to read PBP cache, will re-fetch: {e}")
+        return None
+
+def collect_pbp_features(year: int) -> pd.DataFrame:
+    """
+    Pulls play-by-play data via nfl_data_py to extract exact scoring events 
+    (FGs, TDs, PATs, 2-pt conversions, safeties) and advanced covariates (EPA, Success Rate).
+
+    The raw PBP pull is cached on disk for PBP_CACHE_MAX_AGE_HOURS, since a full
+    season's play-by-play is a heavy download and this job runs multiple times a day.
+    """
+    pbp = _load_pbp_cached(year)
+    if pbp is None:
+        LOG.info(f"Fetching play-by-play data for {year} via nflverse")
+        try:
+            pbp = nfl.import_pbp([year])
+        except Exception as e:
+            LOG.error(f"Failed to fetch pbp for year {year}: {e}")
+            return pd.DataFrame()
+
+        if not pbp.empty:
+            try:
+                CACHE_DIR.mkdir(parents=True, exist_ok=True)
+                pbp.to_parquet(CACHE_DIR / f"pbp_{year}.parquet", index=False)
+            except Exception as e:
+                LOG.warning(f"Failed to write PBP cache (non-fatal): {e}")
+
+    if pbp.empty:
+        return pd.DataFrame()
+
+    # Isolate scoring and event flags
+    pbp["fg_made"] = np.where(pbp["field_goal_result"] == "made", 1, 0)
+    pbp["pat_made"] = np.where(pbp["extra_point_result"] == "good", 1, 0)
+    pbp["two_pt_made"] = np.where(pbp["two_point_conv_result"] == "success", 1, 0)
+    pbp["safety_made"] = np.where(pbp["safety"] == 1, 1, 0)
+    pbp["td_made"] = np.where(pbp["touchdown"] == 1, 1, 0)
+
+    # Offensive team scoring elements
+    off_scoring = pbp.groupby(["game_id", "posteam"])[["fg_made", "pat_made", "two_pt_made"]].sum().reset_index()
+    off_scoring.rename(columns={"posteam": "team"}, inplace=True)
+
+    # Touchdowns mapped to td_team to capture pick-sixes and defensive/special teams scores accurately
+    td_scoring = pbp[pbp["td_made"] == 1].groupby(["game_id", "td_team"])["td_made"].sum().reset_index()
+    td_scoring.rename(columns={"td_team": "team", "td_made": "td_count"}, inplace=True)
+
+    # Safeties awarded to defteam
+    safety_scoring = pbp[pbp["safety_made"] == 1].groupby(["game_id", "defteam"])["safety_made"].sum().reset_index()
+    safety_scoring.rename(columns={"defteam": "team", "safety_made": "safety_count"}, inplace=True)
+
+    # Advanced Efficiency Metrics (EPA and Success Rate)
+    valid_plays = pbp[(pbp["play_type"].isin(["pass", "run"])) & (pbp["epa"].notna())].copy()
+    valid_plays["success"] = np.where(valid_plays["epa"] > 0, 1, 0)
+
+    off_adv = valid_plays.groupby(["game_id", "posteam"])[["epa", "success"]].mean().reset_index()
+    off_adv.rename(columns={"posteam": "team", "epa": "off_epa_per_play", "success": "off_success_rate"}, inplace=True)
+
+    def_adv = valid_plays.groupby(["game_id", "defteam"])[["epa", "success"]].mean().reset_index()
+    def_adv.rename(columns={"defteam": "team", "epa": "def_epa_per_play", "success": "def_success_rate"}, inplace=True)
+
+    # Merge all metrics together per game per team
+    features = off_scoring.merge(td_scoring, on=["game_id", "team"], how="outer")
+    features = features.merge(safety_scoring, on=["game_id", "team"], how="outer")
+    features = features.merge(off_adv, on=["game_id", "team"], how="outer")
+    features = features.merge(def_adv, on=["game_id", "team"], how="outer")
+
+    return features.fillna(0)
+
 def collect_odds_api(api_key: str, lookahead_hours: int = 48) -> pd.DataFrame:
-    """Fetch live odds. Reverted default lookahead_hours to 48 as requested."""
     if not api_key:
         return pd.DataFrame()
     now = datetime.now(pytz.UTC)
@@ -170,7 +251,6 @@ def collect_odds_api(api_key: str, lookahead_hours: int = 48) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 def collect_weather(games_df: pd.DataFrame) -> pd.DataFrame:
-    """Fetch game weather. Treats both 'dome' AND 'retractable' roofs as indoor environments."""
     if games_df.empty:
         return pd.DataFrame()
 
@@ -188,7 +268,6 @@ def collect_weather(games_df: pd.DataFrame) -> pd.DataFrame:
         except (ValueError, TypeError):
             continue
 
-        # ASSUMPTION: Treat both Domes AND Retractable roofs as indoor climate-controlled
         if venue_info and venue_info.get("type") in ("dome", "retractable"):
             rows.append({
                 "game_id": g.get("game_id"), "stadium": venue_name,
@@ -336,8 +415,6 @@ def main():
     if not games_df.empty:
         stats["games_total"] = append_or_create_csv(games_df, DATA_DIR / "games.csv", ["game_id"])
 
-    # If a specific week was requested (e.g. via manual workflow_dispatch),
-    # scope downstream collection (weather/odds/outcomes) to just that week.
     scoped_games_df = games_df
     if args.week is not None and not games_df.empty and "week" in games_df.columns:
         scoped_games_df = games_df[games_df["week"] == args.week]
@@ -362,6 +439,14 @@ def main():
         outcomes_df = compute_outcomes(scoped_games_df, DATA_DIR / "odds_snapshots.csv")
         if not outcomes_df.empty:
             stats["outcomes_updated"] = append_or_create_csv(outcomes_df, DATA_DIR / "outcomes.csv", ["game_id", "provider"])
+
+        # Fetch play-by-play metrics for completed games and append to team_game_stats.csv
+        pbp_df = collect_pbp_features(year)
+        if not pbp_df.empty:
+            completed_game_ids = scoped_games_df[scoped_games_df["completed"] == True]["game_id"].unique()
+            pbp_df = pbp_df[pbp_df["game_id"].isin(completed_game_ids)]
+            if not pbp_df.empty:
+                stats["pbp_features"] = append_or_create_csv(pbp_df, DATA_DIR / "team_game_stats.csv", ["game_id", "team"])
 
     github_output = os.environ.get("GITHUB_OUTPUT")
     if github_output:
