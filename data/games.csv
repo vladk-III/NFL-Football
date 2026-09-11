@@ -1,6 +1,6 @@
 game_id,season,week,game_type,start_date,home_team,home_points,away_team,away_points,stadium,roof,completed
 2026_01_NE_SEA,2026,1,REG,2026-09-10T00:20:00+00:00,SEA,13.0,NE,10.0,Lumen Field,,True
-2026_01_SF_LA,2026,1,REG,2026-09-11T00:35:00+00:00,LA,,SF,,Melbourne Cricket Ground,,False
+2026_01_SF_LA,2026,1,REG,2026-09-11T00:35:00+00:00,LA,7.0,SF,27.0,Melbourne Cricket Ground,,True
 2026_01_CHI_CAR,2026,1,REG,2026-09-13T17:00:00+00:00,CAR,,CHI,,Bank of America Stadium,,False
 2026_01_TB_CIN,2026,1,REG,2026-09-13T17:00:00+00:00,CIN,,TB,,Paycor Stadium,,False
 2026_01_NO_DET,2026,1,REG,2026-09-13T17:00:00+00:00,DET,,NO,,Ford Field,,False
