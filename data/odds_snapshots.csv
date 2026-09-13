@@ -287,3 +287,57 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-09-12T17:58:11.930908-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,bovada,3.0,-110,48.0,-110,145.0,-170.0
 2026-09-12T17:58:11.930908-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,betus,3.0,-110,48.0,-110,134.0,-155.0
 2026-09-12T17:58:11.930908-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,mybookieag,3.0,-120,48.0,-110,135.0,-167.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,draftkings,-9.5,-110,47.5,-105,-500.0,380.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,lowvig,-9.5,101,47.0,-109,-510.0,390.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,betonlineag,-9.5,-105,47.0,-112,-510.0,390.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,betus,-9.5,-105,47.0,-110,-510.0,395.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,betrivers,-9.0,-112,47.0,-113,-500.0,360.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,fanduel,-8.5,-115,47.5,-104,-500.0,385.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,betmgm,-8.5,-108,47.5,-108,-500.0,380.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,bovada,-9.5,-110,47.0,-115,-510.0,370.0
+2026-09-13T13:08:29.332052-04:00,1edfa5ceaa1ad2cb57df1c1b908731f6,Los Angeles Chargers,Arizona Cardinals,mybookieag,-9.5,-110,47.0,-110,-526.0,370.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,draftkings,-1.5,-118,46.5,-105,-130.0,110.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,lowvig,-1.0,-120,46.0,-107,-133.0,113.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,betonlineag,-2.0,-108,46.0,-110,-133.0,113.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,betus,-1.0,-120,46.0,-110,-132.0,112.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,betrivers,-2.0,-108,46.0,-113,-127.0,105.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,fanduel,-1.5,-118,46.5,-104,-134.0,114.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,betmgm,-2.0,-108,46.0,-108,-130.0,110.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,bovada,-2.0,-110,45.5,-110,-130.0,110.0
+2026-09-13T13:08:29.332052-04:00,cb77efed7e711d25a72c1a2a0a1af119,Minnesota Vikings,Green Bay Packers,mybookieag,-1.5,-110,46.0,-110,-134.0,109.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,draftkings,-3.0,-110,40.5,-110,-170.0,142.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,betus,-3.0,-115,40.0,-110,-160.0,138.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,betrivers,-3.0,-113,40.5,-107,-159.0,130.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,fanduel,-3.0,-112,40.5,-105,-164.0,138.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,betonlineag,-3.0,-110,40.5,-105,-166.0,146.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,lowvig,-3.0,-101,40.5,-102,-166.0,146.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,betmgm,-3.0,-110,40.5,-110,-165.0,140.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,bovada,-3.0,-105,40.5,100,-160.0,135.0
+2026-09-13T13:08:29.332052-04:00,c5d95f48a16849ab6bebc68fbbfcb74a,Las Vegas Raiders,Miami Dolphins,mybookieag,-3.0,-115,40.0,-110,-166.0,135.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,draftkings,-6.0,-112,44.5,-105,-265.0,215.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,fanduel,-5.5,-115,44.5,-105,-270.0,220.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,betus,-6.0,-110,44.0,-110,-265.0,223.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,betrivers,-6.0,-107,44.0,-113,-265.0,210.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,betonlineag,-6.0,-112,44.0,-110,-270.0,222.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,lowvig,-6.0,-107,44.0,-107,-270.0,222.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,betmgm,-6.0,-110,44.0,-110,-275.0,220.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,bovada,-6.0,-110,44.0,-110,-270.0,220.0
+2026-09-13T13:08:29.332052-04:00,17885cb8dcade8f6c3bce14b2de805e8,Philadelphia Eagles,Washington Commanders,mybookieag,-5.5,-110,44.5,-110,-260.0,206.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,draftkings,3.0,-108,47.5,-118,140.0,-166.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,fanduel,3.0,-108,47.5,-112,138.0,-164.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,betonlineag,3.0,-108,47.5,-108,148.0,-168.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,betmgm,3.0,-105,47.5,-110,140.0,-165.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,lowvig,3.0,-102,47.5,-105,148.0,-168.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,betrivers,3.0,-114,48.0,-109,138.0,-167.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,bovada,3.0,100,47.0,-115,150.0,-175.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,betus,3.0,-105,47.5,-110,146.0,-170.0
+2026-09-13T13:08:29.332052-04:00,3e646c7479c57f5d9752d8c7dfe7059b,New York Giants,Dallas Cowboys,mybookieag,3.0,-115,47.5,-110,139.0,-172.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,draftkings,-2.5,-110,43.5,-108,-135.0,114.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,fanduel,-2.5,-105,43.5,-112,-132.0,112.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,lowvig,-2.5,-104,43.5,-107,-135.0,115.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,betonlineag,-1.0,-127,43.5,-110,-135.0,115.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,betmgm,-2.5,-108,43.5,-108,-130.0,110.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,bovada,-2.5,-110,43.5,-105,-140.0,120.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,betus,-1.0,-120,43.5,-110,-130.0,110.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,betrivers,-2.5,-118,43.5,-108,-148.0,120.0
+2026-09-13T13:08:29.332052-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,mybookieag,-2.5,-110,43.5,-110,-137.0,112.0
