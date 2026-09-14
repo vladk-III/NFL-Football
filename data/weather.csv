@@ -89,7 +89,7 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_01_DEN_KC,GEHA Field at Arrowhead Stadium,90.5,0.0,15.8,outdoors,False
+2026_01_DEN_KC,GEHA Field at Arrowhead Stadium,90.2,0.0,14.5,outdoors,False
 2026_02_DET_BUF,Highmark Stadium,65.1,0.0,4.8,outdoors,False
 2026_02_NO_BAL,M&T Bank Stadium,95.1,0.0,8.4,outdoors,False
 2026_02_MIN_CHI,Soldier Field,70.2,0.031,8.6,outdoors,False
