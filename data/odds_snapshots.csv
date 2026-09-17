@@ -386,3 +386,11 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-09-14T18:59:02.652168-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,betus,-1.0,-120,42.5,-110,-130.0,110.0
 2026-09-14T18:59:02.652168-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,betrivers,-2.0,-112,42.5,-114,-130.0,107.0
 2026-09-14T18:59:02.652168-04:00,5ad8135dc2b5f27de0b777acd317855a,Kansas City Chiefs,Denver Broncos,mybookieag,-2.0,-110,42.5,-110,-128.0,105.0
+2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,draftkings,-5.5,-110,54.5,-120,-250.0,205.0
+2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,fanduel,-5.5,-112,54.5,-114,-255.0,210.0
+2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betonlineag,-5.5,-110,55.0,-110,-245.0,203.0
+2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betmgm,-5.5,-105,55.0,-110,-250.0,210.0
+2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,lowvig,-5.5,-105,55.0,-105,-245.0,203.0
+2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,bovada,-5.5,-110,55.0,-120,-240.0,200.0
+2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betrivers,-5.5,-108,54.5,-114,-240.0,190.0
+2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betus,-5.5,-110,55.0,-110,-245.0,205.0
