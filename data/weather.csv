@@ -90,7 +90,7 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_02_DET_BUF,Highmark Stadium,70.9,0.0,4.2,outdoors,False
+2026_02_DET_BUF,Highmark Stadium,68.8,0.0,3.1,outdoors,False
 2026_02_NO_BAL,M&T Bank Stadium,79.3,0.0,9.1,outdoors,False
 2026_02_MIN_CHI,Soldier Field,66.2,0.004,8.2,outdoors,False
 2026_02_PIT_NE,Gillette Stadium,54.2,0.016,2.7,outdoors,False

@@ -394,3 +394,11 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,bovada,-5.5,-110,55.0,-120,-240.0,200.0
 2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betrivers,-5.5,-108,54.5,-114,-240.0,190.0
 2026-09-17T13:51:55.580455-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betus,-5.5,-110,55.0,-110,-245.0,205.0
+2026-09-17T18:42:43.365551-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,draftkings,-5.5,-110,54.5,-120,-245.0,200.0
+2026-09-17T18:42:43.365551-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,fanduel,-5.5,-110,54.5,-110,-255.0,210.0
+2026-09-17T18:42:43.365551-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betonlineag,-5.5,-110,54.5,-110,-255.0,211.0
+2026-09-17T18:42:43.365551-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betmgm,-5.5,-105,55.0,-105,-250.0,210.0
+2026-09-17T18:42:43.365551-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,lowvig,-5.5,-105,54.5,-107,-255.0,211.0
+2026-09-17T18:42:43.365551-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,bovada,-5.5,-110,55.0,-110,-250.0,210.0
+2026-09-17T18:42:43.365551-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betrivers,-5.5,-110,54.5,-114,-245.0,190.0
+2026-09-17T18:42:43.365551-04:00,56e8897681915f7ec92baeee952bb1ae,Buffalo Bills,Detroit Lions,betus,-5.5,-110,54.5,-110,-245.0,205.0
