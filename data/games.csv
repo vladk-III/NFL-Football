@@ -15,7 +15,7 @@ game_id,season,week,game_type,start_date,home_team,home_points,away_team,away_po
 2026_01_WAS_PHI,2026,1,REG,2026-09-13T20:25:00+00:00,PHI,24.0,WAS,22.0,Lincoln Financial Field,,True
 2026_01_DAL_NYG,2026,1,REG,2026-09-14T00:20:00+00:00,NYG,28.0,DAL,20.0,MetLife Stadium,,True
 2026_01_DEN_KC,2026,1,REG,2026-09-15T00:15:00+00:00,KC,31.0,DEN,10.0,GEHA Field at Arrowhead Stadium,,True
-2026_02_DET_BUF,2026,2,REG,2026-09-18T00:15:00+00:00,BUF,,DET,,Highmark Stadium,,False
+2026_02_DET_BUF,2026,2,REG,2026-09-18T00:15:00+00:00,BUF,41.0,DET,31.0,Highmark Stadium,,True
 2026_02_CAR_ATL,2026,2,REG,2026-09-20T17:00:00+00:00,ATL,,CAR,,Mercedes-Benz Stadium,,False
 2026_02_NO_BAL,2026,2,REG,2026-09-20T17:00:00+00:00,BAL,,NO,,M&T Bank Stadium,,False
 2026_02_MIN_CHI,2026,2,REG,2026-09-20T17:00:00+00:00,CHI,,MIN,,Soldier Field,,False
