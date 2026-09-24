@@ -771,3 +771,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-09-24T14:04:24.668066-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,mybookieag,-5.0,-110.0,43.0,-110.0,-246.0,204.0
 2026-09-24T14:04:24.668066-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,betmgm,-4.5,-105.0,43.0,-110.0,-250.0,200.0
 2026-09-24T14:04:24.668066-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,bovada,-5.5,-105.0,43.0,-110.0,-250.0,210.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,draftkings,-4.5,-112.0,43.5,-108.0,-238.0,195.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,betus,-4.5,-110.0,43.0,-110.0,-245.0,205.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,fanduel,-4.5,-115.0,43.5,-104.0,-250.0,205.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,betrivers,-5.0,-109.0,43.0,-112.0,-265.0,210.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,betonlineag,-4.5,-109.0,43.5,-110.0,-240.0,200.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,lowvig,-4.5,-110.0,43.0,-110.0,-240.0,200.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,mybookieag,-5.0,-110.0,43.0,-110.0,-252.0,210.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,betmgm,-4.5,-110.0,43.0,-110.0,-250.0,210.0
+2026-09-24T19:03:44.031397-04:00,e5fbd3b3953b896b1bf897ddadb3cc4b,Green Bay Packers,Atlanta Falcons,bovada,-5.0,-110.0,43.0,-115.0,-245.0,205.0
