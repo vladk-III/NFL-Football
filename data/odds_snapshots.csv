@@ -1086,3 +1086,21 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-09-27T13:59:47.884086-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,mybookieag,4.0,-110.0,41.5,-110.0,169.0,-210.0
 2026-09-27T13:59:47.884086-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betmgm,4.0,-108.0,41.5,-105.0,170.0,-210.0
 2026-09-27T13:59:47.884086-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,bovada,4.0,-110.0,41.5,-110.0,175.0,-210.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,draftkings,1.5,-118.0,44.5,-108.0,-108.0,-112.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,betus,1.0,-110.0,44.5,-110.0,100.0,-120.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,fanduel,1.5,-120.0,44.5,-105.0,-102.0,-116.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,betrivers,1.0,-113.0,44.0,-112.0,-107.0,-114.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,lowvig,1.0,-110.0,44.0,-116.0,-105.0,-115.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,betonlineag,1.0,-115.0,44.0,-114.0,-105.0,-115.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,mybookieag,1.0,-110.0,44.5,-110.0,101.0,-118.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,betmgm,1.0,-108.0,44.5,-105.0,-105.0,-115.0
+2026-09-27T18:51:34.759614-04:00,3bfd8bfb4b8e9a365a0877879b73b16b,Denver Broncos,Los Angeles Rams,bovada,1.0,-110.0,44.5,-110.0,-105.0,-115.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,draftkings,4.5,-115.0,41.5,-105.0,170.0,-205.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,fanduel,4.5,-114.0,41.5,-110.0,176.0,-210.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betrivers,4.5,-114.0,42.0,-108.0,170.0,-210.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betus,3.5,-105.0,41.5,-105.0,170.0,-200.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,lowvig,3.5,101.0,41.5,-102.0,174.0,-200.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betonlineag,3.5,-105.0,41.5,-105.0,174.0,-200.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,mybookieag,4.0,-110.0,41.5,-110.0,170.0,-212.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betmgm,4.0,-108.0,41.5,-108.0,170.0,-210.0
+2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,bovada,3.5,-105.0,41.5,-110.0,170.0,-200.0
