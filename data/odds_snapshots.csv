@@ -1104,3 +1104,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,mybookieag,4.0,-110.0,41.5,-110.0,170.0,-212.0
 2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betmgm,4.0,-108.0,41.5,-108.0,170.0,-210.0
 2026-09-27T18:51:34.759614-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,bovada,3.5,-105.0,41.5,-110.0,170.0,-200.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,draftkings,3.5,-112.0,41.5,-110.0,164.0,-198.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,fanduel,3.5,-105.0,41.5,-112.0,168.0,-200.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betrivers,4.0,-113.0,41.5,-109.0,170.0,-210.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betus,3.5,-110.0,41.5,-110.0,180.0,-210.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,lowvig,3.5,-103.0,41.5,-107.0,180.0,-210.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betonlineag,3.5,-108.0,41.5,-110.0,180.0,-210.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,mybookieag,3.5,-110.0,41.5,-110.0,171.0,-204.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betmgm,,,41.5,-110.0,165.0,-200.0
+2026-09-28T12:16:39.825149-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,bovada,3.5,-110.0,41.5,-110.0,175.0,-210.0

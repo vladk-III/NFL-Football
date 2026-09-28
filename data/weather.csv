@@ -32,6 +32,15 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_03_NYJ_DET,Ford Field,72.0,0.0,0.0,dome,True
 2026_03_HOU_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
 2026_03_LV_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
+2026_03_LAC_BUF,Highmark Stadium,67.4,0.0,12.1,outdoors,False
+2026_03_NE_JAX,EverBank Stadium,81.6,0.0,5.8,outdoors,False
+2026_03_KC_MIA,Hard Rock Stadium,84.6,0.0,2.8,outdoors,False
+2026_03_TEN_NYG,MetLife Stadium,62.0,0.016,12.7,outdoors,False
+2026_03_CIN_PIT,Acrisure Stadium,71.1,0.0,11.5,outdoors,False
+2026_03_SEA_WAS,Northwest Stadium,59.5,0.0,10.6,outdoors,False
+2026_03_ARI_SF,Levi's Stadium,68.0,0.0,8.6,outdoors,False
+2026_03_MIN_TB,Raymond James Stadium,84.7,0.0,5.0,outdoors,False
+2026_03_LA_DEN,Empower Field at Mile High,81.3,0.0,11.9,outdoors,False
 2026_04_MIA_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_04_KC_LV,Allegiant Stadium,72.0,0.0,0.0,dome,True
 2026_04_ATL_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
@@ -101,31 +110,22 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_03_LAC_BUF,Highmark Stadium,67.4,0.0,12.1,outdoors,False
-2026_03_NE_JAX,EverBank Stadium,81.6,0.0,5.8,outdoors,False
-2026_03_KC_MIA,Hard Rock Stadium,84.6,0.0,2.8,outdoors,False
-2026_03_TEN_NYG,MetLife Stadium,62.0,0.016,12.7,outdoors,False
-2026_03_CIN_PIT,Acrisure Stadium,71.1,0.0,11.5,outdoors,False
-2026_03_SEA_WAS,Northwest Stadium,59.5,0.0,10.6,outdoors,False
-2026_03_ARI_SF,Levi's Stadium,68.0,0.0,8.6,outdoors,False
-2026_03_MIN_TB,Raymond James Stadium,84.7,0.0,5.0,outdoors,False
-2026_03_LA_DEN,Empower Field at Mile High,81.3,0.0,11.9,outdoors,False
-2026_03_PHI_CHI,Soldier Field,61.8,0.0,4.5,outdoors,False
-2026_04_TEN_BAL,M&T Bank Stadium,62.3,0.0,10.9,outdoors,False
-2026_04_NE_BUF,Highmark Stadium,62.8,0.0,7.3,outdoors,False
-2026_04_NYJ_CHI,Soldier Field,62.0,0.0,7.6,outdoors,False
-2026_04_JAX_CIN,Paycor Stadium,66.4,0.0,6.3,outdoors,False
-2026_04_ARI_NYG,MetLife Stadium,60.5,0.0,10.8,outdoors,False
-2026_04_LA_PHI,Lincoln Financial Field,62.0,0.0,12.2,outdoors,False
-2026_04_GB_TB,Raymond James Stadium,78.9,0.004,6.3,outdoors,False
-2026_04_LAC_SEA,Lumen Field,69.0,0.0,9.0,outdoors,False
-2026_04_DEN_SF,Levi's Stadium,92.7,0.0,6.0,outdoors,False
-2026_04_DET_CAR,Bank of America Stadium,53.2,0.0,9.9,outdoors,False
-2026_05_CIN_MIA,Hard Rock Stadium,89.4,0.0,12.4,outdoors,False
-2026_05_LV_NE,Gillette Stadium,57.7,0.0,1.3,outdoors,False
-2026_05_CLE_NYJ,MetLife Stadium,58.3,0.0,0.5,outdoors,False
-2026_05_IND_PIT,Acrisure Stadium,60.9,0.0,2.9,outdoors,False
-2026_05_HOU_TEN,Nissan Stadium,70.0,0.0,2.5,outdoors,False
-2026_05_NYG_WAS,Northwest Stadium,60.9,0.0,3.7,outdoors,False
-2026_05_CHI_GB,Lambeau Field,64.9,0.0,16.0,outdoors,False
-2026_05_SF_SEA,Lumen Field,70.4,0.0,7.1,outdoors,False
+2026_03_PHI_CHI,Soldier Field,62.0,0.0,4.1,outdoors,False
+2026_04_TEN_BAL,M&T Bank Stadium,64.6,0.004,6.7,outdoors,False
+2026_04_NE_BUF,Highmark Stadium,61.3,0.004,12.2,outdoors,False
+2026_04_NYJ_CHI,Soldier Field,65.8,0.0,10.1,outdoors,False
+2026_04_JAX_CIN,Paycor Stadium,71.5,0.0,6.5,outdoors,False
+2026_04_ARI_NYG,MetLife Stadium,65.2,0.382,16.2,outdoors,False
+2026_04_LA_PHI,Lincoln Financial Field,69.0,0.13,10.6,outdoors,False
+2026_04_GB_TB,Raymond James Stadium,90.8,0.0,6.9,outdoors,False
+2026_04_LAC_SEA,Lumen Field,68.7,0.0,6.5,outdoors,False
+2026_04_DEN_SF,Levi's Stadium,87.8,0.0,4.5,outdoors,False
+2026_04_DET_CAR,Bank of America Stadium,70.0,0.0,3.2,outdoors,False
+2026_05_CIN_MIA,Hard Rock Stadium,86.8,0.0,12.2,outdoors,False
+2026_05_LV_NE,Gillette Stadium,50.8,0.0,7.6,outdoors,False
+2026_05_CLE_NYJ,MetLife Stadium,53.7,0.0,6.6,outdoors,False
+2026_05_IND_PIT,Acrisure Stadium,52.2,0.0,6.1,outdoors,False
+2026_05_HOU_TEN,Nissan Stadium,71.6,0.0,2.1,outdoors,False
+2026_05_NYG_WAS,Northwest Stadium,55.7,0.0,4.0,outdoors,False
+2026_05_CHI_GB,Lambeau Field,53.8,0.0,22.3,outdoors,False
+2026_05_SF_SEA,Lumen Field,68.4,0.0,0.9,outdoors,False
