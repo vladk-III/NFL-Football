@@ -1131,3 +1131,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-09-28T20:14:38.352878-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,mybookieag,3.5,-115.0,42.0,-110.0,165.0,-197.0
 2026-09-28T20:14:38.352878-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,betmgm,,,42.5,-110.0,170.0,-210.0
 2026-09-28T20:14:38.352878-04:00,47dc7baa254659f3beb2ed2b38c207b6,Chicago Bears,Philadelphia Eagles,bovada,3.5,-115.0,42.5,-110.0,165.0,-195.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,draftkings,2.5,100.0,38.5,-105.0,124.0,-148.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betus,3.0,-120.0,37.5,-110.0,129.0,-150.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,fanduel,2.5,-102.0,37.5,-112.0,120.0,-142.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,mybookieag,2.5,100.0,37.5,-110.0,126.0,-149.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betonlineag,3.0,-120.0,37.5,-110.0,131.0,-151.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,lowvig,2.5,105.0,37.5,-107.0,131.0,-151.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betrivers,2.5,-105.0,38.0,-110.0,115.0,-143.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,bovada,3.0,-120.0,37.5,-110.0,130.0,-150.0
+2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betmgm,3.0,-110.0,38.0,-108.0,125.0,-150.0
