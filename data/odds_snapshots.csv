@@ -1140,3 +1140,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betrivers,2.5,-105.0,38.0,-110.0,115.0,-143.0
 2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,bovada,3.0,-120.0,37.5,-110.0,130.0,-150.0
 2026-10-01T15:09:05.291941-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betmgm,3.0,-110.0,38.0,-108.0,125.0,-150.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,draftkings,2.5,100.0,38.5,-105.0,124.0,-148.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betus,3.0,-120.0,37.5,-115.0,129.0,-150.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,fanduel,2.5,100.0,37.5,-112.0,126.0,-148.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,mybookieag,2.5,105.0,38.0,-110.0,130.0,-154.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betonlineag,2.5,100.0,38.0,-110.0,138.0,-158.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,lowvig,3.0,-111.0,38.0,-107.0,138.0,-158.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betrivers,2.5,-104.0,38.0,-109.0,125.0,-152.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,bovada,3.0,-115.0,38.5,100.0,140.0,-165.0
+2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betmgm,3.0,-110.0,37.5,-110.0,125.0,-150.0
