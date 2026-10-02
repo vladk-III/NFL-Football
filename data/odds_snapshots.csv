@@ -1149,3 +1149,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betrivers,2.5,-104.0,38.0,-109.0,125.0,-152.0
 2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,bovada,3.0,-115.0,38.5,100.0,140.0,-165.0
 2026-10-01T19:43:38.131501-04:00,d55cb69fed50a09170560b5b75d8de86,Cleveland Browns,Pittsburgh Steelers,betmgm,3.0,-110.0,37.5,-110.0,125.0,-150.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,draftkings,3.5,-105.0,48.5,-108.0,160.0,-192.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,fanduel,3.5,-105.0,47.5,-115.0,184.0,-220.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,betmgm,4.0,-110.0,48.5,-108.0,170.0,-210.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,bovada,4.0,-110.0,48.5,-110.0,170.0,-200.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,betus,4.0,-110.0,48.5,-110.0,167.0,-195.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,mybookieag,4.0,-110.0,48.5,-110.0,168.0,-210.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,lowvig,4.0,-107.0,48.5,-107.0,171.0,-196.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,betonlineag,4.0,-110.0,48.5,-110.0,171.0,-196.0
+2026-10-02T10:19:13.014249-04:00,c9d8ed8aa4889486eaf10a630138ede0,Washington Commanders,Indianapolis Colts,betrivers,3.5,-107.0,48.0,-113.0,160.0,-195.0

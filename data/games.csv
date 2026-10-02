@@ -47,7 +47,7 @@ game_id,season,week,game_type,start_date,home_team,home_points,away_team,away_po
 2026_03_LV_NO,2026,3,REG,2026-09-27T20:25:00+00:00,NO,27.0,LV,35.0,Caesars Superdome,,True
 2026_03_LA_DEN,2026,3,REG,2026-09-28T00:20:00+00:00,DEN,30.0,LA,26.0,Empower Field at Mile High,,True
 2026_03_PHI_CHI,2026,3,REG,2026-09-29T00:15:00+00:00,CHI,27.0,PHI,7.0,Soldier Field,,True
-2026_04_PIT_CLE,2026,4,REG,2026-10-02T00:15:00+00:00,CLE,,PIT,,Huntington Bank Field,,False
+2026_04_PIT_CLE,2026,4,REG,2026-10-02T00:15:00+00:00,CLE,27.0,PIT,24.0,Huntington Bank Field,,True
 2026_04_IND_WAS,2026,4,REG,2026-10-04T13:30:00+00:00,WAS,,IND,,Tottenham Hotspur Stadium,,False
 2026_04_TEN_BAL,2026,4,REG,2026-10-04T17:00:00+00:00,BAL,,TEN,,M&T Bank Stadium,,False
 2026_04_NE_BUF,2026,4,REG,2026-10-04T17:00:00+00:00,BUF,,NE,,Highmark Stadium,,False
