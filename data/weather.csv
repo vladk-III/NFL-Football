@@ -111,16 +111,16 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_04_TEN_BAL,M&T Bank Stadium,62.3,0.0,7.6,outdoors,False
-2026_04_NE_BUF,Highmark Stadium,66.2,0.0,10.6,outdoors,False
-2026_04_NYJ_CHI,Soldier Field,64.8,0.0,8.3,outdoors,False
-2026_04_JAX_CIN,Paycor Stadium,72.5,0.0,6.2,outdoors,False
-2026_04_ARI_NYG,MetLife Stadium,59.6,0.0,7.2,outdoors,False
-2026_04_LA_PHI,Lincoln Financial Field,60.0,0.0,7.3,outdoors,False
-2026_04_GB_TB,Raymond James Stadium,86.6,0.0,6.1,outdoors,False
-2026_04_LAC_SEA,Lumen Field,68.9,0.0,4.0,outdoors,False
-2026_04_DEN_SF,Levi's Stadium,88.4,0.0,3.8,outdoors,False
-2026_04_DET_CAR,Bank of America Stadium,67.9,0.0,3.3,outdoors,False
+2026_04_TEN_BAL,M&T Bank Stadium,62.8,0.0,4.7,outdoors,False
+2026_04_NE_BUF,Highmark Stadium,66.0,0.0,14.4,outdoors,False
+2026_04_NYJ_CHI,Soldier Field,66.2,0.0,9.0,outdoors,False
+2026_04_JAX_CIN,Paycor Stadium,73.2,0.0,6.5,outdoors,False
+2026_04_ARI_NYG,MetLife Stadium,64.5,0.0,7.4,outdoors,False
+2026_04_LA_PHI,Lincoln Financial Field,62.9,0.0,8.5,outdoors,False
+2026_04_GB_TB,Raymond James Stadium,83.9,0.0,4.9,outdoors,False
+2026_04_LAC_SEA,Lumen Field,67.1,0.0,3.4,outdoors,False
+2026_04_DEN_SF,Levi's Stadium,87.8,0.0,4.3,outdoors,False
+2026_04_DET_CAR,Bank of America Stadium,65.6,0.0,2.9,outdoors,False
 2026_05_CHI_GB,Lambeau Field,79.5,0.0,11.7,outdoors,False
 2026_05_CIN_MIA,Hard Rock Stadium,90.2,0.0,12.8,outdoors,False
 2026_05_LV_NE,Gillette Stadium,65.4,0.0,3.4,outdoors,False
@@ -134,3 +134,4 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_06_NO_NYG,MetLife Stadium,69.5,0.0,4.7,outdoors,False
 2026_06_CAR_PHI,Lincoln Financial Field,71.3,0.0,4.8,outdoors,False
 2026_06_PIT_TB,Raymond James Stadium,79.6,0.0,13.4,outdoors,False
+2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,85.5,0.0,13.2,outdoors,False
