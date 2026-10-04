@@ -1464,3 +1464,21 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-04T13:55:11.438104-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,mybookieag,-2.0,-110.0,48.0,-110.0,-131.0,107.0
 2026-10-04T13:55:11.438104-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,betmgm,-1.5,-110.0,47.5,-110.0,-130.0,110.0
 2026-10-04T13:55:11.438104-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,bovada,-1.5,-110.0,48.0,-110.0,-125.0,105.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,draftkings,3.5,100.0,51.5,-112.0,164.0,-198.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,fanduel,3.5,-104.0,51.5,-110.0,176.0,-210.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,betus,4.0,-110.0,52.0,-110.0,183.0,-215.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,lowvig,4.0,-108.0,52.0,-104.0,178.0,-207.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,betonlineag,3.5,-105.0,52.0,-110.0,178.0,-207.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,betrivers,3.5,-108.0,51.5,-108.0,175.0,-215.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,bovada,4.0,-110.0,52.0,-110.0,175.0,-210.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,mybookieag,4.0,-110.0,51.5,-110.0,182.0,-217.0
+2026-10-04T18:49:24.159723-04:00,a73a76599a4f3422803e57bd8f61b626,Carolina Panthers,Detroit Lions,betmgm,4.0,-105.0,51.5,-110.0,180.0,-220.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,draftkings,-1.5,-115.0,47.5,-115.0,-130.0,110.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,betus,-1.0,-120.0,48.0,-110.0,-125.0,105.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,fanduel,-1.5,-112.0,47.5,-110.0,-126.0,108.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,betonlineag,-1.0,-122.0,48.0,-110.0,-123.0,103.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,lowvig,-1.0,-118.0,48.0,-107.0,-123.0,103.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,betrivers,-2.5,-108.0,47.5,-109.0,-136.0,110.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,mybookieag,-2.0,-110.0,48.0,-110.0,-131.0,107.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,betmgm,-2.0,-108.0,47.5,-110.0,-130.0,110.0
+2026-10-04T18:49:24.159723-04:00,8bd90781e17e6d97df3941063cedae1e,New Orleans Saints,Atlanta Falcons,bovada,-1.5,-110.0,48.0,-110.0,-125.0,105.0

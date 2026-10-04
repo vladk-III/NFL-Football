@@ -111,16 +111,16 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_04_TEN_BAL,M&T Bank Stadium,62.1,0.0,5.4,outdoors,False
-2026_04_NE_BUF,Highmark Stadium,67.9,0.0,12.2,outdoors,False
-2026_04_NYJ_CHI,Soldier Field,68.1,0.0,4.9,outdoors,False
-2026_04_JAX_CIN,Paycor Stadium,71.6,0.0,2.7,outdoors,False
-2026_04_ARI_NYG,MetLife Stadium,61.8,0.0,6.9,outdoors,False
-2026_04_LA_PHI,Lincoln Financial Field,60.3,0.0,8.4,outdoors,False
-2026_04_GB_TB,Raymond James Stadium,87.0,0.0,4.0,outdoors,False
-2026_04_LAC_SEA,Lumen Field,61.8,0.0,2.8,outdoors,False
-2026_04_DEN_SF,Levi's Stadium,83.1,0.0,4.8,outdoors,False
-2026_04_DET_CAR,Bank of America Stadium,65.4,0.0,3.2,outdoors,False
+2026_04_TEN_BAL,M&T Bank Stadium,61.5,0.0,5.5,outdoors,False
+2026_04_NE_BUF,Highmark Stadium,67.4,0.0,10.4,outdoors,False
+2026_04_NYJ_CHI,Soldier Field,69.7,0.0,7.2,outdoors,False
+2026_04_JAX_CIN,Paycor Stadium,71.4,0.0,4.7,outdoors,False
+2026_04_ARI_NYG,MetLife Stadium,59.9,0.0,8.1,outdoors,False
+2026_04_LA_PHI,Lincoln Financial Field,60.4,0.0,10.2,outdoors,False
+2026_04_GB_TB,Raymond James Stadium,87.4,0.0,1.6,outdoors,False
+2026_04_LAC_SEA,Lumen Field,61.2,0.0,1.9,outdoors,False
+2026_04_DEN_SF,Levi's Stadium,86.1,0.0,6.7,outdoors,False
+2026_04_DET_CAR,Bank of America Stadium,65.5,0.0,2.7,outdoors,False
 2026_05_CHI_GB,Lambeau Field,76.3,0.0,13.6,outdoors,False
 2026_05_CIN_MIA,Hard Rock Stadium,90.6,0.0,13.7,outdoors,False
 2026_05_LV_NE,Gillette Stadium,67.8,0.0,12.6,outdoors,False
