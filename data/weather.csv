@@ -121,19 +121,19 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_05_CHI_GB,Lambeau Field,71.7,0.0,13.3,outdoors,False
-2026_05_CIN_MIA,Hard Rock Stadium,90.2,0.0,12.5,outdoors,False
-2026_05_LV_NE,Gillette Stadium,65.7,0.0,11.8,outdoors,False
-2026_05_CLE_NYJ,MetLife Stadium,61.0,0.063,8.1,outdoors,False
-2026_05_IND_PIT,Acrisure Stadium,59.2,0.016,8.4,outdoors,False
-2026_05_HOU_TEN,Nissan Stadium,64.7,0.004,7.2,outdoors,False
-2026_05_NYG_WAS,Northwest Stadium,60.6,0.177,11.0,outdoors,False
-2026_05_SF_SEA,Lumen Field,56.0,0.0,8.3,outdoors,False
-2026_06_SEA_DEN,Empower Field at Mile High,54.5,0.0,4.0,outdoors,False
-2026_06_NYJ_NE,Gillette Stadium,49.2,0.0,12.2,outdoors,False
-2026_06_NO_NYG,MetLife Stadium,53.6,0.0,16.8,outdoors,False
-2026_06_CAR_PHI,Lincoln Financial Field,54.2,0.0,16.1,outdoors,False
-2026_06_PIT_TB,Raymond James Stadium,77.6,0.004,17.4,outdoors,False
-2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,63.0,0.0,13.9,outdoors,False
-2026_06_DAL_GB,Lambeau Field,49.7,0.0,21.6,outdoors,False
-2026_06_WAS_SF,Levi's Stadium,90.1,0.0,7.6,outdoors,False
+2026_05_CHI_GB,Lambeau Field,79.4,0.0,16.5,outdoors,False
+2026_05_CIN_MIA,Hard Rock Stadium,89.0,0.004,13.3,outdoors,False
+2026_05_LV_NE,Gillette Stadium,74.1,0.0,13.3,outdoors,False
+2026_05_CLE_NYJ,MetLife Stadium,72.3,0.0,9.4,outdoors,False
+2026_05_IND_PIT,Acrisure Stadium,68.3,0.0,3.3,outdoors,False
+2026_05_HOU_TEN,Nissan Stadium,66.5,0.008,5.3,outdoors,False
+2026_05_NYG_WAS,Northwest Stadium,71.5,0.0,8.1,outdoors,False
+2026_05_SF_SEA,Lumen Field,57.1,0.0,8.7,outdoors,False
+2026_06_SEA_DEN,Empower Field at Mile High,34.5,0.02,15.0,outdoors,False
+2026_06_NYJ_NE,Gillette Stadium,69.8,0.0,2.5,outdoors,False
+2026_06_NO_NYG,MetLife Stadium,71.1,0.0,2.7,outdoors,False
+2026_06_CAR_PHI,Lincoln Financial Field,73.4,0.0,1.9,outdoors,False
+2026_06_PIT_TB,Raymond James Stadium,87.6,0.0,2.0,outdoors,False
+2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,45.3,0.0,8.4,outdoors,False
+2026_06_DAL_GB,Lambeau Field,48.6,0.016,9.2,outdoors,False
+2026_06_WAS_SF,Levi's Stadium,78.2,0.0,8.1,outdoors,False
