@@ -63,7 +63,7 @@ game_id,season,week,game_type,start_date,home_team,home_points,away_team,away_po
 2026_04_DEN_SF,2026,4,REG,2026-10-04T20:25:00+00:00,SF,24.0,DEN,14.0,Levi's Stadium,,True
 2026_04_DET_CAR,2026,4,REG,2026-10-05T00:20:00+00:00,CAR,32.0,DET,26.0,Bank of America Stadium,,True
 2026_04_ATL_NO,2026,4,REG,2026-10-06T00:15:00+00:00,NO,24.0,ATL,45.0,Caesars Superdome,,True
-2026_05_TB_DAL,2026,5,REG,2026-10-09T00:15:00+00:00,DAL,,TB,,AT&T Stadium,,False
+2026_05_TB_DAL,2026,5,REG,2026-10-09T00:15:00+00:00,DAL,16.0,TB,24.0,AT&T Stadium,,True
 2026_05_PHI_JAX,2026,5,REG,2026-10-11T13:30:00+00:00,JAX,,PHI,,Tottenham Hotspur Stadium,,False
 2026_05_CHI_GB,2026,5,REG,2026-10-11T17:00:00+00:00,GB,,CHI,,Lambeau Field,,False
 2026_05_CIN_MIA,2026,5,REG,2026-10-11T17:00:00+00:00,MIA,,CIN,,Hard Rock Stadium,,False
