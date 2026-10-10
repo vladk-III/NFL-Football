@@ -121,14 +121,14 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_05_CHI_GB,Lambeau Field,74.0,0.0,13.8,outdoors,False
-2026_05_CIN_MIA,Hard Rock Stadium,89.6,0.0,9.8,outdoors,False
-2026_05_LV_NE,Gillette Stadium,64.5,0.0,9.7,outdoors,False
-2026_05_CLE_NYJ,MetLife Stadium,65.8,0.071,10.3,outdoors,False
-2026_05_IND_PIT,Acrisure Stadium,64.4,0.0,15.6,outdoors,False
-2026_05_HOU_TEN,Nissan Stadium,65.9,0.0,8.4,outdoors,False
-2026_05_NYG_WAS,Northwest Stadium,68.3,0.0,7.9,outdoors,False
-2026_05_SF_SEA,Lumen Field,59.0,0.0,8.8,outdoors,False
+2026_05_CHI_GB,Lambeau Field,72.4,0.0,12.4,outdoors,False
+2026_05_CIN_MIA,Hard Rock Stadium,86.7,0.0,5.4,outdoors,False
+2026_05_LV_NE,Gillette Stadium,63.1,0.0,8.9,outdoors,False
+2026_05_CLE_NYJ,MetLife Stadium,64.8,0.028,10.5,outdoors,False
+2026_05_IND_PIT,Acrisure Stadium,60.8,0.028,9.7,outdoors,False
+2026_05_HOU_TEN,Nissan Stadium,64.9,0.0,11.6,outdoors,False
+2026_05_NYG_WAS,Northwest Stadium,66.8,0.0,11.7,outdoors,False
+2026_05_SF_SEA,Lumen Field,58.7,0.0,9.0,outdoors,False
 2026_06_SEA_DEN,Empower Field at Mile High,59.7,0.0,14.4,outdoors,False
 2026_06_NYJ_NE,Gillette Stadium,55.7,0.0,7.6,outdoors,False
 2026_06_NO_NYG,MetLife Stadium,56.7,0.0,10.3,outdoors,False
