@@ -1526,3 +1526,107 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-09T10:48:19.193494-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,betonlineag,-7.5,-113.0,42.0,-107.0,-370.0,296.0
 2026-10-09T10:48:19.193494-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,lowvig,-7.5,-108.0,42.0,-104.0,-370.0,296.0
 2026-10-09T10:48:19.193494-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,betrivers,-7.5,-110.0,41.5,-109.0,-400.0,310.0
+2026-10-10T14:07:30.958074-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,draftkings,-7.5,-108.0,41.5,-112.0,-395.0,310.0
+2026-10-10T14:07:30.958074-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,fanduel,-7.5,-110.0,41.5,-115.0,-400.0,315.0
+2026-10-10T14:07:30.958074-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,betmgm,-7.5,-110.0,41.5,-110.0,-375.0,300.0
+2026-10-10T14:07:30.958074-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,betus,-8.0,-105.0,42.0,-110.0,-375.0,300.0
+2026-10-10T14:07:30.958074-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,mybookieag,-7.5,-110.0,42.0,-110.0,-391.0,295.0
+2026-10-10T14:07:30.958074-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,betonlineag,-7.5,-115.0,42.0,-107.0,-375.0,299.0
+2026-10-10T14:07:30.958074-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,lowvig,-7.5,-109.0,42.0,-104.0,-375.0,299.0
+2026-10-10T14:07:30.958074-04:00,21b26266f3d78af02eb672e606275d95,Jacksonville Jaguars,Philadelphia Eagles,betrivers,-7.5,-112.0,41.5,-109.0,-400.0,300.0
+2026-10-10T14:07:30.958074-04:00,2caea57b1e5cfbba1334cfbfd46f6771,Green Bay Packers,Chicago Bears,draftkings,1.5,-105.0,46.5,-112.0,105.0,-125.0
+2026-10-10T14:07:30.958074-04:00,2caea57b1e5cfbba1334cfbfd46f6771,Green Bay Packers,Chicago Bears,fanduel,1.5,-110.0,45.5,-115.0,104.0,-122.0
+2026-10-10T14:07:30.958074-04:00,2caea57b1e5cfbba1334cfbfd46f6771,Green Bay Packers,Chicago Bears,mybookieag,1.5,-110.0,46.5,-110.0,102.0,-124.0
+2026-10-10T14:07:30.958074-04:00,2caea57b1e5cfbba1334cfbfd46f6771,Green Bay Packers,Chicago Bears,betus,1.0,-105.0,46.5,-110.0,105.0,-125.0
+2026-10-10T14:07:30.958074-04:00,2caea57b1e5cfbba1334cfbfd46f6771,Green Bay Packers,Chicago Bears,betonlineag,1.0,-108.0,46.5,-110.0,-101.0,-119.0
+2026-10-10T14:07:30.958074-04:00,2caea57b1e5cfbba1334cfbfd46f6771,Green Bay Packers,Chicago Bears,lowvig,1.0,-103.0,46.5,-107.0,-101.0,-119.0
+2026-10-10T14:07:30.958074-04:00,2caea57b1e5cfbba1334cfbfd46f6771,Green Bay Packers,Chicago Bears,betrivers,1.5,-110.0,46.0,-112.0,102.0,-124.0
+2026-10-10T14:07:30.958074-04:00,2caea57b1e5cfbba1334cfbfd46f6771,Green Bay Packers,Chicago Bears,betmgm,1.5,-108.0,46.5,-108.0,105.0,-125.0
+2026-10-10T14:07:30.958074-04:00,c4647ca1201e6768501877267ca8251b,Miami Dolphins,Cincinnati Bengals,draftkings,7.0,-112.0,43.5,-112.0,280.0,-355.0
+2026-10-10T14:07:30.958074-04:00,c4647ca1201e6768501877267ca8251b,Miami Dolphins,Cincinnati Bengals,betus,7.0,-115.0,43.5,-110.0,270.0,-330.0
+2026-10-10T14:07:30.958074-04:00,c4647ca1201e6768501877267ca8251b,Miami Dolphins,Cincinnati Bengals,fanduel,7.0,-115.0,43.5,-110.0,260.0,-320.0
+2026-10-10T14:07:30.958074-04:00,c4647ca1201e6768501877267ca8251b,Miami Dolphins,Cincinnati Bengals,mybookieag,7.0,-110.0,43.5,-110.0,259.0,-336.0
+2026-10-10T14:07:30.958074-04:00,c4647ca1201e6768501877267ca8251b,Miami Dolphins,Cincinnati Bengals,betonlineag,7.0,-115.0,44.0,-110.0,267.0,-330.0
+2026-10-10T14:07:30.958074-04:00,c4647ca1201e6768501877267ca8251b,Miami Dolphins,Cincinnati Bengals,lowvig,7.0,-110.0,44.0,-107.0,267.0,-330.0
+2026-10-10T14:07:30.958074-04:00,c4647ca1201e6768501877267ca8251b,Miami Dolphins,Cincinnati Bengals,betrivers,7.0,-114.0,43.5,-109.0,255.0,-335.0
+2026-10-10T14:07:30.958074-04:00,c4647ca1201e6768501877267ca8251b,Miami Dolphins,Cincinnati Bengals,betmgm,7.0,-110.0,43.5,-112.0,275.0,-350.0
+2026-10-10T14:07:30.958074-04:00,9db4ed15fe34fca1fb62f040cd244591,New York Jets,Cleveland Browns,draftkings,-2.5,-110.0,39.5,-112.0,-135.0,114.0
+2026-10-10T14:07:30.958074-04:00,9db4ed15fe34fca1fb62f040cd244591,New York Jets,Cleveland Browns,fanduel,-1.5,-120.0,39.5,-115.0,-134.0,114.0
+2026-10-10T14:07:30.958074-04:00,9db4ed15fe34fca1fb62f040cd244591,New York Jets,Cleveland Browns,mybookieag,-2.5,-110.0,39.5,-110.0,-135.0,110.0
+2026-10-10T14:07:30.958074-04:00,9db4ed15fe34fca1fb62f040cd244591,New York Jets,Cleveland Browns,betus,-2.0,-115.0,39.5,-105.0,-140.0,120.0
+2026-10-10T14:07:30.958074-04:00,9db4ed15fe34fca1fb62f040cd244591,New York Jets,Cleveland Browns,betonlineag,-1.0,-125.0,39.5,-110.0,-140.0,120.0
+2026-10-10T14:07:30.958074-04:00,9db4ed15fe34fca1fb62f040cd244591,New York Jets,Cleveland Browns,lowvig,-2.5,-110.0,39.5,-107.0,-140.0,120.0
+2026-10-10T14:07:30.958074-04:00,9db4ed15fe34fca1fb62f040cd244591,New York Jets,Cleveland Browns,betrivers,-2.5,-109.0,40.0,-113.0,-139.0,115.0
+2026-10-10T14:07:30.958074-04:00,9db4ed15fe34fca1fb62f040cd244591,New York Jets,Cleveland Browns,betmgm,-2.5,-108.0,39.5,-110.0,-145.0,120.0
+2026-10-10T14:07:30.958074-04:00,cc52bba56e74f5cddbe9011046181c3d,Tennessee Titans,Houston Texans,draftkings,7.0,-110.0,38.5,-105.0,280.0,-355.0
+2026-10-10T14:07:30.958074-04:00,cc52bba56e74f5cddbe9011046181c3d,Tennessee Titans,Houston Texans,betus,7.0,-110.0,38.0,-115.0,293.0,-365.0
+2026-10-10T14:07:30.958074-04:00,cc52bba56e74f5cddbe9011046181c3d,Tennessee Titans,Houston Texans,fanduel,7.0,-105.0,37.5,-118.0,295.0,-370.0
+2026-10-10T14:07:30.958074-04:00,cc52bba56e74f5cddbe9011046181c3d,Tennessee Titans,Houston Texans,mybookieag,7.0,-110.0,38.0,-110.0,285.0,-380.0
+2026-10-10T14:07:30.958074-04:00,cc52bba56e74f5cddbe9011046181c3d,Tennessee Titans,Houston Texans,betonlineag,7.0,-110.0,38.0,-113.0,292.0,-365.0
+2026-10-10T14:07:30.958074-04:00,cc52bba56e74f5cddbe9011046181c3d,Tennessee Titans,Houston Texans,lowvig,7.0,-105.0,38.0,-110.0,292.0,-365.0
+2026-10-10T14:07:30.958074-04:00,cc52bba56e74f5cddbe9011046181c3d,Tennessee Titans,Houston Texans,betrivers,7.0,-107.0,37.5,-108.0,280.0,-360.0
+2026-10-10T14:07:30.958074-04:00,cc52bba56e74f5cddbe9011046181c3d,Tennessee Titans,Houston Texans,betmgm,7.0,-108.0,38.0,-110.0,300.0,-375.0
+2026-10-10T14:07:30.958074-04:00,448d7cf18c6db4c811ed82ded1b72867,Pittsburgh Steelers,Indianapolis Colts,draftkings,-3.0,-102.0,43.5,-108.0,-148.0,124.0
+2026-10-10T14:07:30.958074-04:00,448d7cf18c6db4c811ed82ded1b72867,Pittsburgh Steelers,Indianapolis Colts,betus,-2.0,-120.0,43.5,-110.0,-150.0,129.0
+2026-10-10T14:07:30.958074-04:00,448d7cf18c6db4c811ed82ded1b72867,Pittsburgh Steelers,Indianapolis Colts,fanduel,-2.5,-112.0,43.5,-110.0,-144.0,122.0
+2026-10-10T14:07:30.958074-04:00,448d7cf18c6db4c811ed82ded1b72867,Pittsburgh Steelers,Indianapolis Colts,mybookieag,-2.5,-115.0,43.5,-110.0,-150.0,123.0
+2026-10-10T14:07:30.958074-04:00,448d7cf18c6db4c811ed82ded1b72867,Pittsburgh Steelers,Indianapolis Colts,betonlineag,-2.5,-115.0,43.5,-110.0,-148.0,128.0
+2026-10-10T14:07:30.958074-04:00,448d7cf18c6db4c811ed82ded1b72867,Pittsburgh Steelers,Indianapolis Colts,lowvig,-3.0,103.0,43.5,-107.0,-148.0,128.0
+2026-10-10T14:07:30.958074-04:00,448d7cf18c6db4c811ed82ded1b72867,Pittsburgh Steelers,Indianapolis Colts,betrivers,-2.5,-114.0,43.5,-113.0,-143.0,120.0
+2026-10-10T14:07:30.958074-04:00,448d7cf18c6db4c811ed82ded1b72867,Pittsburgh Steelers,Indianapolis Colts,betmgm,-2.5,-118.0,43.5,-110.0,-145.0,120.0
+2026-10-10T14:07:30.958074-04:00,6b024bad1abb54f597225e4ab9b39d89,New England Patriots,Las Vegas Raiders,draftkings,-3.5,-108.0,45.5,-105.0,-192.0,160.0
+2026-10-10T14:07:30.958074-04:00,6b024bad1abb54f597225e4ab9b39d89,New England Patriots,Las Vegas Raiders,betus,-3.5,-110.0,45.0,-115.0,-185.0,159.0
+2026-10-10T14:07:30.958074-04:00,6b024bad1abb54f597225e4ab9b39d89,New England Patriots,Las Vegas Raiders,fanduel,-3.5,-115.0,44.5,-118.0,-196.0,164.0
+2026-10-10T14:07:30.958074-04:00,6b024bad1abb54f597225e4ab9b39d89,New England Patriots,Las Vegas Raiders,mybookieag,-3.5,-110.0,45.0,-110.0,-195.0,157.0
+2026-10-10T14:07:30.958074-04:00,6b024bad1abb54f597225e4ab9b39d89,New England Patriots,Las Vegas Raiders,lowvig,-3.5,-104.0,45.0,-112.0,-183.0,160.0
+2026-10-10T14:07:30.958074-04:00,6b024bad1abb54f597225e4ab9b39d89,New England Patriots,Las Vegas Raiders,betonlineag,-3.5,-110.0,45.0,-114.0,-183.0,160.0
+2026-10-10T14:07:30.958074-04:00,6b024bad1abb54f597225e4ab9b39d89,New England Patriots,Las Vegas Raiders,betrivers,-3.5,-108.0,45.0,-112.0,-195.0,160.0
+2026-10-10T14:07:30.958074-04:00,6b024bad1abb54f597225e4ab9b39d89,New England Patriots,Las Vegas Raiders,betmgm,-3.5,-108.0,45.0,-110.0,-190.0,160.0
+2026-10-10T14:07:30.958074-04:00,2cda9bf0fbe35a2735f0dd8aaafe9eff,New Orleans Saints,Minnesota Vikings,draftkings,2.5,-110.0,41.5,-112.0,120.0,-142.0
+2026-10-10T14:07:30.958074-04:00,2cda9bf0fbe35a2735f0dd8aaafe9eff,New Orleans Saints,Minnesota Vikings,betus,1.0,105.0,41.5,-110.0,120.0,-140.0
+2026-10-10T14:07:30.958074-04:00,2cda9bf0fbe35a2735f0dd8aaafe9eff,New Orleans Saints,Minnesota Vikings,fanduel,1.5,-102.0,42.5,-104.0,116.0,-134.0
+2026-10-10T14:07:30.958074-04:00,2cda9bf0fbe35a2735f0dd8aaafe9eff,New Orleans Saints,Minnesota Vikings,mybookieag,2.5,-110.0,41.5,-110.0,116.0,-142.0
+2026-10-10T14:07:30.958074-04:00,2cda9bf0fbe35a2735f0dd8aaafe9eff,New Orleans Saints,Minnesota Vikings,betonlineag,1.0,105.0,42.0,100.0,120.0,-140.0
+2026-10-10T14:07:30.958074-04:00,2cda9bf0fbe35a2735f0dd8aaafe9eff,New Orleans Saints,Minnesota Vikings,lowvig,2.5,-107.0,42.0,103.0,120.0,-140.0
+2026-10-10T14:07:30.958074-04:00,2cda9bf0fbe35a2735f0dd8aaafe9eff,New Orleans Saints,Minnesota Vikings,betrivers,2.5,-109.0,41.5,-112.0,114.0,-137.0
+2026-10-10T14:07:30.958074-04:00,2cda9bf0fbe35a2735f0dd8aaafe9eff,New Orleans Saints,Minnesota Vikings,betmgm,2.5,-110.0,41.5,-108.0,115.0,-140.0
+2026-10-10T14:07:30.958074-04:00,fbffd0b7722fd81d68d5d62472dc80e8,Washington Commanders,New York Giants,draftkings,-3.5,-110.0,41.5,-115.0,-170.0,142.0
+2026-10-10T14:07:30.958074-04:00,fbffd0b7722fd81d68d5d62472dc80e8,Washington Commanders,New York Giants,betus,-3.5,-110.0,41.5,-110.0,-190.0,163.0
+2026-10-10T14:07:30.958074-04:00,fbffd0b7722fd81d68d5d62472dc80e8,Washington Commanders,New York Giants,fanduel,-3.5,-112.0,41.5,-115.0,-190.0,160.0
+2026-10-10T14:07:30.958074-04:00,fbffd0b7722fd81d68d5d62472dc80e8,Washington Commanders,New York Giants,mybookieag,-3.5,-110.0,41.5,-110.0,-189.0,152.0
+2026-10-10T14:07:30.958074-04:00,fbffd0b7722fd81d68d5d62472dc80e8,Washington Commanders,New York Giants,lowvig,-4.0,107.0,41.5,-107.0,-190.0,165.0
+2026-10-10T14:07:30.958074-04:00,fbffd0b7722fd81d68d5d62472dc80e8,Washington Commanders,New York Giants,betonlineag,-4.0,-104.0,41.5,-110.0,-190.0,165.0
+2026-10-10T14:07:30.958074-04:00,fbffd0b7722fd81d68d5d62472dc80e8,Washington Commanders,New York Giants,betrivers,-4.0,-108.0,42.0,-109.0,-182.0,148.0
+2026-10-10T14:07:30.958074-04:00,fbffd0b7722fd81d68d5d62472dc80e8,Washington Commanders,New York Giants,betmgm,-3.5,-110.0,41.5,-110.0,-190.0,155.0
+2026-10-10T14:07:30.958074-04:00,d1d408fdfd272046fb517fe992a1c5a0,Los Angeles Chargers,Denver Broncos,draftkings,3.5,-112.0,41.5,-115.0,160.0,-192.0
+2026-10-10T14:07:30.958074-04:00,d1d408fdfd272046fb517fe992a1c5a0,Los Angeles Chargers,Denver Broncos,betus,3.5,-110.0,42.0,-110.0,155.0,-180.0
+2026-10-10T14:07:30.958074-04:00,d1d408fdfd272046fb517fe992a1c5a0,Los Angeles Chargers,Denver Broncos,fanduel,3.5,-112.0,42.5,-105.0,156.0,-186.0
+2026-10-10T14:07:30.958074-04:00,d1d408fdfd272046fb517fe992a1c5a0,Los Angeles Chargers,Denver Broncos,mybookieag,3.5,-110.0,42.0,-110.0,155.0,-193.0
+2026-10-10T14:07:30.958074-04:00,d1d408fdfd272046fb517fe992a1c5a0,Los Angeles Chargers,Denver Broncos,betonlineag,3.5,-108.0,42.0,-110.0,157.0,-180.0
+2026-10-10T14:07:30.958074-04:00,d1d408fdfd272046fb517fe992a1c5a0,Los Angeles Chargers,Denver Broncos,lowvig,3.5,-103.0,42.0,-107.0,157.0,-180.0
+2026-10-10T14:07:30.958074-04:00,d1d408fdfd272046fb517fe992a1c5a0,Los Angeles Chargers,Denver Broncos,betrivers,3.5,-113.0,42.5,-108.0,150.0,-182.0
+2026-10-10T14:07:30.958074-04:00,d1d408fdfd272046fb517fe992a1c5a0,Los Angeles Chargers,Denver Broncos,betmgm,3.5,-110.0,42.0,-110.0,155.0,-190.0
+2026-10-10T14:07:30.958074-04:00,f8e7f43f73aa983c5c99c189587f0118,Arizona Cardinals,Detroit Lions,draftkings,5.5,-110.0,54.5,-115.0,205.0,-250.0
+2026-10-10T14:07:30.958074-04:00,f8e7f43f73aa983c5c99c189587f0118,Arizona Cardinals,Detroit Lions,fanduel,5.5,-115.0,54.5,-108.0,198.0,-245.0
+2026-10-10T14:07:30.958074-04:00,f8e7f43f73aa983c5c99c189587f0118,Arizona Cardinals,Detroit Lions,mybookieag,5.5,-110.0,54.5,-110.0,192.0,-242.0
+2026-10-10T14:07:30.958074-04:00,f8e7f43f73aa983c5c99c189587f0118,Arizona Cardinals,Detroit Lions,betus,5.5,-110.0,54.5,-110.0,215.0,-255.0
+2026-10-10T14:07:30.958074-04:00,f8e7f43f73aa983c5c99c189587f0118,Arizona Cardinals,Detroit Lions,betonlineag,5.5,-110.0,54.5,-110.0,211.0,-255.0
+2026-10-10T14:07:30.958074-04:00,f8e7f43f73aa983c5c99c189587f0118,Arizona Cardinals,Detroit Lions,lowvig,5.5,-105.0,54.5,-107.0,211.0,-255.0
+2026-10-10T14:07:30.958074-04:00,f8e7f43f73aa983c5c99c189587f0118,Arizona Cardinals,Detroit Lions,betrivers,5.5,-112.0,54.0,-110.0,188.0,-235.0
+2026-10-10T14:07:30.958074-04:00,f8e7f43f73aa983c5c99c189587f0118,Arizona Cardinals,Detroit Lions,betmgm,5.5,-110.0,54.5,-108.0,200.0,-235.0
+2026-10-10T14:07:30.958074-04:00,8e5d515b10d8a5ffb324640ed60bcc55,Seattle Seahawks,San Francisco 49ers,draftkings,-3.0,-110.0,45.5,-115.0,-162.0,136.0
+2026-10-10T14:07:30.958074-04:00,8e5d515b10d8a5ffb324640ed60bcc55,Seattle Seahawks,San Francisco 49ers,betus,-3.5,100.0,46.5,-110.0,-170.0,146.0
+2026-10-10T14:07:30.958074-04:00,8e5d515b10d8a5ffb324640ed60bcc55,Seattle Seahawks,San Francisco 49ers,fanduel,-3.0,-118.0,46.5,-105.0,-174.0,146.0
+2026-10-10T14:07:30.958074-04:00,8e5d515b10d8a5ffb324640ed60bcc55,Seattle Seahawks,San Francisco 49ers,mybookieag,-3.0,-120.0,46.0,-110.0,-170.0,136.0
+2026-10-10T14:07:30.958074-04:00,8e5d515b10d8a5ffb324640ed60bcc55,Seattle Seahawks,San Francisco 49ers,betonlineag,-3.0,-118.0,46.0,-113.0,-170.0,149.0
+2026-10-10T14:07:30.958074-04:00,8e5d515b10d8a5ffb324640ed60bcc55,Seattle Seahawks,San Francisco 49ers,lowvig,-3.0,-115.0,46.0,-110.0,-170.0,149.0
+2026-10-10T14:07:30.958074-04:00,8e5d515b10d8a5ffb324640ed60bcc55,Seattle Seahawks,San Francisco 49ers,betrivers,-3.0,-115.0,46.0,-110.0,-165.0,135.0
+2026-10-10T14:07:30.958074-04:00,8e5d515b10d8a5ffb324640ed60bcc55,Seattle Seahawks,San Francisco 49ers,betmgm,-3.0,-112.0,46.5,-108.0,-165.0,138.0
+2026-10-10T14:07:30.958074-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,draftkings,-3.0,-122.0,43.5,-110.0,-180.0,150.0
+2026-10-10T14:07:30.958074-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,betus,-3.5,100.0,43.5,-110.0,-170.0,146.0
+2026-10-10T14:07:30.958074-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,fanduel,-3.5,100.0,43.5,-114.0,-168.0,142.0
+2026-10-10T14:07:30.958074-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,mybookieag,-3.5,100.0,43.5,-110.0,-193.0,156.0
+2026-10-10T14:07:30.958074-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,betonlineag,-3.5,100.0,43.5,-115.0,-170.0,149.0
+2026-10-10T14:07:30.958074-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,lowvig,-3.5,101.0,43.5,-113.0,-170.0,149.0
+2026-10-10T14:07:30.958074-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,betrivers,-3.5,-103.0,43.5,-110.0,-182.0,150.0
+2026-10-10T14:07:30.958074-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,betmgm,-3.0,-118.0,43.5,-110.0,-175.0,145.0
