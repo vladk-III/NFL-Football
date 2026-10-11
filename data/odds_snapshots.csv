@@ -1792,3 +1792,19 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-11T14:31:48.721129-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,betrivers,-3.5,-104.0,54.0,-112.0,-177.0,145.0
 2026-10-11T14:31:48.721129-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,betmgm,-3.5,-102.0,54.5,-108.0,-185.0,150.0
 2026-10-11T14:31:48.721129-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,bovada,-3.0,-120.0,54.0,-115.0,-175.0,150.0
+2026-10-11T19:28:47.452343-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,draftkings,-3.0,-120.0,43.5,-115.0,-170.0,142.0
+2026-10-11T19:28:47.452343-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,betus,-3.0,-120.0,44.0,-110.0,-170.0,146.0
+2026-10-11T19:28:47.452343-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,fanduel,-3.5,100.0,43.5,-114.0,-172.0,144.0
+2026-10-11T19:28:47.452343-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,mybookieag,-3.0,-120.0,44.0,-110.0,-170.0,144.0
+2026-10-11T19:28:47.452343-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,betonlineag,-3.0,-122.0,44.5,-110.0,-168.0,148.0
+2026-10-11T19:28:47.452343-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,lowvig,-3.5,105.0,44.0,-112.0,-168.0,148.0
+2026-10-11T19:28:47.452343-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,betrivers,-3.5,-106.0,43.5,-110.0,-177.0,145.0
+2026-10-11T19:28:47.452343-04:00,86457f91112732f21ad4bb7d37bd291c,Atlanta Falcons,Baltimore Ravens,betmgm,-3.0,-118.0,44.0,-110.0,-175.0,145.0
+2026-10-11T19:28:47.452343-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,draftkings,-3.5,-105.0,54.5,-115.0,-180.0,150.0
+2026-10-11T19:28:47.452343-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,fanduel,-3.5,-104.0,54.5,-110.0,-176.0,148.0
+2026-10-11T19:28:47.452343-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,mybookieag,-3.0,-120.0,54.5,-110.0,-186.0,150.0
+2026-10-11T19:28:47.452343-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,betus,-3.5,-105.0,54.5,-110.0,-175.0,150.0
+2026-10-11T19:28:47.452343-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,lowvig,-3.5,100.0,54.5,-107.0,-175.0,153.0
+2026-10-11T19:28:47.452343-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,betonlineag,-3.5,-105.0,54.5,-110.0,-175.0,153.0
+2026-10-11T19:28:47.452343-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,betrivers,-3.5,-104.0,54.0,-112.0,-177.0,145.0
+2026-10-11T19:28:47.452343-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,betmgm,-3.5,-102.0,54.5,-110.0,-185.0,150.0
