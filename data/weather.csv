@@ -67,6 +67,7 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_05_DEN_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_05_DET_ARI,State Farm Stadium,72.0,0.0,0.0,retractable,True
 2026_05_BAL_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
+2026_05_SF_SEA,Lumen Field,57.4,0.0,8.1,outdoors,False
 2026_05_BUF_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_06_CHI_ATL,Mercedes-Benz Stadium,72.0,0.0,0.0,retractable,True
 2026_06_TEN_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
@@ -128,18 +129,18 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_05_SF_SEA,Lumen Field,57.4,0.0,8.1,outdoors,False
-2026_06_SEA_DEN,Empower Field at Mile High,60.8,0.0,10.7,outdoors,False
-2026_06_NYJ_NE,Gillette Stadium,48.6,0.0,12.4,outdoors,False
-2026_06_NO_NYG,MetLife Stadium,52.0,0.0,11.8,outdoors,False
-2026_06_CAR_PHI,Lincoln Financial Field,53.1,0.0,9.7,outdoors,False
-2026_06_PIT_TB,Raymond James Stadium,79.8,0.0,25.1,outdoors,False
-2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,66.1,0.0,15.9,outdoors,False
-2026_06_DAL_GB,Lambeau Field,54.4,0.0,21.8,outdoors,False
-2026_06_WAS_SF,Levi's Stadium,67.2,0.0,10.8,outdoors,False
-2026_07_NE_CHI,Soldier Field,55.3,0.0,10.1,outdoors,False
-2026_07_CIN_BAL,M&T Bank Stadium,50.1,0.0,6.4,outdoors,False
-2026_07_TB_CAR,Bank of America Stadium,63.1,0.0,7.0,outdoors,False
-2026_07_MIA_NYJ,MetLife Stadium,47.4,0.0,10.5,outdoors,False
-2026_07_CLE_TEN,Nissan Stadium,62.7,0.0,9.0,outdoors,False
-2026_07_KC_SEA,Lumen Field,54.1,0.0,4.2,outdoors,False
+2026_06_SEA_DEN,Empower Field at Mile High,52.7,0.0,8.1,outdoors,False
+2026_06_NYJ_NE,Gillette Stadium,51.2,0.0,8.8,outdoors,False
+2026_06_NO_NYG,MetLife Stadium,54.7,0.0,6.6,outdoors,False
+2026_06_CAR_PHI,Lincoln Financial Field,54.7,0.0,5.0,outdoors,False
+2026_06_PIT_TB,Raymond James Stadium,74.1,0.012,16.4,outdoors,False
+2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,66.0,0.0,13.5,outdoors,False
+2026_06_DAL_GB,Lambeau Field,54.7,0.0,17.9,outdoors,False
+2026_06_WAS_SF,Levi's Stadium,65.4,0.0,8.0,outdoors,False
+2026_07_NE_CHI,Soldier Field,70.9,0.0,6.9,outdoors,False
+2026_07_CIN_BAL,M&T Bank Stadium,75.9,0.0,8.8,outdoors,False
+2026_07_TB_CAR,Bank of America Stadium,76.4,0.0,10.0,outdoors,False
+2026_07_MIA_NYJ,MetLife Stadium,62.7,0.0,7.8,outdoors,False
+2026_07_CLE_TEN,Nissan Stadium,76.6,0.0,10.2,outdoors,False
+2026_07_KC_SEA,Lumen Field,57.8,0.0,8.3,outdoors,False
+2026_07_DAL_PHI,Lincoln Financial Field,53.3,0.0,15.3,outdoors,False
