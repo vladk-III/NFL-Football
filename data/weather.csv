@@ -129,18 +129,18 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_06_SEA_DEN,Empower Field at Mile High,53.2,0.0,10.8,outdoors,False
-2026_06_NYJ_NE,Gillette Stadium,47.7,0.0,9.4,outdoors,False
-2026_06_NO_NYG,MetLife Stadium,51.5,0.0,5.2,outdoors,False
-2026_06_CAR_PHI,Lincoln Financial Field,52.7,0.0,4.3,outdoors,False
-2026_06_PIT_TB,Raymond James Stadium,79.4,0.02,14.8,outdoors,False
-2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,66.8,0.0,13.2,outdoors,False
-2026_06_DAL_GB,Lambeau Field,53.5,0.0,14.8,outdoors,False
-2026_06_WAS_SF,Levi's Stadium,64.9,0.0,11.5,outdoors,False
-2026_07_NE_CHI,Soldier Field,72.9,0.0,13.7,outdoors,False
-2026_07_CIN_BAL,M&T Bank Stadium,60.1,0.0,2.4,outdoors,False
-2026_07_TB_CAR,Bank of America Stadium,78.3,0.0,4.5,outdoors,False
-2026_07_MIA_NYJ,MetLife Stadium,57.1,0.0,4.2,outdoors,False
-2026_07_CLE_TEN,Nissan Stadium,53.5,0.106,9.5,outdoors,False
-2026_07_KC_SEA,Lumen Field,57.4,0.0,8.5,outdoors,False
-2026_07_DAL_PHI,Lincoln Financial Field,52.1,0.0,6.4,outdoors,False
+2026_06_SEA_DEN,Empower Field at Mile High,50.3,0.0,10.6,outdoors,False
+2026_06_NYJ_NE,Gillette Stadium,56.8,0.0,12.6,outdoors,False
+2026_06_NO_NYG,MetLife Stadium,59.9,0.0,10.8,outdoors,False
+2026_06_CAR_PHI,Lincoln Financial Field,59.3,0.0,8.6,outdoors,False
+2026_06_PIT_TB,Raymond James Stadium,79.1,0.008,18.4,outdoors,False
+2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,64.4,0.0,13.2,outdoors,False
+2026_06_DAL_GB,Lambeau Field,55.8,0.0,17.5,outdoors,False
+2026_06_WAS_SF,Levi's Stadium,67.4,0.0,10.1,outdoors,False
+2026_07_NE_CHI,Soldier Field,66.4,0.0,5.5,outdoors,False
+2026_07_CIN_BAL,M&T Bank Stadium,60.0,0.0,12.3,outdoors,False
+2026_07_TB_CAR,Bank of America Stadium,75.5,0.0,5.0,outdoors,False
+2026_07_MIA_NYJ,MetLife Stadium,56.4,0.0,7.8,outdoors,False
+2026_07_CLE_TEN,Nissan Stadium,74.7,0.0,5.9,outdoors,False
+2026_07_KC_SEA,Lumen Field,51.2,0.0,4.7,outdoors,False
+2026_07_DAL_PHI,Lincoln Financial Field,55.7,0.0,3.6,outdoors,False
