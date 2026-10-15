@@ -1825,3 +1825,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-12T17:55:33.623734-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,betrivers,-3.5,-105.0,54.5,-114.0,-177.0,145.0
 2026-10-12T17:55:33.623734-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,betmgm,-3.5,100.0,55.0,-108.0,-175.0,145.0
 2026-10-12T17:55:33.623734-04:00,e6d00eedd87d367e510314bd8cab8f6f,Los Angeles Rams,Buffalo Bills,bovada,-3.5,100.0,55.5,-115.0,-175.0,150.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,draftkings,2.5,-108.0,40.5,-115.0,120.0,-142.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,betus,2.0,100.0,40.5,-110.0,125.0,-145.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,fanduel,2.5,-110.0,40.5,-115.0,120.0,-142.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,lowvig,2.5,-104.0,40.5,-107.0,127.0,-147.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,betonlineag,2.5,-105.0,40.5,-110.0,127.0,-147.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,betrivers,2.5,-108.0,40.5,-109.0,120.0,-148.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,mybookieag,2.5,-110.0,40.5,-110.0,121.0,-142.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,betmgm,2.5,-108.0,40.5,-108.0,125.0,-150.0
+2026-10-15T13:56:20.559328-04:00,855f58fad5f0f14b239f4f63df27998b,Denver Broncos,Seattle Seahawks,bovada,2.5,-105.0,40.5,-110.0,125.0,-145.0
