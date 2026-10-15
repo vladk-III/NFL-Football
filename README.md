@@ -54,3 +54,11 @@ Temperature, wind, precipitation for open-air stadiums. Domes are automatically 
 ## Pending Architecture Decisions
 - **Team Stats:** Unlike CFBD, NFL advanced metrics (EPA, DVOA) require processing play-by-play data. This is currently stubbed pending user architectural decisions.
 - **Injury Reports:** Not currently integrated, but vital for NFL line movement.
+
+## Dashboard (`nfl_dashboard.py`)
+
+The Colab dashboard (BPS model, Money Ball, skill tracking). Its **📈 Kalshi** tab:
+
+- **Pull Kalshi Odds Now** (or the 30-minute auto-snapshot) fetches every open `KXNFLSPREAD` / `KXNFLTOTAL` contract from Kalshi's public API (no key needed), matches it to `games.csv`, and prices it with the model's BPS draws from `predictions_history.csv`.
+- Each pregame snapshot is appended to `kalshi_history.csv` next to `predictions_history.csv` (Drive): bid/ask, mid, volume, open interest, the model's probability, and the fee-adjusted expected value of buying YES or NO.
+- The tracker grades each contract at its last pregame snapshot (the closing price): Brier score and log loss of the model vs. Kalshi, calibration, a week-by-week comparison, and paper-trade P&L at the closing ask.

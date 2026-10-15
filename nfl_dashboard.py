@@ -76,6 +76,7 @@ import os
 import sys
 import io
 import json
+import re
 import time
 import pickle
 import logging
@@ -1310,6 +1311,507 @@ def run_predictions_pipeline(set_progress, n_samples=BPS_DEFAULT_SAMPLES,
     return {"ok": True, "data": out.to_json(orient="records")}
 
 # =============================================================================
+# KALSHI — live NFL spread / total contracts vs. the model's probabilities
+# =============================================================================
+# Kalshi's market data is public (no key). Every strike of every game is a binary contract:
+#   KXNFLSPREAD  "Washington wins by over 7.5 points"   ticker KXNFLSPREAD-26OCT19WASSF-WAS8
+#   KXNFLTOTAL   "Over 45.5 points"                     ticker KXNFLTOTAL-26OCT19WASSF-46
+# Event tickers are <series>-<yy><MON><dd><AWAY><HOME>, dated in US Eastern time.
+# The model's probability for a contract comes from the BPS posterior-predictive draws stored in
+# predictions_history.csv: P(total > strike), or P(team's margin > strike) from the home-margin draws.
+KALSHI_API = "https://api.elections.kalshi.com/trade-api/v2"
+KALSHI_SERIES = {"spread": "KXNFLSPREAD", "total": "KXNFLTOTAL"}
+KALSHI_HISTORY_PATH = DRIVE_BASE / "kalshi_history.csv"
+KALSHI_TEAM_ALIASES = {"JAC": "JAX", "LAR": "LA", "WSH": "WAS", "LVR": "LV", "ARZ": "ARI"}  # Kalshi code -> games.csv code
+KALSHI_TAKER_FEE_RATE = 0.07         # taker fee per contract ≈ rate * P * (1 - P); check Kalshi's current fee schedule
+KALSHI_STORE_RANGE = (0.03, 0.97)    # strikes priced outside this range (dead tails of the ladder) are not stored
+KALSHI_CONTESTED_RANGE = (0.15, 0.85)
+KALSHI_DEFAULT_MIN_EV = 3            # (UI) cents of expected value per contract, after fees, to flag / paper-trade
+KALSHI_AUTO_SNAPSHOT_MIN = 30        # (UI) auto-snapshot interval while the dashboard is open
+EASTERN_TZ = "America/New_York"
+
+KALSHI_COLUMNS = [
+    "snapshot_utc", "game_id", "season", "week", "kickoff_utc", "home_team", "away_team",
+    "market_type", "event_ticker", "ticker", "team", "strike", "contract",
+    "yes_bid", "yes_ask", "no_bid", "no_ask", "kalshi_mid", "kalshi_prob", "last_price",
+    "yes_bid_size", "yes_ask_size", "volume", "volume_24h", "open_interest",
+    "model_prob", "model_predicted_at", "ev_yes", "ev_no",
+]
+
+def _kalshi_get(path: str, params: dict, attempts: int = 3) -> dict:
+    last_err = None
+    for i in range(attempts):
+        try:
+            r = requests.get(f"{KALSHI_API}{path}", params=params, timeout=20)
+            if r.status_code == 200:
+                return r.json()
+            last_err = f"HTTP {r.status_code}: {r.text[:200]}"
+        except requests.RequestException as e:
+            last_err = str(e)
+        time.sleep(2 ** i)
+    raise RuntimeError(f"Kalshi request {path} failed: {last_err}")
+
+def fetch_kalshi_markets(series: str) -> list[dict]:
+    """Every open market in a series (paginated)."""
+    markets, cursor = [], None
+    for _ in range(50):
+        params = {"series_ticker": series, "status": "open", "limit": 1000}
+        if cursor:
+            params["cursor"] = cursor
+        data = _kalshi_get("/markets", params)
+        batch = data.get("markets", [])
+        markets.extend(batch)
+        cursor = data.get("cursor")
+        if not cursor or not batch:
+            break
+    return markets
+
+def _kalshi_prob(m: dict, key: str) -> float:
+    """A price as a probability in [0, 1]: '<key>_dollars' ("0.4200") on the current API,
+    '<key>' in cents on older responses."""
+    for k, scale in ((f"{key}_dollars", 1.0), (key, 100.0)):
+        v = m.get(k)
+        if v not in (None, ""):
+            try:
+                return float(v) / scale
+            except (TypeError, ValueError):
+                pass
+    return np.nan
+
+def _kalshi_count(m: dict, key: str) -> float:
+    for k in (f"{key}_fp", key):
+        v = m.get(k)
+        if v not in (None, ""):
+            try:
+                return float(v)
+            except (TypeError, ValueError):
+                pass
+    return np.nan
+
+def _kalshi_abbr(code: str) -> str:
+    code = str(code).strip().upper()
+    return KALSHI_TEAM_ALIASES.get(code, code)
+
+def kalshi_game_lookup(games: pd.DataFrame) -> dict:
+    """Indexes games.csv for matching Kalshi events: {(ET date code, AWAY, HOME): game dict} plus a
+    teams-only fallback {(AWAY, HOME): [game dicts]} for games Kalshi dates differently (reschedules)."""
+    g = games.copy()
+    g["_kick"] = pd.to_datetime(g["start_date"], utc=True, errors="coerce")
+    g["_code"] = g["_kick"].dt.tz_convert(EASTERN_TZ).dt.strftime("%y%b%d").str.upper()
+    by_date, by_teams = {}, {}
+    for r in g.dropna(subset=["_kick"]).to_dict("records"):
+        game = {"game_id": r["game_id"], "season": r.get("season"), "week": r.get("week"),
+                "kickoff_utc": r["_kick"], "home_team": str(r["home_team"]).upper(),
+                "away_team": str(r["away_team"]).upper(), "completed": str(r.get("completed")).lower() == "true"}
+        by_date[(r["_code"], game["away_team"], game["home_team"])] = game
+        by_teams.setdefault((game["away_team"], game["home_team"]), []).append(game)
+    return {"by_date": by_date, "by_teams": by_teams}
+
+def match_kalshi_event(event_ticker: str, lookup: dict):
+    """KXNFLSPREAD-26OCT19WASSF -> the games.csv game (WAS @ SF on Oct 19 ET), or None."""
+    seg = event_ticker.split("-", 1)[1] if "-" in event_ticker else ""
+    date_code, blob = seg[:7].upper(), seg[7:].upper()
+    for i in range(2, len(blob) - 1):
+        away, home = _kalshi_abbr(blob[:i]), _kalshi_abbr(blob[i:])
+        for a, h in ((away, home), (home, away)):
+            hit = lookup["by_date"].get((date_code, a, h))
+            if hit is not None:
+                return hit
+        for a, h in ((away, home), (home, away)):
+            upcoming = [x for x in lookup["by_teams"].get((a, h), []) if not x["completed"]]
+            if upcoming:
+                return min(upcoming, key=lambda x: x["kickoff_utc"])
+    return None
+
+def _kalshi_strike(m: dict) -> float:
+    if m.get("floor_strike") is not None:
+        try:
+            return float(m["floor_strike"])
+        except (TypeError, ValueError):
+            pass
+    match = re.search(r"over\s+(\d+(?:\.\d+)?)", str(m.get("yes_sub_title") or m.get("title") or ""), re.I)
+    return float(match.group(1)) if match else np.nan
+
+def parse_kalshi_markets(markets: list[dict], market_type: str, lookup: dict) -> pd.DataFrame:
+    """One row per contract, matched to games.csv. Unmatched events are logged and skipped."""
+    rows, unmatched = [], set()
+    for m in markets:
+        ticker = m.get("ticker", "")
+        event = m.get("event_ticker") or ticker.rsplit("-", 1)[0]
+        game = match_kalshi_event(event, lookup)
+        if game is None:
+            unmatched.add(event)
+            continue
+        strike = _kalshi_strike(m)
+        if not np.isfinite(strike):
+            continue
+        team = None
+        if market_type == "spread":
+            code = re.match(r"[A-Za-z]+", ticker.rsplit("-", 1)[-1])
+            team = _kalshi_abbr(code.group(0)) if code else None
+            if team not in (game["home_team"], game["away_team"]):
+                LOG.warning("Kalshi %s: team %s is not in %s @ %s", ticker, team, game["away_team"], game["home_team"])
+                continue
+            contract = f"{team} wins by {strike:g}+"
+        else:
+            contract = f"Over {strike:g}"
+
+        bid, ask = _kalshi_prob(m, "yes_bid"), _kalshi_prob(m, "yes_ask")
+        bid = bid if np.isfinite(bid) and bid > 0 else np.nan            # 0 = no resting bids
+        ask = ask if np.isfinite(ask) and 0 < ask < 1 else np.nan        # 1.00 = no resting offers
+        last = _kalshi_prob(m, "last_price")
+        mid = (bid + ask) / 2 if np.isfinite(bid) and np.isfinite(ask) else np.nan
+        rows.append({
+            "game_id": game["game_id"], "season": game["season"], "week": game["week"],
+            "kickoff_utc": game["kickoff_utc"], "home_team": game["home_team"], "away_team": game["away_team"],
+            "market_type": market_type, "event_ticker": event, "ticker": ticker, "team": team,
+            "strike": strike, "contract": contract,
+            "yes_bid": bid, "yes_ask": ask, "no_bid": 1 - ask, "no_ask": 1 - bid,
+            "kalshi_mid": mid, "kalshi_prob": mid if np.isfinite(mid) else (last if last and last > 0 else np.nan),
+            "last_price": last,
+            "yes_bid_size": _kalshi_count(m, "yes_bid_size"), "yes_ask_size": _kalshi_count(m, "yes_ask_size"),
+            "volume": _kalshi_count(m, "volume"), "volume_24h": _kalshi_count(m, "volume_24h"),
+            "open_interest": _kalshi_count(m, "open_interest"),
+        })
+    if unmatched:
+        LOG.warning("Kalshi %s: %d event(s) with no games.csv match: %s", market_type, len(unmatched), sorted(unmatched)[:5])
+    return pd.DataFrame(rows)
+
+_MODEL_DRAWS_CACHE: dict = {}
+
+def latest_model_draws() -> dict:
+    """{game_id: {"total": sorted draws, "spread": sorted home-margin draws, "predicted_at": str}} from the
+    latest prediction of each game in predictions_history.csv. Cached on the file's mtime."""
+    if not PREDICTIONS_HISTORY_PATH.exists():
+        return {}
+    stamp = PREDICTIONS_HISTORY_PATH.stat().st_mtime
+    if _MODEL_DRAWS_CACHE.get("stamp") == stamp:
+        return _MODEL_DRAWS_CACHE["draws"]
+    hist = pd.read_csv(PREDICTIONS_HISTORY_PATH)
+    out = {}
+    if not hist.empty and "total_draws_json" in hist.columns:
+        hist["game_id"] = _norm_gid(hist["game_id"])
+        if "predicted_at" in hist.columns:
+            hist = hist.sort_values("predicted_at", kind="mergesort")
+        for r in hist.drop_duplicates("game_id", keep="last").to_dict("records"):
+            out[r["game_id"]] = {"total": _sorted_draws(r.get("total_draws_json")),
+                                 "spread": _sorted_draws(r.get("spread_draws_json")),
+                                 "predicted_at": r.get("predicted_at")}
+    _MODEL_DRAWS_CACHE.update(stamp=stamp, draws=out)
+    return out
+
+def kalshi_fee(p):
+    return KALSHI_TAKER_FEE_RATE * p * (1 - p)
+
+def model_prob_for_contract(market_type: str, strike: float, team, home_team: str, draws: dict | None) -> float:
+    """P(contract resolves YES) under the model's posterior-predictive draws."""
+    if draws is None:
+        return np.nan
+    if market_type == "total":
+        return _prob_above(draws.get("total"), strike)
+    s = draws.get("spread")                               # home margin = home - away
+    if s is None:
+        return np.nan
+    if team == home_team:
+        return _prob_above(s, strike)
+    return float(np.searchsorted(s, -strike, side="left") / s.size)   # away wins by > k  <=>  margin < -k
+
+def attach_model_probs(df: pd.DataFrame, draws_by_game: dict) -> pd.DataFrame:
+    """Adds model_prob, model_predicted_at and the fee-adjusted expected value of buying YES / NO at the ask."""
+    df = df.copy()
+    if df.empty:
+        for c in ("model_prob", "model_predicted_at", "ev_yes", "ev_no"):
+            df[c] = pd.Series(dtype=float)
+        return df
+    gids = _norm_gid(df["game_id"])
+    df["model_prob"] = [model_prob_for_contract(mt, k, t, h, draws_by_game.get(g))
+                        for mt, k, t, h, g in zip(df["market_type"], df["strike"], df["team"], df["home_team"], gids)]
+    df["model_predicted_at"] = [draws_by_game.get(g, {}).get("predicted_at") for g in gids]
+    df["ev_yes"] = df["model_prob"] - df["yes_ask"] - kalshi_fee(df["yes_ask"])
+    df["ev_no"] = (1 - df["model_prob"]) - df["no_ask"] - kalshi_fee(df["no_ask"])
+    return df
+
+def append_kalshi_history(snap: pd.DataFrame):
+    snap = snap.reindex(columns=KALSHI_COLUMNS)
+    if KALSHI_HISTORY_PATH.exists():
+        with open(KALSHI_HISTORY_PATH) as f:
+            header = f.readline().strip().split(",")
+        if header == KALSHI_COLUMNS:
+            snap.to_csv(KALSHI_HISTORY_PATH, mode="a", header=False, index=False)
+            return
+        snap = pd.concat([pd.read_csv(KALSHI_HISTORY_PATH), snap], ignore_index=True).reindex(columns=KALSHI_COLUMNS)
+    snap.to_csv(KALSHI_HISTORY_PATH, index=False)
+
+def run_kalshi_snapshot(set_progress) -> dict:
+    """Pulls every open NFL spread/total contract, prices it with the model, and appends the pregame
+    contracts to kalshi_history.csv."""
+    set_progress("Loading schedule and the latest model predictions...")
+    games = _load_csv("games.csv", max_age=0)
+    if games.empty:
+        raise RuntimeError("games.csv is empty or unavailable, so Kalshi events can't be matched to games.")
+    lookup = kalshi_game_lookup(games)
+    draws = latest_model_draws()
+
+    frames = []
+    for market_type, series in KALSHI_SERIES.items():
+        set_progress(f"Fetching open Kalshi {series} markets...")
+        frames.append(parse_kalshi_markets(fetch_kalshi_markets(series), market_type, lookup))
+    snap = pd.concat(frames, ignore_index=True)
+    if snap.empty:
+        raise RuntimeError("Kalshi returned no open NFL spread/total contracts that match a game in games.csv.")
+
+    now = pd.Timestamp.now(tz="UTC")
+    snap = snap[pd.to_datetime(snap["kickoff_utc"], utc=True) > now]          # pregame prices only
+    lo, hi = KALSHI_STORE_RANGE
+    snap = snap[snap["kalshi_prob"].between(lo, hi)]
+    if snap.empty:
+        raise RuntimeError("No pregame Kalshi contracts with a live price right now.")
+
+    set_progress(f"Pricing {len(snap)} contracts with the model...")
+    snap = attach_model_probs(snap, draws)
+    snap["snapshot_utc"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    snap["kickoff_utc"] = pd.to_datetime(snap["kickoff_utc"], utc=True).dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+    append_kalshi_history(snap)
+
+    n_priced = int(snap["model_prob"].notna().sum())
+    local = now.tz_convert(EASTERN_TZ).strftime("%a %b %d %I:%M %p ET")
+    msg = (f"Kalshi snapshot saved {local}: {len(snap)} contracts across {snap['game_id'].nunique()} games, "
+           f"{n_priced} priced by the model.")
+    if n_priced == 0:
+        msg += " Run step 3 (Predict Outcomes) for these games to get model probabilities."
+    set_progress(msg)
+    return {"ok": True, "snapshot_utc": snap["snapshot_utc"].iloc[0], "n": int(len(snap)), "message": msg}
+
+_KALSHI_HIST_CACHE: dict = {}
+
+def load_kalshi_history() -> pd.DataFrame:
+    """kalshi_history.csv with parsed timestamps; cached on the file's mtime."""
+    if not KALSHI_HISTORY_PATH.exists():
+        return pd.DataFrame(columns=KALSHI_COLUMNS)
+    stamp = KALSHI_HISTORY_PATH.stat().st_mtime
+    if _KALSHI_HIST_CACHE.get("stamp") != stamp:
+        kh = pd.read_csv(KALSHI_HISTORY_PATH)
+        kh["snapshot_utc"] = pd.to_datetime(kh["snapshot_utc"], utc=True, errors="coerce")
+        kh["kickoff_utc"] = pd.to_datetime(kh["kickoff_utc"], utc=True, errors="coerce")
+        kh["team"] = kh["team"].astype(object).where(kh["team"].notna(), None)
+        _KALSHI_HIST_CACHE.update(stamp=stamp, df=kh)
+    return _KALSHI_HIST_CACHE["df"].copy()
+
+def kalshi_home_view(df: pd.DataFrame) -> pd.DataFrame:
+    """Puts every contract on one axis so a game's whole ladder can be compared:
+    totals -> x = total points; spreads -> x = home margin. P(above x) for Kalshi (mid, bid, ask) and the model.
+    'AWAY wins by over k' is P(home margin < -k), i.e. 1 - P(home margin > -k)."""
+    d = df.copy()
+    away = (d["market_type"] == "spread") & (d["team"] != d["home_team"])
+    d["x"] = np.where(away, -d["strike"], d["strike"])
+    d["p_kalshi"] = np.where(away, 1 - d["kalshi_prob"], d["kalshi_prob"])
+    d["p_bid"] = np.where(away, 1 - d["yes_ask"], d["yes_bid"])
+    d["p_ask"] = np.where(away, 1 - d["yes_bid"], d["yes_ask"])
+    d["p_model"] = np.where(away, 1 - d["model_prob"], d["model_prob"])
+    return d.sort_values("x")
+
+def fair_line(x, p) -> float:
+    """The x where P(above x) crosses 50%, linearly interpolated: the market's (or model's) implied line."""
+    pts = sorted((float(a), float(b)) for a, b in zip(x, p) if np.isfinite(a) and np.isfinite(b))
+    for (x0, p0), (x1, p1) in zip(pts, pts[1:]):
+        if (p0 - 0.5) * (p1 - 0.5) <= 0 and p0 != p1:
+            return x0 + (0.5 - p0) * (x1 - x0) / (p1 - p0)
+    return np.nan
+
+def grade_kalshi_history(kh: pd.DataFrame, games: pd.DataFrame) -> pd.DataFrame:
+    """Each contract's CLOSING snapshot (the last one before kickoff) joined to the final score, with
+    outcome = 1 if the contract resolved YES."""
+    if kh is None or kh.empty or games is None or games.empty:
+        return pd.DataFrame()
+    k = kh[kh["snapshot_utc"] < kh["kickoff_utc"]].copy()
+    k = k.sort_values("snapshot_utc", kind="mergesort").drop_duplicates("ticker", keep="last")
+    k["game_id"] = _norm_gid(k["game_id"])
+    k = k.merge(completed_scores(games), on="game_id", how="inner")
+    if k.empty:
+        return k
+    total = k["home_points"] + k["away_points"]
+    margin = k["home_points"] - k["away_points"]
+    team_margin = np.where(k["team"] == k["home_team"], margin, -margin)
+    k["outcome"] = np.where(k["market_type"] == "total", total > k["strike"], team_margin > k["strike"]).astype(float)
+    return k.reset_index(drop=True)
+
+def _brier(p, y):
+    return float(np.mean((np.asarray(p) - np.asarray(y)) ** 2))
+
+def _log_loss(p, y):
+    p = np.clip(np.asarray(p, float), 0.01, 0.99)
+    y = np.asarray(y, float)
+    return float(-np.mean(y * np.log(p) + (1 - y) * np.log(1 - p)))
+
+def kalshi_scored(graded: pd.DataFrame, contested_only: bool) -> pd.DataFrame:
+    """Graded contracts that both the model and Kalshi priced (optionally only the contested strikes)."""
+    if graded is None or graded.empty:
+        return pd.DataFrame()
+    d = graded.dropna(subset=["model_prob", "kalshi_prob", "outcome"])
+    if contested_only:
+        d = d[d["kalshi_prob"].between(*KALSHI_CONTESTED_RANGE)]
+    return d
+
+def kalshi_skill_rows(scored: pd.DataFrame) -> list[dict]:
+    rows = []
+    for label, part in [("All", scored),
+                        ("Spreads", scored[scored["market_type"] == "spread"]),
+                        ("Totals", scored[scored["market_type"] == "total"])]:
+        if part.empty:
+            rows.append({"Market": label, "Contracts": 0, "Games": 0, "Model Brier": "—", "Kalshi Brier": "—",
+                         "Skill vs Kalshi": "—", "Model Log Loss": "—", "Kalshi Log Loss": "—"})
+            continue
+        bm, bk = _brier(part["model_prob"], part["outcome"]), _brier(part["kalshi_prob"], part["outcome"])
+        rows.append({
+            "Market": label, "Contracts": len(part), "Games": part["game_id"].nunique(),
+            "Model Brier": round(bm, 4), "Kalshi Brier": round(bk, 4),
+            "Skill vs Kalshi": f"{(1 - bm / bk) * 100:+.1f}%" if bk > 0 else "—",
+            "Model Log Loss": round(_log_loss(part["model_prob"], part["outcome"]), 4),
+            "Kalshi Log Loss": round(_log_loss(part["kalshi_prob"], part["outcome"]), 4),
+        })
+    return rows
+
+def kalshi_paper_trades(graded: pd.DataFrame, min_ev_cents: float, one_per_game: bool) -> pd.DataFrame:
+    """Hypothetical 1-contract taker trades at each contract's closing ask whenever the model's expected
+    value after fees was at least min_ev_cents. P&L is in dollars per contract."""
+    if graded is None or graded.empty:
+        return pd.DataFrame()
+    d = graded.dropna(subset=["model_prob", "outcome"]).copy()
+    d["side"] = np.where(d["ev_yes"].fillna(-1) >= d["ev_no"].fillna(-1), "YES", "NO")
+    d["ev"] = np.where(d["side"] == "YES", d["ev_yes"], d["ev_no"])
+    d["price"] = np.where(d["side"] == "YES", d["yes_ask"], d["no_ask"])
+    d = d[np.isfinite(d["ev"]) & np.isfinite(d["price"]) & (d["ev"] * 100 >= min_ev_cents)]
+    if d.empty:
+        return d
+    if one_per_game:
+        d = d.sort_values("ev", kind="mergesort").drop_duplicates(["game_id", "market_type"], keep="last")
+    d["won"] = np.where(d["side"] == "YES", d["outcome"] == 1, d["outcome"] == 0)
+    d["fee"] = kalshi_fee(d["price"])
+    d["pnl"] = d["won"].astype(float) - d["price"] - d["fee"]
+    d = d.sort_values(["kickoff_utc", "ticker"], kind="mergesort").reset_index(drop=True)
+    d["cum_pnl"] = d["pnl"].cumsum()
+    return d
+
+def _et(ts, fmt="%a %b %d %I:%M %p"):
+    ts = pd.to_datetime(ts, utc=True, errors="coerce")
+    return ts.dt.tz_convert(EASTERN_TZ).dt.strftime(fmt) if isinstance(ts, pd.Series) else (
+        ts.tz_convert(EASTERN_TZ).strftime(fmt) if pd.notna(ts) else "—")
+
+def _cents(p):
+    return round(float(p) * 100, 1) if pd.notna(p) else None
+
+def kalshi_ladder_figure(game_rows: pd.DataFrame, market_type: str, draws: dict | None):
+    """One game's whole ladder: Kalshi bid/ask/mid at every strike vs. the model's P(above x) curve."""
+    d = kalshi_home_view(game_rows[game_rows["market_type"] == market_type])
+    home, away = game_rows["home_team"].iloc[0], game_rows["away_team"].iloc[0]
+    fig = go.Figure()
+    if d.empty:
+        return apply_plotly_theme(fig, "No contracts for this market in the latest snapshot").update_layout(height=380)
+
+    s = (draws or {}).get("total" if market_type == "total" else "spread")
+    if s is not None:
+        grid = np.linspace(d["x"].min() - 3, d["x"].max() + 3, 200)
+        curve = 1.0 - np.searchsorted(s, grid, side="right") / s.size
+        fig.add_trace(go.Scatter(x=grid, y=curve * 100, name="Model P(above)", mode="lines",
+                                 line=dict(color=theme['colors'][4], width=3),
+                                 hovertemplate="x %{x:.1f}<br>Model %{y:.1f}%<extra></extra>"))
+    elif d["p_model"].notna().any():
+        fig.add_trace(go.Scatter(x=d["x"], y=d["p_model"] * 100, name="Model P(above)", mode="lines+markers",
+                                 line=dict(color=theme['colors'][4], width=3)))
+
+    err_hi = (d["p_ask"] - d["p_kalshi"]).clip(lower=0) * 100
+    err_lo = (d["p_kalshi"] - d["p_bid"]).clip(lower=0) * 100
+    fig.add_trace(go.Scatter(
+        x=d["x"], y=d["p_kalshi"] * 100, name="Kalshi mid (bid–ask bar)", mode="markers",
+        marker=dict(color=theme['colors'][1], size=9),
+        error_y=dict(type="data", symmetric=False, array=err_hi.fillna(0), arrayminus=err_lo.fillna(0),
+                     color=theme['colors'][2], thickness=1.5, width=4),
+        customdata=np.stack([d["contract"], d["p_bid"] * 100, d["p_ask"] * 100], axis=-1),
+        hovertemplate="%{customdata[0]}<br>Kalshi mid %{y:.1f}%<br>bid %{customdata[1]:.0f}% · ask %{customdata[2]:.0f}%<extra></extra>"))
+
+    k_line = fair_line(d["x"], d["p_kalshi"])
+    m_line = float(np.median(s)) if s is not None else fair_line(d["x"], d["p_model"])
+    fig.add_hline(y=50, line_dash="dot", line_color=theme['grid'])
+    if np.isfinite(k_line):
+        fig.add_vline(x=k_line, line_dash="dash", line_color=theme['colors'][1],
+                      annotation_text=f"Kalshi line {k_line:.1f}", annotation_position="top left")
+    if np.isfinite(m_line):
+        fig.add_vline(x=m_line, line_dash="dash", line_color=theme['colors'][4],
+                      annotation_text=f"Model line {m_line:.1f}", annotation_position="bottom right")
+    if market_type == "spread":
+        title = f"{away} @ {home} — spread ladder"
+        x_title = f"{home} margin ({home} − {away});  '{away} wins by k+' is plotted at −k"
+        y_title = f"P({home} margin > x), %"
+    else:
+        title = f"{away} @ {home} — totals ladder"
+        x_title, y_title = "Total points", "P(total > x), %"
+    fig.update_layout(xaxis_title=x_title, yaxis=dict(title=y_title, range=[0, 100]), hovermode="closest")
+    return apply_plotly_theme(fig, title).update_layout(height=400)
+
+def kalshi_line_history_figure(game_hist: pd.DataFrame, market_type: str):
+    """Kalshi's implied line vs. the model's line at every snapshot taken for this game."""
+    d = game_hist[game_hist["market_type"] == market_type]
+    fig = go.Figure()
+    pts = []
+    for ts, snap in d.groupby("snapshot_utc"):
+        v = kalshi_home_view(snap)
+        pts.append((ts, fair_line(v["x"], v["p_kalshi"]), fair_line(v["x"], v["p_model"])))
+    if pts:
+        p = pd.DataFrame(pts, columns=["ts", "kalshi", "model"]).sort_values("ts")
+        p["ts_et"] = p["ts"].dt.tz_convert(EASTERN_TZ).dt.tz_localize(None)
+        fig.add_trace(go.Scatter(x=p["ts_et"], y=p["kalshi"], name="Kalshi implied line", mode="lines+markers",
+                                 line=dict(color=theme['colors'][1], width=2)))
+        fig.add_trace(go.Scatter(x=p["ts_et"], y=p["model"], name="Model line", mode="lines+markers",
+                                 line=dict(color=theme['colors'][4], width=2, dash="dot")))
+    home = d["home_team"].iloc[0] if not d.empty else ""
+    y_title = f"{home} margin" if market_type == "spread" else "Total points"
+    fig.update_layout(xaxis_title="Snapshot time (ET)", yaxis_title=y_title, hovermode="x unified")
+    return apply_plotly_theme(fig, "Line movement — Kalshi vs. model, by snapshot").update_layout(height=340)
+
+def kalshi_weekly_figure(scored: pd.DataFrame):
+    sq = scored.assign(model=(scored["model_prob"] - scored["outcome"]) ** 2,
+                       kalshi=(scored["kalshi_prob"] - scored["outcome"]) ** 2)
+    w = sq.groupby("week").agg(model=("model", "mean"), kalshi=("kalshi", "mean"), n=("outcome", "size")).reset_index()
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=w["week"], y=w["kalshi"], name="Kalshi", mode="lines+markers",
+                             line=dict(color=theme['colors'][1], width=2), customdata=w["n"],
+                             hovertemplate="Week %{x}<br>Kalshi Brier %{y:.4f}<br>%{customdata} contracts<extra></extra>"))
+    fig.add_trace(go.Scatter(x=w["week"], y=w["model"], name="Model", mode="lines+markers",
+                             line=dict(color=theme['colors'][4], width=2), customdata=w["n"],
+                             hovertemplate="Week %{x}<br>Model Brier %{y:.4f}<br>%{customdata} contracts<extra></extra>"))
+    fig.update_layout(xaxis_title="Week", yaxis_title="Brier score (lower is better)", hovermode="x unified")
+    return apply_plotly_theme(fig, "Model vs. Kalshi, week by week").update_layout(height=340)
+
+def kalshi_calibration_figure(scored: pd.DataFrame):
+    bins = np.linspace(0, 1, 11)
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=[0, 100], y=[0, 100], mode="lines", name="Perfect calibration",
+                             line=dict(color=theme['grid'], dash="dot"), hoverinfo="skip"))
+    for col, name, color in [("kalshi_prob", "Kalshi", theme['colors'][1]), ("model_prob", "Model", theme['colors'][4])]:
+        b = pd.cut(scored[col], bins, include_lowest=True)
+        c = scored.groupby(b, observed=True).agg(p=(col, "mean"), y=("outcome", "mean"), n=("outcome", "size")).reset_index()
+        fig.add_trace(go.Scatter(x=c["p"] * 100, y=c["y"] * 100, name=name, mode="lines+markers",
+                                 marker=dict(size=np.clip(np.sqrt(c["n"]) * 3, 6, 20)), line=dict(color=color, width=2),
+                                 customdata=c["n"],
+                                 hovertemplate=f"{name} said %{{x:.0f}}%<br>Happened %{{y:.0f}}%<br>%{{customdata}} contracts<extra></extra>"))
+    fig.update_layout(xaxis=dict(title="Predicted probability (%)", range=[0, 100]),
+                      yaxis=dict(title="Actual YES rate (%)", range=[0, 100]))
+    return apply_plotly_theme(fig, "Calibration — closing price vs. actual result").update_layout(height=340)
+
+def kalshi_pnl_figure(trades: pd.DataFrame):
+    fig = go.Figure()
+    x = trades["kickoff_utc"].dt.tz_convert(EASTERN_TZ).dt.tz_localize(None)
+    fig.add_trace(go.Scatter(x=x, y=trades["cum_pnl"], mode="lines+markers", name="Cumulative P&L",
+                             line=dict(color=theme['colors'][1], width=2, shape="hv"),
+                             customdata=np.stack([trades["contract"], trades["side"], trades["price"] * 100,
+                                                  trades["pnl"]], axis=-1),
+                             hovertemplate="%{customdata[1]} %{customdata[0]} @ %{customdata[2]:.0f}¢"
+                                           "<br>P&L %{customdata[3]:+.2f}<br>Cumulative %{y:+.2f}<extra></extra>"))
+    fig.add_hline(y=0, line_dash="dot", line_color=theme['negative'])
+    fig.update_layout(xaxis_title="Kickoff (ET)", yaxis_title="$ per 1-contract bet", hovermode="closest")
+    return apply_plotly_theme(fig, "Paper-trade P&L at closing Kalshi prices").update_layout(height=340)
+
+# =============================================================================
 # DASHBOARD UI (BORDERLESS & PROGRESS AWARE)
 # =============================================================================
 app = Dash(__name__, background_callback_manager=DiskcacheManager(diskcache.Cache(str(Path("/tmp/nfl_dash_cache")))), suppress_callback_exceptions=True)
@@ -1417,6 +1919,57 @@ tab3_layout = html.Div([
     dcc.Loading(html.Div(id="tab3-results"))
 ])
 
+KALSHI_RADIO_LABEL = {'color': theme['card_bg'], 'marginRight': '18px', 'fontWeight': '600'}
+
+tab4_layout = html.Div([
+    html.Div([
+        html.Button("Pull Kalshi Odds Now", id="kalshi-pull-btn", n_clicks=0, style=BTN_STYLE),
+        dcc.Checklist(id="kalshi-auto", value=[],
+                      options=[{"label": f" Auto-snapshot every {KALSHI_AUTO_SNAPSHOT_MIN} min while this dashboard is open",
+                                "value": "on"}],
+                      labelStyle=KALSHI_RADIO_LABEL),
+    ], style={"display": "flex", "alignItems": "center", "flexWrap": "wrap", "gap": "8px", "marginBottom": "10px"}),
+    html.Div(id="kalshi-status", style={"color": "#E5D9C5", "fontSize": "14px", "fontWeight": "600", "marginBottom": "16px"}),
+    dcc.Interval(id="kalshi-interval", interval=KALSHI_AUTO_SNAPSHOT_MIN * 60 * 1000, disabled=True),
+    dcc.Store(id="kalshi-store"),
+
+    html.Div([
+        html.Label("Minimum expected value to flag / paper-trade (¢ per contract, after fees)",
+                   style={"fontWeight": "700", "color": theme['text_main'], "fontSize": "13.5px"}),
+        dcc.Slider(id="kalshi-min-ev", min=0, max=15, step=0.5, value=KALSHI_DEFAULT_MIN_EV,
+                   marks={v: f"{v}¢" for v in range(0, 16, 3)}, tooltip={"placement": "bottom", "always_visible": True}),
+    ], style={**CARD_STYLE, "padding": "18px 28px 30px 28px"}),
+
+    html.Div([
+        html.Span("Market: ", style=CONTROL_LABEL_STYLE),
+        dcc.RadioItems(id="kalshi-market-filter", value="all", inline=True, labelStyle=KALSHI_RADIO_LABEL,
+                       options=[{"label": " All", "value": "all"}, {"label": " Spreads", "value": "spread"},
+                                {"label": " Totals", "value": "total"}]),
+        dcc.Checklist(id="kalshi-only-edges", value=[], labelStyle=KALSHI_RADIO_LABEL,
+                      options=[{"label": " Only contracts at or above the minimum EV", "value": "on"}]),
+    ], style={"display": "flex", "alignItems": "center", "flexWrap": "wrap", "gap": "8px", "marginBottom": "14px"}),
+    dcc.Loading(html.Div(id="kalshi-live-results")),
+
+    section_header("Game ladder", "Every Kalshi strike for one game against the model's distribution"),
+    html.Div([
+        dcc.Dropdown(id="kalshi-game-dropdown", clearable=False, placeholder="Pick a game",
+                     style={"width": "360px", "color": theme['text_main'], "fontFamily": theme['font']}),
+        dcc.RadioItems(id="kalshi-ladder-market", value="spread", inline=True, labelStyle=KALSHI_RADIO_LABEL,
+                       options=[{"label": " Spread", "value": "spread"}, {"label": " Total", "value": "total"}]),
+    ], style={"display": "flex", "alignItems": "center", "flexWrap": "wrap", "gap": "16px", "marginBottom": "14px"}),
+    dcc.Loading(html.Div(id="kalshi-game-charts")),
+
+    section_header("Historical tracker", "Closing Kalshi price vs. the model on every graded contract"),
+    html.Div([
+        dcc.Checklist(id="kalshi-contested", value=["on"], labelStyle=KALSHI_RADIO_LABEL,
+                      options=[{"label": f" Contested strikes only (Kalshi {KALSHI_CONTESTED_RANGE[0]:.0%}–"
+                                         f"{KALSHI_CONTESTED_RANGE[1]:.0%})", "value": "on"}]),
+        dcc.Checklist(id="kalshi-one-per-game", value=["on"], labelStyle=KALSHI_RADIO_LABEL,
+                      options=[{"label": " Paper-trade one contract per game & market (best EV)", "value": "on"}]),
+    ], style={"display": "flex", "alignItems": "center", "flexWrap": "wrap", "gap": "8px", "marginBottom": "14px"}),
+    dcc.Loading(html.Div(id="kalshi-history-results")),
+])
+
 app.layout = html.Div([
     html.Div([
         html.H1("NFL Projections & Insight Ledger", style={"margin": "0", "color": "#FFFDF8", "fontSize": "28px", "fontWeight": "800", "letterSpacing": "0.5px"}),
@@ -1427,15 +1980,18 @@ app.layout = html.Div([
         dcc.Tab(label="Forecast & Models", value="tab1", style=TAB_STYLE, selected_style=TAB_SELECTED_STYLE),
         dcc.Tab(label="Skill & Evaluation", value="tab2", style=TAB_STYLE, selected_style=TAB_SELECTED_STYLE),
         dcc.Tab(label="💰 Money Ball", value="tab3", style=TAB_STYLE, selected_style=TAB_SELECTED_STYLE),
+        dcc.Tab(label="📈 Kalshi", value="tab4", style=TAB_STYLE, selected_style=TAB_SELECTED_STYLE),
     ]),
 
     html.Div(tab1_layout, id="tab1-page", style={"padding": "36px 40px", "display": "block"}),
     html.Div(tab2_layout, id="tab2-page", style={"padding": "36px 40px", "display": "none"}),
     html.Div(tab3_layout, id="tab3-page", style={"padding": "36px 40px", "display": "none"}),
+    html.Div(tab4_layout, id="tab4-page", style={"padding": "36px 40px", "display": "none"}),
 ], style={"fontFamily": theme['font'], "backgroundColor": theme['page_bg'], "minHeight": "100vh", "padding": "0", "margin": "0"})
 
 @app.callback(
     Output("tab1-page", "style"), Output("tab2-page", "style"), Output("tab3-page", "style"),
+    Output("tab4-page", "style"),
     Input("tabs", "value")
 )
 def toggle_tab_visibility(tab):
@@ -1445,6 +2001,7 @@ def toggle_tab_visibility(tab):
         shown if tab == "tab1" else hidden,
         shown if tab == "tab2" else hidden,
         shown if tab == "tab3" else hidden,
+        shown if tab == "tab4" else hidden,
     )
 
 @app.callback(
@@ -1845,6 +2402,221 @@ def render_moneyball(ci_pct, store_data):
                         html.Div(dcc.Graph(figure=moneyball_sweep_figure(sweep_df, "Spreads", "Spreads Selectivity", "Spreads Win Rate", conf_level)), style={"flex": 1, "minWidth": "380px", **CARD_STYLE}),
                     ], style={"display": "flex", "gap": "20px", "flexWrap": "wrap"}))
 
+    return html.Div(sections)
+
+# -----------------------------
+# TAB 4 CALLBACKS — Kalshi
+# -----------------------------
+@app.callback(Output("kalshi-interval", "disabled"), Input("kalshi-auto", "value"))
+def toggle_kalshi_auto(value):
+    return "on" not in (value or [])
+
+@app.callback(
+    Output("kalshi-store", "data"),
+    Input("kalshi-pull-btn", "n_clicks"), Input("kalshi-interval", "n_intervals"),
+    background=True,
+    running=[(Output("kalshi-pull-btn", "disabled"), True, False)],
+    progress=[Output("kalshi-status", "children")],
+    prevent_initial_call=True
+)
+def kalshi_snapshot_callback(set_progress, n_clicks, n_intervals):
+    try:
+        return run_kalshi_snapshot(lambda msg: set_progress([msg]))
+    except Exception as e:
+        LOG.exception("Kalshi snapshot failed")
+        set_progress([f"⚠ Kalshi snapshot failed: {e}"])
+        return {"ok": False, "error": str(e)}
+
+def _latest_kalshi_snapshot() -> pd.DataFrame:
+    """Most recent snapshot's contracts for games that haven't kicked off, re-priced with the model's
+    CURRENT predictions (so re-running step 3 updates the comparison without a new Kalshi pull)."""
+    kh = load_kalshi_history()
+    if kh.empty:
+        return kh
+    latest = kh[kh["snapshot_utc"] == kh["snapshot_utc"].max()]
+    latest = latest[latest["kickoff_utc"] > pd.Timestamp.now(tz="UTC")]
+    if latest.empty:
+        return latest
+    return attach_model_probs(latest.drop(columns=["model_prob", "model_predicted_at", "ev_yes", "ev_no"]),
+                              latest_model_draws())
+
+@app.callback(
+    Output("kalshi-live-results", "children"),
+    Output("kalshi-game-dropdown", "options"), Output("kalshi-game-dropdown", "value"),
+    Input("kalshi-store", "data"), Input("kalshi-market-filter", "value"),
+    Input("kalshi-min-ev", "value"), Input("kalshi-only-edges", "value"),
+    State("kalshi-game-dropdown", "value"),
+)
+def render_kalshi_live(store_data, market_filter, min_ev, only_edges, current_game):
+    min_ev = float(min_ev or 0)
+    kh = load_kalshi_history()
+    games_in_hist = (kh.sort_values("kickoff_utc", ascending=False).drop_duplicates("game_id")
+                     if not kh.empty else kh)
+    options = [{"label": f"Wk {int(r.week) if pd.notna(r.week) else '?'} · {r.away_team} @ {r.home_team} "
+                         f"({_et(r.kickoff_utc, '%b %d')})", "value": r.game_id}
+               for r in games_in_hist.itertuples()]
+
+    snap = _latest_kalshi_snapshot()
+    valid_ids = {o["value"] for o in options}
+    if current_game in valid_ids:
+        game_value = current_game
+    elif not snap.empty:
+        game_value = snap.sort_values("kickoff_utc")["game_id"].iloc[0]
+    else:
+        game_value = options[0]["value"] if options else None
+
+    header = section_header("Kalshi vs. Model — upcoming games",
+                            "Latest snapshot. EV = model probability − ask − Kalshi taker fee, in cents per $1 contract.")
+    if snap.empty:
+        msg = ("No Kalshi snapshot yet." if kh.empty else "The latest snapshot has no games that haven't kicked off.")
+        return html.Div([header, empty_state(msg, "Press “Pull Kalshi Odds Now” to fetch every open NFL spread and total contract.")]), options, game_value
+
+    d = snap if market_filter in (None, "all") else snap[snap["market_type"] == market_filter]
+    d = d.copy()
+    d["best_side"] = np.where(d["ev_yes"].fillna(-1) >= d["ev_no"].fillna(-1), "YES", "NO")
+    d["best_ev"] = np.where(d["best_side"] == "YES", d["ev_yes"], d["ev_no"])
+    if "on" in (only_edges or []):
+        d = d[d["best_ev"] * 100 >= min_ev]
+    d = d.sort_values("best_ev", ascending=False, na_position="last")
+
+    table = pd.DataFrame({
+        "kickoff": _et(d["kickoff_utc"]),
+        "game": d["away_team"] + " @ " + d["home_team"],
+        "market": d["market_type"].str.title(),
+        "contract": d["contract"],
+        "bid": [_cents(v) for v in d["yes_bid"]],
+        "ask": [_cents(v) for v in d["yes_ask"]],
+        "kalshi": [_cents(v) for v in d["kalshi_prob"]],
+        "model": [_cents(v) for v in d["model_prob"]],
+        "diff": [round((m - k) * 100, 1) if pd.notna(m) and pd.notna(k) else None
+                 for m, k in zip(d["model_prob"], d["kalshi_prob"])],
+        "side": np.where(d["best_ev"].notna(), "Buy " + d["best_side"], "—"),
+        "ev": [_cents(v) for v in d["best_ev"]],
+        "volume": d["volume"].fillna(0).astype(int),
+    })
+    columns = [{"name": n, "id": i} for n, i in [
+        ("Kickoff (ET)", "kickoff"), ("Game", "game"), ("Market", "market"), ("Contract (YES =)", "contract"),
+        ("Bid ¢", "bid"), ("Ask ¢", "ask"), ("Kalshi %", "kalshi"), ("Model %", "model"),
+        ("Model − Kalshi (pts)", "diff"), ("Best side", "side"), ("EV ¢", "ev"), ("Volume", "volume")]]
+
+    snap_time = _et(snap["snapshot_utc"].iloc[0], "%a %b %d %I:%M %p ET")
+    n_priced = int(snap["model_prob"].notna().sum())
+    n_edges = int(((snap[["ev_yes", "ev_no"]].max(axis=1) * 100) >= min_ev).sum())
+    kpis = html.Div([
+        kpi_card("Snapshot", snap_time, f"{snap['game_id'].nunique()} games · {len(snap)} contracts"),
+        kpi_card("Priced by model", f"{n_priced} / {len(snap)}",
+                 "Run step 3 for games without model draws" if n_priced < len(snap) else "All contracts priced"),
+        kpi_card(f"Contracts with EV ≥ {min_ev:g}¢", f"{n_edges}", "Strikes on one game are highly correlated"),
+    ], style={"display": "flex", "gap": "20px", "flexWrap": "wrap", "marginBottom": "20px"})
+
+    edge_style = [
+        {"if": {"filter_query": f"{{ev}} >= {min_ev}"}, "fontWeight": "bold", "color": theme['positive']},
+        {"if": {"filter_query": "{model} is blank"}, "color": theme['text_muted']},
+    ]
+    return html.Div([
+        header, kpis,
+        html.Div(dash_table.DataTable(
+            data=table.to_dict("records"), columns=columns, sort_action="native", filter_action="native",
+            page_size=20, style_cell=TABLE_STYLE_CELL, style_header=TABLE_STYLE_HEADER,
+            style_data_conditional=edge_style,
+        ), style={"marginBottom": "28px", "borderRadius": "12px", "overflowX": "auto"}),
+    ]), options, game_value
+
+@app.callback(
+    Output("kalshi-game-charts", "children"),
+    Input("kalshi-game-dropdown", "value"), Input("kalshi-ladder-market", "value"), Input("kalshi-store", "data"),
+)
+def render_kalshi_game(game_id, market_type, store_data):
+    if not game_id:
+        return empty_state("No Kalshi history yet.", "Pull Kalshi odds to start building the ladder and line history.")
+    kh = load_kalshi_history()
+    game_hist = kh[kh["game_id"] == game_id]
+    if game_hist.empty:
+        return empty_state("No snapshots for this game.")
+    latest = game_hist[game_hist["snapshot_utc"] == game_hist["snapshot_utc"].max()]
+    draws = latest_model_draws().get(str(game_id).strip().lower())
+    if draws is not None:   # price the ladder with the model's current predictions
+        latest = attach_model_probs(latest.drop(columns=["model_prob", "model_predicted_at", "ev_yes", "ev_no"]),
+                                    {str(game_id).strip().lower(): draws})
+    return html.Div([
+        html.Div(dcc.Graph(figure=kalshi_ladder_figure(latest, market_type, draws), config={"displayModeBar": False}),
+                 style={"flex": 1, "minWidth": "420px", **CARD_STYLE}),
+        html.Div(dcc.Graph(figure=kalshi_line_history_figure(game_hist, market_type), config={"displayModeBar": False}),
+                 style={"flex": 1, "minWidth": "420px", **CARD_STYLE}),
+    ], style={"display": "flex", "gap": "20px", "flexWrap": "wrap"})
+
+@app.callback(
+    Output("kalshi-history-results", "children"),
+    Input("kalshi-store", "data"), Input("kalshi-min-ev", "value"),
+    Input("kalshi-contested", "value"), Input("kalshi-one-per-game", "value"),
+)
+def render_kalshi_history(store_data, min_ev, contested, one_per_game):
+    min_ev = float(min_ev or 0)
+    kh = load_kalshi_history()
+    if kh.empty:
+        return empty_state("No Kalshi history yet.", "Every snapshot you pull is saved to kalshi_history.csv and graded once games finish.")
+    games = _load_csv("games.csv")
+    graded = grade_kalshi_history(kh, games)
+    if graded.empty:
+        return empty_state("No graded contracts yet.",
+                           f"{kh['snapshot_utc'].nunique()} snapshot(s) saved. Contracts are graded at their last pregame "
+                           "snapshot once games.csv has final scores.")
+
+    scored = kalshi_scored(graded, "on" in (contested or []))
+    trades = kalshi_paper_trades(graded, min_ev, "on" in (one_per_game or []))
+    sections = [
+        html.P("Each contract is scored at its CLOSING snapshot (the last one you pulled before kickoff). Brier score "
+               "is the mean squared error of the probability (lower is better); skill vs. Kalshi > 0 means the model "
+               "beat Kalshi's closing price. Pull a snapshot shortly before kickoff each game day for a true closing line.",
+               style={"fontSize": "12.5px", "color": theme['border'], "maxWidth": "900px", "marginTop": "0"}),
+    ]
+    if scored.empty:
+        sections.append(empty_state("No graded contracts that the model priced yet.",
+                                    "The model needs predictions_history draws for a game at the time of the snapshot."))
+    else:
+        sections.append(html.Div(dash_table.DataTable(
+            data=kalshi_skill_rows(scored),
+            columns=[{"name": c, "id": c} for c in ["Market", "Contracts", "Games", "Model Brier", "Kalshi Brier",
+                                                    "Skill vs Kalshi", "Model Log Loss", "Kalshi Log Loss"]],
+            style_cell=TABLE_STYLE_CELL, style_header=TABLE_STYLE_HEADER,
+        ), style={"marginBottom": "20px", "borderRadius": "12px", "overflowX": "auto"}))
+        sections.append(html.Div([
+            html.Div(dcc.Graph(figure=kalshi_weekly_figure(scored), config={"displayModeBar": False}),
+                     style={"flex": 1, "minWidth": "380px", **CARD_STYLE}),
+            html.Div(dcc.Graph(figure=kalshi_calibration_figure(scored), config={"displayModeBar": False}),
+                     style={"flex": 1, "minWidth": "380px", **CARD_STYLE}),
+        ], style={"display": "flex", "gap": "20px", "flexWrap": "wrap"}))
+
+    sections.append(section_header("Paper trading",
+                                   f"Buy 1 contract at the closing ask whenever the model's EV ≥ {min_ev:g}¢ after fees"))
+    if trades.empty:
+        sections.append(empty_state("No graded contracts cleared the EV threshold."))
+    else:
+        cost = float((trades["price"] + trades["fee"]).sum())
+        pnl = float(trades["pnl"].sum())
+        sections.append(html.Div([
+            kpi_card("Bets", f"{len(trades)}", f"{trades['game_id'].nunique()} games"),
+            kpi_card("Win rate", f"{trades['won'].mean() * 100:.1f}%",
+                     f"Avg price {trades['price'].mean() * 100:.0f}¢ — breakeven ≈ avg price + fee"),
+            kpi_card("P&L", f"${pnl:+.2f}", f"on ${cost:.2f} staked · ROI {pnl / cost * 100:+.1f}%" if cost else None),
+            kpi_card("Avg EV at entry", f"{trades['ev'].mean() * 100:.1f}¢", "What the model expected per contract"),
+        ], style={"display": "flex", "gap": "20px", "flexWrap": "wrap", "marginBottom": "20px"}))
+        sections.append(html.Div(dcc.Graph(figure=kalshi_pnl_figure(trades), config={"displayModeBar": False}),
+                                 style=CARD_STYLE))
+        recent = trades.sort_values("kickoff_utc", ascending=False).head(50)
+        sections.append(html.Div(dash_table.DataTable(
+            data=pd.DataFrame({
+                "Week": recent["week"], "Game": recent["away_team"] + " @ " + recent["home_team"],
+                "Contract": recent["contract"], "Side": recent["side"],
+                "Price ¢": (recent["price"] * 100).round(0), "Model %": (recent["model_prob"] * 100).round(1),
+                "EV ¢": (recent["ev"] * 100).round(1), "Result": np.where(recent["won"], "Won", "Lost"),
+                "P&L $": recent["pnl"].round(2),
+            }).to_dict("records"),
+            columns=[{"name": c, "id": c} for c in ["Week", "Game", "Contract", "Side", "Price ¢", "Model %",
+                                                    "EV ¢", "Result", "P&L $"]],
+            sort_action="native", page_size=15, style_cell=TABLE_STYLE_CELL, style_header=TABLE_STYLE_HEADER,
+            style_data_conditional=[{"if": {"filter_query": '{Result} = "Won"'}, "color": theme['positive'], "fontWeight": "bold"}],
+        ), style={"borderRadius": "12px", "overflowX": "auto"}))
     return html.Div(sections)
 
 app.server.add_url_rule('/_dash-update-component', endpoint='_dash-update-component')
