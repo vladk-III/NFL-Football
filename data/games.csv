@@ -78,7 +78,7 @@ game_id,season,week,game_type,start_date,home_team,home_points,away_team,away_po
 2026_05_SF_SEA,2026,5,REG,2026-10-11T20:25:00+00:00,SEA,29.0,SF,32.0,Lumen Field,,True
 2026_05_BAL_ATL,2026,5,REG,2026-10-12T00:20:00+00:00,ATL,23.0,BAL,30.0,Mercedes-Benz Stadium,,True
 2026_05_BUF_LA,2026,5,REG,2026-10-13T00:15:00+00:00,LA,34.0,BUF,37.0,SoFi Stadium,,True
-2026_06_SEA_DEN,2026,6,REG,2026-10-16T00:15:00+00:00,DEN,,SEA,,Empower Field at Mile High,,False
+2026_06_SEA_DEN,2026,6,REG,2026-10-16T00:15:00+00:00,DEN,17.0,SEA,14.0,Empower Field at Mile High,,True
 2026_06_HOU_JAX,2026,6,REG,2026-10-18T13:30:00+00:00,JAX,,HOU,,Wembley Stadium,,False
 2026_06_CHI_ATL,2026,6,REG,2026-10-18T17:00:00+00:00,ATL,,CHI,,Mercedes-Benz Stadium,,False
 2026_06_BAL_CLE,2026,6,REG,2026-10-18T17:00:00+00:00,CLE,,BAL,,Huntington Bank Field,,False
