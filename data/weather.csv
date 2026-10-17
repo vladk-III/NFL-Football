@@ -130,18 +130,18 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_06_NYJ_NE,Gillette Stadium,50.1,0.0,8.7,outdoors,False
-2026_06_NO_NYG,MetLife Stadium,54.5,0.0,9.7,outdoors,False
-2026_06_CAR_PHI,Lincoln Financial Field,54.6,0.0,12.3,outdoors,False
-2026_06_PIT_TB,Raymond James Stadium,74.8,0.0,16.6,outdoors,False
-2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,64.8,0.0,12.6,outdoors,False
-2026_06_DAL_GB,Lambeau Field,52.0,0.0,13.4,outdoors,False
-2026_06_WAS_SF,Levi's Stadium,64.7,0.0,11.2,outdoors,False
-2026_07_NE_CHI,Soldier Field,58.9,0.0,4.3,outdoors,False
-2026_07_CIN_BAL,M&T Bank Stadium,58.9,0.0,9.8,outdoors,False
-2026_07_TB_CAR,Bank of America Stadium,59.3,0.0,14.2,outdoors,False
-2026_07_MIA_NYJ,MetLife Stadium,55.5,0.0,10.0,outdoors,False
-2026_07_CLE_TEN,Nissan Stadium,70.1,0.0,0.9,outdoors,False
-2026_07_KC_SEA,Lumen Field,54.2,0.0,5.9,outdoors,False
-2026_07_DAL_PHI,Lincoln Financial Field,59.5,0.0,3.2,outdoors,False
-2026_08_CAR_GB,Lambeau Field,57.6,0.0,8.2,outdoors,False
+2026_06_NYJ_NE,Gillette Stadium,50.0,0.0,1.1,outdoors,False
+2026_06_NO_NYG,MetLife Stadium,54.4,0.0,6.3,outdoors,False
+2026_06_CAR_PHI,Lincoln Financial Field,53.3,0.0,7.8,outdoors,False
+2026_06_PIT_TB,Raymond James Stadium,75.7,0.0,14.6,outdoors,False
+2026_06_LAC_KC,GEHA Field at Arrowhead Stadium,63.2,0.0,12.0,outdoors,False
+2026_06_DAL_GB,Lambeau Field,49.3,0.0,8.1,outdoors,False
+2026_06_WAS_SF,Levi's Stadium,65.9,0.0,10.2,outdoors,False
+2026_07_NE_CHI,Soldier Field,62.5,0.0,2.0,outdoors,False
+2026_07_CIN_BAL,M&T Bank Stadium,62.2,0.0,4.5,outdoors,False
+2026_07_TB_CAR,Bank of America Stadium,66.2,0.0,8.1,outdoors,False
+2026_07_MIA_NYJ,MetLife Stadium,59.4,0.0,4.9,outdoors,False
+2026_07_CLE_TEN,Nissan Stadium,71.9,0.0,6.7,outdoors,False
+2026_07_KC_SEA,Lumen Field,50.3,0.008,6.6,outdoors,False
+2026_07_DAL_PHI,Lincoln Financial Field,62.9,0.0,5.8,outdoors,False
+2026_08_CAR_GB,Lambeau Field,50.5,0.0,7.9,outdoors,False
