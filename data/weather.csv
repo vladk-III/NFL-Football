@@ -137,7 +137,7 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_07_NE_CHI,Soldier Field,55.7,0.0,4.8,outdoors,False
+2026_07_NE_CHI,Soldier Field,56.8,0.0,4.6,outdoors,False
 2026_07_CIN_BAL,M&T Bank Stadium,63.5,0.0,2.1,outdoors,False
 2026_07_TB_CAR,Bank of America Stadium,64.8,0.0,8.7,outdoors,False
 2026_07_MIA_NYJ,MetLife Stadium,63.7,0.0,3.5,outdoors,False

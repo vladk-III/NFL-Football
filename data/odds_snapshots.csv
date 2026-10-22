@@ -2220,3 +2220,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-22T14:13:01.049176-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,mybookieag,-3.0,-110.0,51.0,-110.0,-160.0,136.0
 2026-10-22T14:13:01.049176-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,betmgm,-3.0,-102.0,50.5,-110.0,-155.0,130.0
 2026-10-22T14:13:01.049176-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,bovada,-3.0,-105.0,51.0,-110.0,-160.0,135.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,draftkings,-3.0,-108.0,50.5,-120.0,-155.0,130.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,fanduel,-3.0,-105.0,50.5,-115.0,-158.0,134.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,betus,-3.0,-110.0,51.0,-110.0,-155.0,134.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,lowvig,-3.0,-104.0,51.0,-106.0,-161.0,141.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,betonlineag,-3.0,-110.0,51.0,-110.0,-161.0,141.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,betrivers,-3.0,-110.0,50.5,-113.0,-159.0,128.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,mybookieag,-3.0,-110.0,51.0,-110.0,-160.0,136.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,betmgm,-3.0,100.0,50.5,-118.0,-155.0,130.0
+2026-10-22T19:00:13.360091-04:00,ffebea881c1d7b2dfb85b3e590c35985,Chicago Bears,New England Patriots,bovada,-3.0,-105.0,51.0,-110.0,-160.0,135.0
