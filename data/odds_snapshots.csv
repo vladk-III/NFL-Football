@@ -2419,3 +2419,48 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-24T18:16:35.132008-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,betrivers,-2.5,-118.0,42.5,-113.0,-143.0,118.0
 2026-10-24T18:16:35.132008-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,betmgm,-3.0,-102.0,42.5,-108.0,-150.0,125.0
 2026-10-24T18:16:35.132008-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,mybookieag,-3.0,-105.0,42.5,-110.0,-146.0,119.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,draftkings,4.5,-105.0,43.5,-110.0,195.0,-238.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,betus,4.5,-110.0,43.5,-110.0,185.0,-220.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,fanduel,4.5,-112.0,43.5,-110.0,188.0,-225.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,betonlineag,4.5,-110.0,43.5,-108.0,189.0,-225.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,lowvig,4.5,-106.0,43.5,-105.0,189.0,-225.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,betrivers,4.5,-109.0,43.5,-113.0,190.0,-245.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,betmgm,4.5,-110.0,43.5,-110.0,195.0,-235.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,bovada,4.5,-110.0,44.0,-105.0,185.0,-225.0
+2026-10-25T13:19:22.875972-04:00,436119bb3ccdaa6ed7808aa3ebd82b76,Arizona Cardinals,Denver Broncos,mybookieag,4.5,-110.0,43.5,-110.0,183.0,-220.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,draftkings,-3.5,-108.0,55.5,-110.0,-180.0,150.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,fanduel,-3.5,-112.0,55.5,-110.0,-198.0,166.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,betus,-3.5,-115.0,55.5,-110.0,-195.0,167.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,betonlineag,-3.5,-115.0,55.0,-115.0,-202.0,175.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,lowvig,-3.5,-110.0,55.0,-113.0,-202.0,175.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,betrivers,-3.5,-108.0,55.0,-113.0,-186.0,150.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,betmgm,-3.5,-110.0,55.5,-108.0,-190.0,160.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,mybookieag,-4.0,-110.0,55.5,-110.0,-194.0,163.0
+2026-10-25T13:19:22.875972-04:00,e8e5715eefb6a9ce64765e9ddf49c0cc,Detroit Lions,Green Bay Packers,bovada,-4.0,-110.0,55.5,-110.0,-200.0,170.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,draftkings,3.5,-120.0,48.5,-110.0,154.0,-185.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,betus,3.0,100.0,48.5,-110.0,150.0,-175.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,fanduel,3.5,-120.0,48.5,-110.0,142.0,-168.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,lowvig,3.0,104.0,48.5,-109.0,153.0,-175.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,betonlineag,3.0,101.0,48.5,-112.0,153.0,-175.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,betrivers,3.0,-105.0,48.0,-113.0,145.0,-180.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,betmgm,3.5,-118.0,48.5,-110.0,145.0,-175.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,bovada,3.0,100.0,49.0,-105.0,145.0,-170.0
+2026-10-25T13:19:22.875972-04:00,f7679cf18454e4d88a8f2b990c3f08ac,Las Vegas Raiders,Los Angeles Rams,mybookieag,3.0,100.0,48.5,-110.0,148.0,-175.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,draftkings,-3.0,100.0,42.5,-110.0,-148.0,124.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,betus,-3.0,-105.0,42.5,-110.0,-150.0,129.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,fanduel,-3.0,-104.0,42.5,-108.0,-154.0,130.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,betonlineag,-3.0,-101.0,42.5,-110.0,-150.0,130.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,lowvig,-3.0,-101.0,42.5,-107.0,-150.0,130.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,betrivers,-2.5,-118.0,42.5,-113.0,-143.0,118.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,betmgm,-3.0,-102.0,42.5,-108.0,-145.0,125.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,bovada,-3.0,-105.0,42.5,-110.0,-150.0,130.0
+2026-10-25T13:19:22.875972-04:00,176d474ed8b2bbf1eb4d7e9c56b4bf22,Seattle Seahawks,Kansas City Chiefs,mybookieag,-3.0,-105.0,42.5,-110.0,-155.0,131.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,draftkings,4.5,-112.0,43.5,-118.0,180.0,-218.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,betus,4.0,-110.0,44.0,-110.0,190.0,-225.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,fanduel,4.5,-105.0,44.5,-102.0,190.0,-230.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,betonlineag,4.5,-110.0,44.0,-110.0,189.0,-225.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,lowvig,4.5,-105.0,44.0,-107.0,189.0,-225.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,betrivers,4.5,-109.0,44.0,-108.0,180.0,-225.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,betmgm,4.5,-110.0,44.0,-108.0,185.0,-225.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,mybookieag,4.5,-110.0,44.0,-110.0,180.0,-226.0
+2026-10-25T13:19:22.875972-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,bovada,4.5,-110.0,44.0,-110.0,190.0,-230.0
