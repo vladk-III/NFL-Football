@@ -2509,3 +2509,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-26T19:36:22.049333-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,betmgm,4.5,-108.0,43.5,-110.0,185.0,-225.0
 2026-10-26T19:36:22.049333-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,mybookieag,4.0,-110.0,43.5,-110.0,188.0,-224.0
 2026-10-26T19:36:22.049333-04:00,4853610e63c246f2027a6a248e642c9a,Philadelphia Eagles,Dallas Cowboys,bovada,4.0,-110.0,43.5,-115.0,180.0,-220.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,draftkings,-3.5,-112.0,46.5,-120.0,-185.0,154.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,betus,-3.5,-110.0,47.0,-110.0,-195.0,167.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,fanduel,-3.5,-112.0,46.5,-122.0,-198.0,166.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,betrivers,-3.5,-112.0,47.0,-112.0,-195.0,160.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,lowvig,-3.5,-105.0,47.0,-107.0,-190.0,165.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,betonlineag,-3.5,-110.0,47.0,-110.0,-190.0,165.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,mybookieag,-3.5,-115.0,47.0,-110.0,-204.0,171.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,betmgm,-3.5,-108.0,47.0,-108.0,-200.0,165.0
+2026-10-29T15:20:55.976764-04:00,ab2865e9f2d4b012de8bc6fb6de11a7c,Green Bay Packers,Carolina Panthers,bovada,-3.5,-110.0,47.0,-105.0,-195.0,165.0
