@@ -2743,3 +2743,48 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-10-31T19:08:14.697750-04:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,mybookieag,-6.0,-110.0,40.0,-110.0,-270.0,214.0
 2026-10-31T19:08:14.697750-04:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,betmgm,-6.0,-108.0,40.0,-112.0,-275.0,225.0
 2026-10-31T19:08:14.697750-04:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,bovada,-6.0,-110.0,40.0,-110.0,-250.0,210.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,draftkings,-6.5,-115.0,45.5,-112.0,-270.0,220.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,betus,-7.0,100.0,46.5,-110.0,-310.0,255.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,fanduel,-6.5,-112.0,45.5,-114.0,-290.0,235.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,betrivers,-7.0,-107.0,45.5,-109.0,-305.0,235.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,lowvig,-6.5,-112.0,45.5,-107.0,-320.0,260.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,betonlineag,-6.5,-110.0,45.5,-110.0,-320.0,260.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,mybookieag,-6.5,-115.0,46.0,-110.0,-318.0,255.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,betmgm,-6.5,-110.0,46.5,-108.0,-300.0,240.0
+2026-11-01T13:40:54.678169-05:00,2ff84d3f6053d083c8c0a5bebf7cdd4c,Los Angeles Rams,Los Angeles Chargers,bovada,-6.5,-115.0,46.0,-108.0,-310.0,255.0
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,draftkings,1.5,-120.0,41.5,-110.0,-108.0,-112.0
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,betus,0.0,-105.0,41.5,-110.0,,
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,fanduel,1.5,-120.0,41.5,-112.0,-104.0,-112.0
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,betrivers,1.0,-108.0,41.0,-110.0,-103.0,-120.0
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,lowvig,1.0,-110.0,41.5,-114.0,-104.0,-116.0
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,betonlineag,1.0,-113.0,41.5,-115.0,-104.0,-116.0
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,mybookieag,-1.0,-110.0,42.0,-110.0,-115.0,-102.0
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,betmgm,1.0,-112.0,42.0,-108.0,-105.0,-112.0
+2026-11-01T13:40:54.678169-05:00,f2a036d5edf483a277880014861e78ad,Denver Broncos,Kansas City Chiefs,bovada,-1.0,-105.0,42.0,-110.0,-108.0,-112.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,draftkings,7.0,-110.0,41.5,-108.0,275.0,-345.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,betus,7.0,-115.0,41.0,-110.0,280.0,-350.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,fanduel,7.5,-128.0,41.5,-108.0,295.0,-370.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,betrivers,7.0,-112.0,41.5,-109.0,275.0,-375.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,lowvig,7.0,-109.0,41.0,-107.0,291.0,-363.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,betonlineag,7.0,-111.0,41.0,-110.0,291.0,-363.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,betmgm,7.0,-110.0,41.5,-108.0,290.0,-350.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,mybookieag,7.0,-120.0,41.5,-110.0,303.0,-377.0
+2026-11-01T13:40:54.678169-05:00,05405af79752f5e742cdf50b61f6745e,Miami Dolphins,New England Patriots,bovada,7.0,-115.0,41.0,-108.0,290.0,-370.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,draftkings,-6.0,-112.0,40.5,-110.0,-270.0,220.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,betus,-6.0,-110.0,40.0,-110.0,-260.0,218.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,fanduel,-5.5,-122.0,40.5,-105.0,-270.0,220.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,betrivers,-6.5,-106.0,41.0,-107.0,-265.0,210.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,lowvig,-6.0,100.0,40.0,-107.0,-256.0,212.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,betonlineag,-6.0,-110.0,40.0,-110.0,-256.0,212.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,mybookieag,-6.0,-110.0,40.0,-110.0,-270.0,222.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,betmgm,-6.0,-110.0,40.0,-110.0,-275.0,210.0
+2026-11-01T13:40:54.678169-05:00,b9c60db63b1a19ad319f24b33c0defe8,Washington Commanders,Philadelphia Eagles,bovada,-6.0,-108.0,40.5,-108.0,-260.0,215.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,draftkings,-3.0,-115.0,46.5,-110.0,-166.0,140.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,fanduel,-3.0,-120.0,46.5,-110.0,-174.0,146.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betrivers,-3.0,-110.0,46.5,-112.0,-175.0,140.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,lowvig,-3.0,-110.0,46.5,-107.0,-168.0,148.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betonlineag,-3.0,-115.0,46.5,-110.0,-168.0,148.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betus,-3.0,-120.0,46.5,-110.0,-170.0,146.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,mybookieag,-3.0,-115.0,46.5,-110.0,-174.0,141.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betmgm,-3.0,-115.0,46.5,-108.0,-175.0,150.0
+2026-11-01T13:40:54.678169-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,bovada,-3.0,-112.0,46.5,-110.0,-168.0,143.0
