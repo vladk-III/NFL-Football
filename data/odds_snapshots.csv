@@ -2806,3 +2806,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-01T18:24:19.726113-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,mybookieag,-3.0,-115.0,46.5,-110.0,-174.0,141.0
 2026-11-01T18:24:19.726113-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betmgm,-3.0,-112.0,46.5,-108.0,-175.0,140.0
 2026-11-01T18:24:19.726113-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,bovada,-3.0,-110.0,46.5,-110.0,-165.0,140.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,draftkings,-3.0,-120.0,46.5,-110.0,-170.0,142.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,fanduel,-3.5,-102.0,46.5,-110.0,-180.0,152.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betrivers,-3.0,-118.0,46.0,-113.0,-177.0,145.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,lowvig,-3.5,106.0,46.5,-107.0,-175.0,153.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betonlineag,-3.0,-120.0,46.5,-110.0,-175.0,153.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betus,-3.0,-120.0,46.5,-110.0,-175.0,150.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,mybookieag,-3.0,-120.0,46.5,-110.0,-173.0,146.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,betmgm,-3.0,-130.0,46.5,-110.0,-190.0,155.0
+2026-11-02T12:35:20.941760-05:00,7d664fbcd39350e559d83c0068ba7169,Seattle Seahawks,Chicago Bears,bovada,-3.0,-122.0,46.5,-112.0,-175.0,150.0
