@@ -154,7 +154,7 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_08_CHI_SEA,Lumen Field,47.6,0.0,1.7,outdoors,False
+2026_08_CHI_SEA,Lumen Field,45.6,0.0,1.6,outdoors,False
 2026_09_JAX_BAL,M&T Bank Stadium,68.2,0.012,3.3,outdoors,False
 2026_09_DEN_CAR,Bank of America Stadium,70.9,0.004,6.6,outdoors,False
 2026_09_NYJ_KC,GEHA Field at Arrowhead Stadium,49.7,0.0,16.6,outdoors,False
