@@ -154,20 +154,20 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_08_CHI_SEA,Lumen Field,45.6,0.0,1.6,outdoors,False
-2026_09_JAX_BAL,M&T Bank Stadium,68.2,0.012,3.3,outdoors,False
-2026_09_DEN_CAR,Bank of America Stadium,70.9,0.004,6.6,outdoors,False
-2026_09_NYJ_KC,GEHA Field at Arrowhead Stadium,49.7,0.0,16.6,outdoors,False
-2026_09_DET_MIA,Hard Rock Stadium,87.4,0.0,8.6,outdoors,False
-2026_09_NYG_PHI,Lincoln Financial Field,57.9,0.0,4.3,outdoors,False
-2026_09_LA_WAS,Northwest Stadium,60.2,0.0,8.1,outdoors,False
-2026_09_LV_SF,Levi's Stadium,75.4,0.0,4.2,outdoors,False
-2026_09_GB_NE,Gillette Stadium,51.9,0.0,2.9,outdoors,False
-2026_09_ARI_SEA,Lumen Field,56.2,0.0,4.8,outdoors,False
-2026_09_TB_CHI,Soldier Field,45.2,0.008,15.3,outdoors,False
-2026_10_WAS_NYG,MetLife Stadium,49.2,0.0,10.1,outdoors,False
-2026_10_MIN_GB,Lambeau Field,44.5,0.0,1.7,outdoors,False
-2026_10_BUF_NYJ,MetLife Stadium,50.8,0.0,9.2,outdoors,False
-2026_10_JAX_TEN,Nissan Stadium,60.2,0.0,4.8,outdoors,False
-2026_10_PIT_CIN,Paycor Stadium,49.2,0.0,6.8,outdoors,False
-2026_10_LAC_BAL,M&T Bank Stadium,43.4,0.0,6.8,outdoors,False
+2026_08_CHI_SEA,Lumen Field,46.3,0.0,1.8,outdoors,False
+2026_09_JAX_BAL,M&T Bank Stadium,69.6,0.008,3.5,outdoors,False
+2026_09_DEN_CAR,Bank of America Stadium,61.0,0.0,5.4,outdoors,False
+2026_09_NYJ_KC,GEHA Field at Arrowhead Stadium,62.6,0.0,7.2,outdoors,False
+2026_09_DET_MIA,Hard Rock Stadium,87.4,0.0,10.5,outdoors,False
+2026_09_NYG_PHI,Lincoln Financial Field,54.1,0.0,6.3,outdoors,False
+2026_09_LA_WAS,Northwest Stadium,54.4,0.0,6.1,outdoors,False
+2026_09_LV_SF,Levi's Stadium,73.2,0.0,5.7,outdoors,False
+2026_09_GB_NE,Gillette Stadium,48.0,0.0,2.0,outdoors,False
+2026_09_ARI_SEA,Lumen Field,60.2,0.004,15.3,outdoors,False
+2026_09_TB_CHI,Soldier Field,53.0,0.0,3.8,outdoors,False
+2026_10_WAS_NYG,MetLife Stadium,45.6,0.0,4.8,outdoors,False
+2026_10_MIN_GB,Lambeau Field,54.3,0.0,12.0,outdoors,False
+2026_10_BUF_NYJ,MetLife Stadium,49.3,0.0,4.1,outdoors,False
+2026_10_JAX_TEN,Nissan Stadium,67.7,0.0,4.7,outdoors,False
+2026_10_PIT_CIN,Paycor Stadium,58.6,0.0,3.3,outdoors,False
+2026_10_LAC_BAL,M&T Bank Stadium,54.3,0.0,6.5,outdoors,False
