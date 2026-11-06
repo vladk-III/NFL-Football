@@ -2842,3 +2842,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-05T19:50:00.643543-05:00,c75744790b7acf6260c78ba5e739c0e5,Baltimore Ravens,Jacksonville Jaguars,mybookieag,9.0,-110.0,40.0,-110.0,322.0,-417.0
 2026-11-05T19:50:00.643543-05:00,c75744790b7acf6260c78ba5e739c0e5,Baltimore Ravens,Jacksonville Jaguars,betmgm,9.5,-102.0,40.0,-108.0,375.0,-475.0
 2026-11-05T19:50:00.643543-05:00,c75744790b7acf6260c78ba5e739c0e5,Baltimore Ravens,Jacksonville Jaguars,bovada,8.5,-108.0,40.0,-108.0,300.0,-390.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,draftkings,3.0,-102.0,52.5,-105.0,142.0,-170.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,fanduel,3.0,-105.0,52.5,-110.0,140.0,-166.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,betmgm,3.0,-102.0,52.5,-108.0,140.0,-175.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,betus,3.0,-105.0,52.5,-110.0,146.0,-170.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,mybookieag,3.0,-110.0,52.5,-110.0,140.0,-173.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,betonlineag,3.0,-105.0,52.5,-110.0,149.0,-170.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,lowvig,3.0,100.0,52.5,-105.0,149.0,-170.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,betrivers,3.0,-103.0,52.5,-115.0,148.0,-186.0
+2026-11-06T10:29:10.942415-05:00,dc56d980f527ffeef89940133b211b13,Atlanta Falcons,Cincinnati Bengals,bovada,3.0,-103.0,52.5,-110.0,145.0,-170.0
