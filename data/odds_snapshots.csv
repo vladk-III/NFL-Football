@@ -3085,3 +3085,57 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-07T18:28:43.423089-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,mybookieag,-6.0,-110.0,47.5,-110.0,-283.0,222.0
 2026-11-07T18:28:43.423089-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,betmgm,-6.0,-110.0,47.5,-108.0,-275.0,220.0
 2026-11-07T18:28:43.423089-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,bovada,-6.0,-108.0,47.5,-112.0,-270.0,220.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,draftkings,5.5,-112.0,40.5,-110.0,185.0,-225.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,betus,5.0,-110.0,40.5,-110.0,195.0,-230.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,fanduel,5.5,-110.0,40.5,-115.0,198.0,-240.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,betonlineag,5.5,-115.0,40.5,-110.0,195.0,-235.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,lowvig,5.5,-110.0,40.5,-107.0,195.0,-235.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,betrivers,5.5,-108.0,40.5,-110.0,205.0,-265.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,mybookieag,5.0,-110.0,40.5,-110.0,195.0,-234.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,betmgm,5.0,-105.0,40.5,-110.0,195.0,-235.0
+2026-11-08T13:35:14.348588-05:00,39aeac43cea7b12558b91cdab1255a10,Los Angeles Chargers,Houston Texans,bovada,5.0,-112.0,40.5,-108.0,190.0,-230.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,draftkings,-8.5,-110.0,39.5,-112.0,-440.0,340.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,betus,-9.0,-105.0,39.5,-110.0,-400.0,320.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,fanduel,-8.5,-115.0,39.5,-110.0,-460.0,350.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,betonlineag,-8.0,-116.0,39.5,-115.0,-400.0,316.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,lowvig,-8.0,-116.0,39.5,-113.0,-400.0,316.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,betrivers,-8.5,-108.0,39.5,-108.0,-435.0,325.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,mybookieag,-9.0,-110.0,39.5,-110.0,-436.0,343.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,betmgm,-8.5,-110.0,40.0,-105.0,-425.0,333.0
+2026-11-08T13:35:14.348588-05:00,240e23b02b1e3fef655d04a286b5a623,Seattle Seahawks,Arizona Cardinals,bovada,-9.0,-108.0,40.0,-108.0,-410.0,315.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,draftkings,-3.0,-115.0,44.5,-112.0,-170.0,142.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,betus,-3.0,-125.0,44.5,-110.0,-175.0,150.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,fanduel,-3.0,-115.0,44.5,-110.0,-174.0,146.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,betonlineag,-3.0,-125.0,44.5,-112.0,-180.0,157.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,lowvig,-3.0,-124.0,44.5,-109.0,-180.0,157.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,betrivers,-3.0,-118.0,45.0,-108.0,-175.0,140.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,mybookieag,-3.0,-120.0,44.5,-110.0,-176.0,149.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,betmgm,-3.0,-118.0,44.5,-110.0,-175.0,145.0
+2026-11-08T13:35:14.348588-05:00,2922c573ec3df8466c4a34975e446898,New England Patriots,Green Bay Packers,bovada,-3.5,-103.0,45.0,-105.0,-180.0,155.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,draftkings,-8.5,-112.0,51.5,-118.0,-440.0,340.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,betus,-9.5,-110.0,52.0,-110.0,-425.0,333.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,fanduel,-9.5,-110.0,51.5,-115.0,-490.0,380.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,lowvig,-9.5,100.0,52.0,-102.0,-480.0,370.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,betonlineag,-9.5,-105.0,52.0,-105.0,-480.0,370.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,betrivers,-9.5,-112.0,52.0,-110.0,-530.0,380.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,mybookieag,-9.0,-110.0,52.0,-110.0,-439.0,345.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,betmgm,-9.0,-105.0,52.0,-108.0,-475.0,375.0
+2026-11-08T13:35:14.348588-05:00,ac9d38a18d5c92814233a31aa9a48d78,San Francisco 49ers,Las Vegas Raiders,bovada,-9.0,-108.0,52.0,-108.0,-480.0,365.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,draftkings,-6.0,-112.0,47.5,-108.0,-270.0,220.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,fanduel,-6.5,100.0,47.5,-110.0,-270.0,220.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,betus,-6.0,-105.0,47.5,-110.0,-245.0,205.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,betonlineag,-6.0,-109.0,47.5,-110.0,-255.0,211.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,lowvig,-6.0,-104.0,47.5,-107.0,-255.0,211.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,betrivers,-6.0,-109.0,47.5,-110.0,-275.0,220.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,mybookieag,-6.0,-105.0,47.5,-110.0,-268.0,219.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,betmgm,-6.0,-108.0,47.5,-108.0,-275.0,225.0
+2026-11-08T13:35:14.348588-05:00,9760d8f19f84bfee300a74ceb656c95d,Chicago Bears,Tampa Bay Buccaneers,bovada,-6.0,-112.0,47.5,-112.0,-275.0,225.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,draftkings,3.0,-102.0,43.5,-118.0,145.0,-175.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,fanduel,3.0,-105.0,44.5,-110.0,146.0,-174.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betus,3.0,-105.0,44.0,-110.0,150.0,-175.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betonlineag,3.0,-110.0,44.0,-105.0,155.0,-177.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,lowvig,3.0,-101.0,44.0,-102.0,155.0,-177.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betrivers,3.0,-107.0,44.0,-113.0,145.0,-180.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,mybookieag,3.0,-110.0,44.0,-110.0,144.0,-178.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betmgm,3.0,-105.0,44.0,-110.0,145.0,-175.0
+2026-11-08T13:35:14.348588-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,bovada,3.0,-103.0,44.0,-108.0,150.0,-175.0
