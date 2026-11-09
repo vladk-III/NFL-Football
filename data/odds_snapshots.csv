@@ -3157,3 +3157,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-08T18:27:11.578701-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,mybookieag,3.0,-110.0,44.0,-110.0,144.0,-178.0
 2026-11-08T18:27:11.578701-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betmgm,3.0,-105.0,44.0,-110.0,145.0,-175.0
 2026-11-08T18:27:11.578701-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,bovada,3.0,-103.0,44.0,-108.0,150.0,-175.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,draftkings,3.5,-115.0,45.5,-105.0,160.0,-192.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,fanduel,3.0,100.0,44.5,-120.0,154.0,-184.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betus,3.0,100.0,45.0,-110.0,155.0,-180.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betonlineag,3.0,100.0,45.0,-110.0,158.0,-181.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,lowvig,3.0,105.0,45.0,-107.0,158.0,-181.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betrivers,3.5,-117.0,44.5,-110.0,145.0,-180.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,mybookieag,3.0,100.0,45.0,-110.0,161.0,-192.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betmgm,3.5,-118.0,45.0,-110.0,150.0,-185.0
+2026-11-09T12:59:53.761933-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,bovada,3.0,105.0,45.0,-110.0,155.0,-180.0
