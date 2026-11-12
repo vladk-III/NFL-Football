@@ -3175,3 +3175,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-09T18:13:24.634016-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,mybookieag,3.0,105.0,46.0,-110.0,170.0,-204.0
 2026-11-09T18:13:24.634016-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,betmgm,3.5,-118.0,46.0,-108.0,165.0,-200.0
 2026-11-09T18:13:24.634016-05:00,17ad7eff2f7875e20a8109abe40470e3,Minnesota Vikings,Buffalo Bills,bovada,3.5,-117.0,46.0,-108.0,172.0,-205.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,draftkings,-1.5,-115.0,40.5,-115.0,-125.0,105.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,fanduel,-1.5,-110.0,40.5,-115.0,-122.0,104.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,betus,-1.0,-115.0,41.0,-110.0,-125.0,105.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,betonlineag,-1.0,-118.0,41.0,-108.0,-125.0,105.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,lowvig,-1.0,-114.0,41.0,-105.0,-125.0,105.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,betrivers,-2.0,-108.0,41.0,-114.0,-136.0,112.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,mybookieag,-1.5,-110.0,41.0,-110.0,-124.0,105.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,betmgm,-1.5,-110.0,41.0,-105.0,-125.0,105.0
+2026-11-12T16:15:13.722601-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,bovada,-1.5,-112.0,41.0,-108.0,-127.0,107.0
