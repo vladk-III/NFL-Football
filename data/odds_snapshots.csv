@@ -3193,3 +3193,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-12T19:55:18.570975-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,mybookieag,-1.5,-110.0,40.5,-110.0,-125.0,106.0
 2026-11-12T19:55:18.570975-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,betmgm,-1.5,-105.0,40.5,-118.0,-120.0,100.0
 2026-11-12T19:55:18.570975-05:00,74d39e19225caf211ad2c8eb4110179f,New York Giants,Washington Commanders,bovada,-1.5,-112.0,41.0,-105.0,-127.0,107.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,draftkings,-2.5,-120.0,49.5,-118.0,-148.0,124.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,fanduel,-2.5,-120.0,50.5,-110.0,-152.0,128.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,betmgm,-3.0,100.0,50.0,-110.0,-155.0,130.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,mybookieag,-3.0,100.0,49.5,-110.0,-153.0,125.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,betus,-3.0,100.0,49.5,-115.0,-150.0,129.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,betonlineag,-3.0,100.0,49.5,-115.0,-150.0,130.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,lowvig,-3.0,105.0,49.5,-113.0,-150.0,130.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,betrivers,-2.5,-121.0,50.5,-117.0,-159.0,130.0
+2026-11-13T10:47:48.167761-05:00,b8c10fdf1e0ac4e13deee7f7c0af0b0b,Detroit Lions,New England Patriots,bovada,-2.5,-120.0,50.0,-110.0,-150.0,130.0

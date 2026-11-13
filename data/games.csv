@@ -135,7 +135,7 @@ game_id,season,week,game_type,start_date,home_team,home_points,away_team,away_po
 2026_09_LV_SF,2026,9,REG,2026-11-08T21:25:00+00:00,SF,38.0,LV,17.0,Levi's Stadium,,True
 2026_09_TB_CHI,2026,9,REG,2026-11-09T01:20:00+00:00,CHI,27.0,TB,24.0,Soldier Field,,True
 2026_09_BUF_MIN,2026,9,REG,2026-11-10T01:15:00+00:00,MIN,6.0,BUF,23.0,U.S. Bank Stadium,,True
-2026_10_WAS_NYG,2026,10,REG,2026-11-13T01:15:00+00:00,NYG,,WAS,,MetLife Stadium,,False
+2026_10_WAS_NYG,2026,10,REG,2026-11-13T01:15:00+00:00,NYG,21.0,WAS,24.0,MetLife Stadium,,True
 2026_10_NE_DET,2026,10,REG,2026-11-15T14:30:00+00:00,DET,,NE,,FC Bayern Munich Stadium,,False
 2026_10_KC_ATL,2026,10,REG,2026-11-15T18:00:00+00:00,ATL,,KC,,Mercedes-Benz Stadium,,False
 2026_10_HOU_CLE,2026,10,REG,2026-11-15T18:00:00+00:00,CLE,,HOU,,Huntington Bank Field,,False
