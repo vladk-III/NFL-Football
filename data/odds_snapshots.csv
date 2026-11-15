@@ -3417,3 +3417,48 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-14T18:41:30.013152-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,mybookieag,-3.5,-110.0,49.5,-110.0,-190.0,153.0
 2026-11-14T18:41:30.013152-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,betmgm,-3.5,-108.0,49.5,-108.0,-190.0,155.0
 2026-11-14T18:41:30.013152-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,bovada,-3.5,-108.0,49.0,-112.0,-190.0,165.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,draftkings,9.5,-105.0,38.5,-108.0,380.0,-500.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,betus,10.0,-115.0,38.5,-110.0,378.0,-480.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,fanduel,9.5,-105.0,38.5,-110.0,390.0,-510.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,lowvig,10.0,-109.0,38.0,-107.0,386.0,-505.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,betonlineag,10.0,-115.0,38.0,-110.0,386.0,-505.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,betrivers,9.0,-112.0,38.5,-108.0,310.0,-420.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,mybookieag,10.0,-110.0,38.5,-110.0,399.0,-531.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,betmgm,10.0,-112.0,38.5,-108.0,400.0,-500.0
+2026-11-15T14:29:59.559718-05:00,6c932a965110f3f89ec4a5f1a6ac256e,Arizona Cardinals,Los Angeles Rams,bovada,10.0,-110.0,38.0,-112.0,365.0,-480.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,draftkings,6.5,-110.0,40.5,-108.0,240.0,-298.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,betus,6.5,-110.0,40.5,-110.0,225.0,-270.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,fanduel,6.5,-110.0,40.5,-110.0,245.0,-300.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,lowvig,6.5,-109.0,40.5,-113.0,224.0,-272.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,betonlineag,6.5,-110.0,40.5,-110.0,224.0,-272.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,betrivers,6.5,-108.0,40.5,-109.0,240.0,-315.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,betmgm,6.5,-102.0,40.5,-108.0,240.0,-295.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,mybookieag,6.5,100.0,40.5,-110.0,248.0,-306.0
+2026-11-15T14:29:59.559718-05:00,6079a5cbabf99b265a17edfc92a1da60,Las Vegas Raiders,Seattle Seahawks,bovada,6.5,-112.0,41.0,-105.0,230.0,-280.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,draftkings,4.5,-112.0,55.5,-118.0,180.0,-218.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,fanduel,4.5,-115.0,55.5,-115.0,176.0,-210.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,betus,4.0,-115.0,56.0,-110.0,175.0,-205.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,lowvig,3.5,-101.0,56.0,-102.0,177.0,-205.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,betonlineag,4.0,-114.0,56.0,-105.0,177.0,-205.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,betrivers,4.5,-114.0,56.0,-110.0,180.0,-225.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,mybookieag,4.5,-110.0,56.0,-110.0,182.0,-218.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,betmgm,4.0,-105.0,56.0,-108.0,175.0,-210.0
+2026-11-15T14:29:59.559718-05:00,7627192fd89b05120ab6c712aa23fd81,Dallas Cowboys,San Francisco 49ers,bovada,4.0,-112.0,56.0,-108.0,175.0,-210.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,draftkings,-3.5,-110.0,49.5,-105.0,-192.0,160.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,betus,-3.5,-105.0,49.0,-110.0,-185.0,159.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,fanduel,-3.5,-110.0,49.5,-105.0,-190.0,160.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,lowvig,-3.5,-107.0,49.5,-107.0,-185.0,161.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,betonlineag,-3.5,-107.0,49.5,-110.0,-185.0,161.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,betrivers,-3.5,-113.0,49.5,-110.0,-195.0,155.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,mybookieag,-3.5,-110.0,49.5,-110.0,-200.0,169.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,betmgm,-3.5,-108.0,49.5,-110.0,-200.0,165.0
+2026-11-15T14:29:59.559718-05:00,48e497c230e6c9afcb3b600091d28e17,Cincinnati Bengals,Pittsburgh Steelers,bovada,-3.5,-112.0,50.0,-108.0,-190.0,165.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,draftkings,-4.5,-112.0,38.5,-115.0,-225.0,185.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,betus,-4.5,-110.0,38.5,-110.0,-225.0,190.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,fanduel,-4.5,-110.0,38.5,-115.0,-230.0,190.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,lowvig,-4.5,-106.0,39.0,-107.0,-220.0,186.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,betonlineag,-4.5,-111.0,39.0,-110.0,-220.0,186.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,betrivers,-4.5,-113.0,39.0,-107.0,-230.0,180.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,betmgm,-5.0,-108.0,39.0,-108.0,-225.0,185.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,bovada,-4.5,-110.0,39.0,-112.0,-225.0,185.0
+2026-11-15T14:29:59.559718-05:00,35e3bdff558b5d1506251e814986f164,Baltimore Ravens,Los Angeles Chargers,mybookieag,-4.5,-110.0,39.0,-110.0,-236.0,188.0
