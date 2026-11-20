@@ -171,18 +171,18 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_11_MIA_BUF,Highmark Stadium,59.7,0.0,10.3,outdoors,False
-2026_11_BAL_CAR,Bank of America Stadium,63.4,0.0,4.3,outdoors,False
-2026_11_NO_CHI,Soldier Field,56.8,0.047,8.9,outdoors,False
-2026_11_ARI_KC,GEHA Field at Arrowhead Stadium,51.6,0.0,15.6,outdoors,False
-2026_11_JAX_NYG,MetLife Stadium,55.0,0.0,10.1,outdoors,False
-2026_11_LV_DEN,Empower Field at Mile High,47.2,0.0,3.9,outdoors,False
-2026_11_PIT_PHI,Lincoln Financial Field,61.1,0.26,10.4,outdoors,False
-2026_11_CIN_WAS,Northwest Stadium,48.5,0.0,11.7,outdoors,False
-2026_12_KC_BUF,Highmark Stadium,34.5,0.0,1.4,outdoors,False
-2026_12_DEN_PIT,Acrisure Stadium,46.7,0.0,4.3,outdoors,False
-2026_12_NO_CIN,Paycor Stadium,56.1,0.0,11.2,outdoors,False
-2026_12_TEN_JAX,EverBank Stadium,68.4,0.0,4.1,outdoors,False
-2026_12_NYJ_MIA,Hard Rock Stadium,79.4,0.0,7.5,outdoors,False
-2026_12_SEA_SF,Levi's Stadium,66.4,0.0,7.9,outdoors,False
-2026_12_CAR_TB,Raymond James Stadium,69.4,0.0,6.3,outdoors,False
+2026_11_MIA_BUF,Highmark Stadium,62.6,0.0,10.6,outdoors,False
+2026_11_BAL_CAR,Bank of America Stadium,55.4,0.02,9.9,outdoors,False
+2026_11_NO_CHI,Soldier Field,56.5,0.071,7.9,outdoors,False
+2026_11_ARI_KC,GEHA Field at Arrowhead Stadium,52.6,0.0,15.2,outdoors,False
+2026_11_JAX_NYG,MetLife Stadium,56.6,0.004,6.6,outdoors,False
+2026_11_LV_DEN,Empower Field at Mile High,45.5,0.0,2.1,outdoors,False
+2026_11_PIT_PHI,Lincoln Financial Field,56.8,0.024,7.6,outdoors,False
+2026_11_CIN_WAS,Northwest Stadium,49.6,0.0,11.4,outdoors,False
+2026_12_KC_BUF,Highmark Stadium,39.7,0.024,7.2,outdoors,False
+2026_12_DEN_PIT,Acrisure Stadium,45.0,0.0,6.5,outdoors,False
+2026_12_NO_CIN,Paycor Stadium,55.4,0.0,11.5,outdoors,False
+2026_12_TEN_JAX,EverBank Stadium,69.9,0.0,2.5,outdoors,False
+2026_12_NYJ_MIA,Hard Rock Stadium,76.2,0.0,12.6,outdoors,False
+2026_12_SEA_SF,Levi's Stadium,59.9,0.004,2.2,outdoors,False
+2026_12_CAR_TB,Raymond James Stadium,70.0,0.0,6.7,outdoors,False
