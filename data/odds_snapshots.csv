@@ -3699,3 +3699,48 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-21T19:07:50.695321-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betonlineag,-3.5,-102.0,46.5,-107.0,-175.0,153.0
 2026-11-21T19:07:50.695321-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betrivers,-3.5,-103.0,46.5,-112.0,-167.0,138.0
 2026-11-21T19:07:50.695321-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,bovada,-3.5,100.0,46.0,-112.0,-178.0,153.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,draftkings,-3.0,-118.0,43.5,-103.0,-181.0,152.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,fanduel,-3.0,-116.0,42.5,-116.0,-176.0,148.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,betus,-3.0,-120.0,43.5,-105.0,-170.0,146.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,lowvig,-3.0,-112.0,43.0,-110.0,-170.0,149.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,betonlineag,-3.0,-118.0,43.5,-105.0,-170.0,149.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,betrivers,-3.0,-107.0,42.5,-120.0,-175.0,140.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,mybookieag,-3.0,-115.0,43.0,-110.0,-175.0,148.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,betmgm,-3.0,-118.0,43.5,-105.0,-175.0,145.0
+2026-11-22T15:31:16.498539-05:00,4b20b742b6168aaca4f25d87f11b1526,Los Angeles Chargers,New York Jets,bovada,-3.0,-117.0,43.0,-115.0,-173.0,148.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,draftkings,-10.5,-111.0,40.5,-117.0,-590.0,440.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,fanduel,-10.5,-115.0,41.5,-105.0,-650.0,480.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,betus,-11.5,-115.0,41.5,-110.0,-600.0,450.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,lowvig,-11.5,-109.0,41.5,-107.0,-685.0,497.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,betonlineag,-11.5,-114.0,41.5,-110.0,-685.0,497.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,betrivers,-11.5,-112.0,41.5,-106.0,-715.0,475.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,mybookieag,-11.5,-110.0,41.5,-110.0,-699.0,500.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,betmgm,-11.5,-105.0,40.5,-112.0,-650.0,500.0
+2026-11-22T15:31:16.498539-05:00,1940706a79cbcbafacdcbf231069716b,Denver Broncos,Las Vegas Raiders,bovada,-12.0,-112.0,41.5,-110.0,-700.0,500.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,draftkings,6.0,-110.0,45.5,-107.0,216.0,-262.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,fanduel,5.5,100.0,45.5,100.0,215.0,-260.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,betus,6.0,-110.0,44.5,-110.0,238.0,-285.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,betonlineag,6.0,-108.0,44.0,-110.0,237.0,-290.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,lowvig,6.0,-101.0,44.0,-107.0,237.0,-290.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,betrivers,6.0,-112.0,44.5,-113.0,210.0,-275.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,mybookieag,6.0,-110.0,45.0,-110.0,237.0,-291.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,betmgm,6.0,-108.0,44.5,-110.0,225.0,-275.0
+2026-11-22T15:31:16.498539-05:00,8ba112fabf4e87639338a5f437c5abfe,New York Giants,Jacksonville Jaguars,bovada,6.0,-105.0,44.5,-112.0,235.0,-285.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,draftkings,-3.5,-112.0,46.5,-105.0,-190.0,159.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,fanduel,-3.5,-110.0,46.5,-105.0,-188.0,158.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betmgm,-4.0,-108.0,45.5,-110.0,-200.0,165.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betus,-4.0,-110.0,45.5,-110.0,-195.0,167.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,mybookieag,-3.5,-115.0,45.5,-110.0,-194.0,163.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,lowvig,-4.0,-105.0,45.5,-102.0,-195.0,170.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betonlineag,-4.0,-110.0,45.5,-105.0,-195.0,170.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betrivers,-3.5,-109.0,45.5,-110.0,-177.0,145.0
+2026-11-22T15:31:16.498539-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,bovada,-4.0,-110.0,45.5,-108.0,-195.0,167.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,draftkings,6.0,-107.0,54.5,-116.0,241.0,-296.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betus,6.0,-110.0,55.0,-110.0,238.0,-285.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,fanduel,5.5,100.0,54.5,-110.0,235.0,-290.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betonlineag,6.0,-110.0,55.0,-110.0,239.0,-292.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,lowvig,6.0,-105.0,55.0,100.0,239.0,-292.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betrivers,6.0,-109.0,54.5,-109.0,230.0,-295.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,mybookieag,6.0,-110.0,55.0,-110.0,244.0,-318.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betmgm,6.0,-110.0,55.0,-105.0,240.0,-295.0
+2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,bovada,6.0,-108.0,54.5,-110.0,235.0,-285.0
