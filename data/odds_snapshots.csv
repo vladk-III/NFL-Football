@@ -3744,3 +3744,21 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,mybookieag,6.0,-110.0,55.0,-110.0,244.0,-318.0
 2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betmgm,6.0,-110.0,55.0,-105.0,240.0,-295.0
 2026-11-22T15:31:16.498539-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,bovada,6.0,-108.0,54.5,-110.0,235.0,-285.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,draftkings,-4.5,-103.0,44.5,-117.0,-204.0,171.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,fanduel,-3.5,-120.0,45.5,-110.0,-210.0,176.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betmgm,-4.0,-110.0,45.0,-110.0,-210.0,175.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betus,-4.0,-110.0,45.0,-110.0,-205.0,175.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,mybookieag,-4.0,-110.0,45.0,-110.0,-208.0,174.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,lowvig,-4.0,-105.0,45.0,-107.0,-207.0,178.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betonlineag,-4.0,-112.0,45.0,-110.0,-207.0,178.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,betrivers,-4.0,-112.0,45.0,-109.0,-195.0,155.0
+2026-11-22T19:36:53.142701-05:00,60e1d27b083a335b722c2c852ea85612,San Francisco 49ers,Minnesota Vikings,bovada,-4.0,-112.0,45.0,-108.0,-210.0,175.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,draftkings,6.0,-107.0,54.5,-116.0,241.0,-296.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betus,6.0,-110.0,55.0,-110.0,238.0,-285.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,fanduel,5.5,100.0,54.5,-110.0,235.0,-290.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betonlineag,6.0,-110.0,55.0,-110.0,239.0,-292.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,lowvig,6.0,-105.0,55.0,100.0,239.0,-292.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betrivers,6.0,-109.0,54.5,-109.0,230.0,-295.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,mybookieag,6.0,-110.0,55.0,-110.0,244.0,-318.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,betmgm,6.0,-110.0,55.0,-105.0,240.0,-295.0
+2026-11-22T19:36:53.142701-05:00,3a60ed1d20004aa4d4772b2c1a2272e7,Washington Commanders,Cincinnati Bengals,bovada,6.0,-108.0,54.5,-110.0,235.0,-285.0
