@@ -3788,3 +3788,26 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-23T23:39:03.834473-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,betrivers,-3.0,-103.0,44.0,-113.0,-148.0,120.0
 2026-11-23T23:39:03.834473-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,lowvig,-2.5,-108.0,44.0,-107.0,-142.0,122.0
 2026-11-23T23:39:03.834473-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,betonlineag,-2.5,-110.0,44.0,-110.0,-142.0,122.0
+2026-11-24T18:24:01.256668-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,draftkings,-2.5,-109.0,43.5,-121.0,-136.0,115.0
+2026-11-24T18:24:01.256668-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,fanduel,-2.5,-112.0,44.5,100.0,-142.0,120.0
+2026-11-24T18:24:01.256668-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,betmgm,-2.5,-108.0,44.0,-108.0,-135.0,115.0
+2026-11-24T18:24:01.256668-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,betus,-2.0,-115.0,44.0,-110.0,-135.0,115.0
+2026-11-24T18:24:01.256668-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,mybookieag,-2.0,-110.0,44.0,-110.0,-140.0,115.0
+2026-11-24T18:24:01.256668-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,betrivers,-2.5,-112.0,43.5,-114.0,-136.0,112.0
+2026-11-24T18:24:01.256668-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,lowvig,-2.5,-107.0,44.0,-107.0,-135.0,115.0
+2026-11-24T18:24:01.256668-05:00,5b612899d6dcdf998107f2c6c6e49a58,Los Angeles Rams,Green Bay Packers,betonlineag,-1.5,-122.0,44.0,-110.0,-135.0,115.0
+2026-11-24T18:24:01.256668-05:00,9b825e6518156008da499be041975fdd,Detroit Lions,Chicago Bears,draftkings,2.5,-111.0,55.5,-104.0,116.0,-138.0
+2026-11-24T18:24:01.256668-05:00,9b825e6518156008da499be041975fdd,Detroit Lions,Chicago Bears,fanduel,2.5,-108.0,55.5,-105.0,120.0,-142.0
+2026-11-24T18:24:01.256668-05:00,9b825e6518156008da499be041975fdd,Detroit Lions,Chicago Bears,betmgm,2.5,-108.0,55.0,-110.0,115.0,-140.0
+2026-11-24T18:24:01.256668-05:00,9b825e6518156008da499be041975fdd,Detroit Lions,Chicago Bears,mybookieag,2.5,-115.0,55.0,-110.0,114.0,-139.0
+2026-11-24T18:24:01.256668-05:00,9b825e6518156008da499be041975fdd,Detroit Lions,Chicago Bears,betrivers,2.5,-105.0,55.5,-109.0,123.0,-148.0
+2026-11-24T18:24:01.256668-05:00,9b825e6518156008da499be041975fdd,Detroit Lions,Chicago Bears,betus,2.0,100.0,55.5,-110.0,111.0,-131.0
+2026-11-24T18:24:01.256668-05:00,9b825e6518156008da499be041975fdd,Detroit Lions,Chicago Bears,betonlineag,1.0,108.0,55.5,-105.0,111.0,-131.0
+2026-11-24T18:24:01.256668-05:00,9b825e6518156008da499be041975fdd,Detroit Lions,Chicago Bears,lowvig,1.0,112.0,55.5,-102.0,111.0,-131.0
+2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,draftkings,-8.5,-111.0,47.5,-115.0,-469.0,363.0
+2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,fanduel,-8.5,-110.0,48.5,-105.0,-500.0,380.0
+2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,betonlineag,-10.0,106.0,48.0,-107.0,-450.0,350.0
+2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,betmgm,-8.5,-108.0,48.0,-108.0,-475.0,375.0
+2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,lowvig,-9.0,100.0,48.0,-104.0,-450.0,350.0
+2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,betrivers,-8.5,-110.0,48.0,-109.0,-455.0,335.0
+2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,betus,-9.0,-110.0,48.0,-105.0,-435.0,340.0
