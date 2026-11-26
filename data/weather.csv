@@ -179,18 +179,19 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_12_KC_BUF,Highmark Stadium,34.7,0.0,17.8,outdoors,False
-2026_12_DEN_PIT,Acrisure Stadium,39.7,0.008,12.9,outdoors,False
-2026_12_NO_CIN,Paycor Stadium,51.5,0.0,6.4,outdoors,False
-2026_12_TEN_JAX,EverBank Stadium,68.9,0.0,2.7,outdoors,False
-2026_12_NYJ_MIA,Hard Rock Stadium,75.5,0.0,10.8,outdoors,False
-2026_12_SEA_SF,Levi's Stadium,58.7,0.11,6.7,outdoors,False
-2026_12_CAR_TB,Raymond James Stadium,66.5,0.035,17.2,outdoors,False
-2026_13_JAX_CHI,Soldier Field,41.0,0.0,6.7,outdoors,False
-2026_13_SF_NYG,MetLife Stadium,41.2,0.0,13.0,outdoors,False
-2026_13_LAC_TB,Raymond James Stadium,74.4,0.0,12.5,outdoors,False
-2026_13_WAS_TEN,Nissan Stadium,52.9,0.0,8.0,outdoors,False
-2026_13_MIA_DEN,Empower Field at Mile High,43.1,0.0,7.2,outdoors,False
-2026_13_BUF_NE,Gillette Stadium,30.3,0.0,12.0,outdoors,False
-2026_13_HOU_PIT,Acrisure Stadium,34.6,0.0,3.6,outdoors,False
-2026_13_DAL_SEA,Lumen Field,41.7,0.0,2.9,outdoors,False
+2026_12_KC_BUF,Highmark Stadium,35.0,0.283,20.1,outdoors,False
+2026_12_DEN_PIT,Acrisure Stadium,40.5,0.0,12.2,outdoors,False
+2026_12_NO_CIN,Paycor Stadium,50.6,0.126,9.4,outdoors,False
+2026_12_TEN_JAX,EverBank Stadium,66.1,0.0,9.0,outdoors,False
+2026_12_NYJ_MIA,Hard Rock Stadium,77.8,0.0,8.8,outdoors,False
+2026_12_SEA_SF,Levi's Stadium,64.6,0.0,10.4,outdoors,False
+2026_12_CAR_TB,Raymond James Stadium,64.2,0.024,7.4,outdoors,False
+2026_13_JAX_CHI,Soldier Field,46.9,0.0,8.4,outdoors,False
+2026_13_SF_NYG,MetLife Stadium,57.0,0.0,16.2,outdoors,False
+2026_13_LAC_TB,Raymond James Stadium,83.2,0.004,6.8,outdoors,False
+2026_13_WAS_TEN,Nissan Stadium,54.2,0.0,6.0,outdoors,False
+2026_13_MIA_DEN,Empower Field at Mile High,48.2,0.0,2.1,outdoors,False
+2026_13_BUF_NE,Gillette Stadium,43.2,0.004,18.3,outdoors,False
+2026_13_HOU_PIT,Acrisure Stadium,42.6,0.0,3.7,outdoors,False
+2026_13_DAL_SEA,Lumen Field,40.8,0.0,4.1,outdoors,False
+2026_14_MIN_NE,Gillette Stadium,36.2,0.0,8.9,outdoors,False

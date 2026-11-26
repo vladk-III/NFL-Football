@@ -3811,3 +3811,21 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,lowvig,-9.0,100.0,48.0,-104.0,-450.0,350.0
 2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,betrivers,-8.5,-110.0,48.0,-109.0,-455.0,335.0
 2026-11-24T18:24:01.256668-05:00,ffaa06af56a7137d4b078c5c46c0b730,Dallas Cowboys,Philadelphia Eagles,betus,-9.0,-110.0,48.0,-105.0,-435.0,340.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,draftkings,-3.0,-101.0,45.5,-113.0,-153.0,130.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,fanduel,-3.0,-108.0,45.5,-116.0,-158.0,134.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,betmgm,-3.0,100.0,46.0,-110.0,-160.0,135.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,mybookieag,-3.0,100.0,46.0,-110.0,-157.0,133.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,betrivers,-3.0,-109.0,45.5,-113.0,-159.0,130.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,betonlineag,-3.0,-103.0,46.0,-108.0,-161.0,141.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,lowvig,-3.0,102.0,46.0,-105.0,-161.0,141.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,betus,-3.0,100.0,46.0,-110.0,-155.0,134.0
+2026-11-26T17:41:33.616288-05:00,f36f518585aec40e8cb40e071c0844aa,Buffalo Bills,Kansas City Chiefs,bovada,-3.0,-110.0,46.0,-110.0,-170.0,145.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,draftkings,4.5,101.0,36.5,-119.0,209.0,-254.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,fanduel,4.5,-110.0,36.5,-114.0,194.0,-235.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betmgm,5.0,-110.0,37.0,-105.0,195.0,-235.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betrivers,4.0,-108.0,36.5,-113.0,195.0,-245.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betonlineag,4.5,-105.0,37.0,-110.0,198.0,-238.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,lowvig,4.5,-105.0,37.0,-107.0,198.0,-238.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betus,5.0,-110.0,37.0,-110.0,203.0,-238.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,mybookieag,5.0,-110.0,37.0,-110.0,195.0,-246.0
+2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,bovada,5.0,-110.0,37.0,-112.0,195.0,-235.0
