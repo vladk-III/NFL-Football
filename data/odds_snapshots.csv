@@ -3829,3 +3829,12 @@ snapshot_ts,game_id,home_team,away_team,provider,spread,spread_price,over_under,
 2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betus,5.0,-110.0,37.0,-110.0,203.0,-238.0
 2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,mybookieag,5.0,-110.0,37.0,-110.0,195.0,-246.0
 2026-11-26T17:41:33.616288-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,bovada,5.0,-110.0,37.0,-112.0,195.0,-235.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,draftkings,4.5,-102.0,36.5,-119.0,205.0,-248.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,fanduel,4.5,-110.0,36.5,-114.0,194.0,-235.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betmgm,5.0,-110.0,37.0,-105.0,195.0,-235.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betrivers,5.5,-113.0,36.5,-114.0,210.0,-265.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betonlineag,5.0,-110.0,37.0,-110.0,203.0,-245.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,lowvig,5.0,-107.0,37.0,-107.0,203.0,-245.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,betus,5.0,-110.0,37.0,-110.0,205.0,-245.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,mybookieag,5.0,-110.0,37.0,-110.0,193.0,-244.0
+2026-11-26T21:40:48.152762-05:00,44a3bcf5bd002583ddef2207a92dd977,Pittsburgh Steelers,Denver Broncos,bovada,5.0,-108.0,36.5,-115.0,195.0,-235.0
