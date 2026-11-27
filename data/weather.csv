@@ -147,6 +147,7 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_12_GB_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_12_CHI_DET,Ford Field,72.0,0.0,0.0,dome,True
 2026_12_PHI_DAL,AT&T Stadium,72.0,0.0,0.0,retractable,True
+2026_12_KC_BUF,Highmark Stadium,33.5,0.937,13.8,outdoors,False
 2026_12_NYG_IND,Lucas Oil Stadium,72.0,0.0,0.0,retractable,True
 2026_12_ATL_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_12_NE_LAC,SoFi Stadium,72.0,0.0,0.0,dome,True
@@ -179,19 +180,18 @@ game_id,stadium,temperature,precipitation,wind_speed,roof_type,is_indoor
 2026_18_SEA_LA,SoFi Stadium,72.0,0.0,0.0,dome,True
 2026_18_CHI_MIN,U.S. Bank Stadium,72.0,0.0,0.0,dome,True
 2026_18_TB_NO,Caesars Superdome,72.0,0.0,0.0,dome,True
-2026_12_KC_BUF,Highmark Stadium,33.5,0.937,13.8,outdoors,False
-2026_12_DEN_PIT,Acrisure Stadium,38.9,0.016,13.7,outdoors,False
-2026_12_NO_CIN,Paycor Stadium,47.4,0.102,4.3,outdoors,False
-2026_12_TEN_JAX,EverBank Stadium,61.9,0.0,3.0,outdoors,False
-2026_12_NYJ_MIA,Hard Rock Stadium,76.6,0.0,8.5,outdoors,False
-2026_12_SEA_SF,Levi's Stadium,65.9,0.0,10.8,outdoors,False
-2026_12_CAR_TB,Raymond James Stadium,67.8,0.02,5.3,outdoors,False
-2026_13_JAX_CHI,Soldier Field,45.8,0.0,8.8,outdoors,False
-2026_13_SF_NYG,MetLife Stadium,46.6,0.0,14.1,outdoors,False
-2026_13_LAC_TB,Raymond James Stadium,78.1,0.0,2.6,outdoors,False
-2026_13_WAS_TEN,Nissan Stadium,60.4,0.0,5.4,outdoors,False
-2026_13_MIA_DEN,Empower Field at Mile High,38.9,0.0,8.5,outdoors,False
-2026_13_BUF_NE,Gillette Stadium,36.8,0.0,12.6,outdoors,False
-2026_13_HOU_PIT,Acrisure Stadium,43.3,0.0,6.3,outdoors,False
-2026_13_DAL_SEA,Lumen Field,46.3,0.043,14.4,outdoors,False
-2026_14_MIN_NE,Gillette Stadium,32.4,0.0,2.0,outdoors,False
+2026_12_DEN_PIT,Acrisure Stadium,37.5,0.016,13.5,outdoors,False
+2026_12_NO_CIN,Paycor Stadium,53.2,0.008,11.4,outdoors,False
+2026_12_TEN_JAX,EverBank Stadium,68.8,0.0,6.5,outdoors,False
+2026_12_NYJ_MIA,Hard Rock Stadium,77.6,0.0,9.8,outdoors,False
+2026_12_SEA_SF,Levi's Stadium,67.4,0.0,10.6,outdoors,False
+2026_12_CAR_TB,Raymond James Stadium,69.1,0.0,4.5,outdoors,False
+2026_13_JAX_CHI,Soldier Field,38.5,0.0,5.6,outdoors,False
+2026_13_SF_NYG,MetLife Stadium,48.1,0.0,18.1,outdoors,False
+2026_13_LAC_TB,Raymond James Stadium,77.5,0.0,8.7,outdoors,False
+2026_13_WAS_TEN,Nissan Stadium,48.1,0.0,5.6,outdoors,False
+2026_13_MIA_DEN,Empower Field at Mile High,51.2,0.0,4.2,outdoors,False
+2026_13_BUF_NE,Gillette Stadium,42.9,0.008,17.5,outdoors,False
+2026_13_HOU_PIT,Acrisure Stadium,36.3,0.0,11.4,outdoors,False
+2026_13_DAL_SEA,Lumen Field,40.8,0.0,4.3,outdoors,False
+2026_14_MIN_NE,Gillette Stadium,28.6,0.0,17.0,outdoors,False
